@@ -1,0 +1,36 @@
+# E2a ablation: MSE + SSIM only (no edge loss)
+# Tests whether SSIM alone improves over baseline.
+#
+# Run:  python train_e2.py --config configs/e2a_mse_ssim.yaml --shot-count 1000
+
+experiment:
+  name: e2a_mse_ssim
+  description: "E2a ablation — MSE + SSIM only"
+
+data:
+  frozen_root: /home/ss_students/Downloads/MTP_Ghost_Imaging/01_UNet_Baseline
+  shot_count: 1000
+  random_k: true
+  num_workers: 2
+
+model:
+  base: 32
+  depth: 3
+
+training:
+  epochs: 80
+  batch_size: 16
+  lr: 1.0e-4
+  patience: 10
+  min_delta: 1.0e-5
+  seed: 0
+  device: cuda
+
+loss:
+  lambda_ssim: 0.1
+  lambda_edge: 0.0        # disabled for this ablation
+
+output:
+  checkpoint_dir: checkpoints
+  log_dir: logs
+  results_dir: results

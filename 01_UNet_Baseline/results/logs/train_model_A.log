@@ -1,0 +1,186 @@
+train samples (image x level): 2046, train images: 341, min valid corners/image: 1078
+val patches: 900 from 75 val images (98s)
+parameters: 1,941,139
+Epoch 1/60
+2026-10-04 18:46:13.291609: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(26.15), 'val_psnr_P50': np.float64(28.21), 'val_psnr_P100': np.float64(28.53), 'val_psnr_P250': np.float64(28.68), 'val_psnr_P500': np.float64(28.69), 'val_psnr_P1000': np.float64(28.66)}
+250/250 - 150s - 598ms/step - loss: 0.0111 - masked_mae: 0.0635 - masked_psnr: 23.7177 - val_loss: 0.0016 - val_masked_mae: 0.0282 - val_masked_psnr: 28.3911 - learning_rate: 1.0000e-03
+Epoch 2/60
+250/250 - 125s - 501ms/step - loss: 9.9286e-04 - masked_mae: 0.0220 - masked_psnr: 30.3782 - val_loss: 6.8383e-04 - val_masked_mae: 0.0180 - val_masked_psnr: 32.3568 - learning_rate: 1.0000e-03
+Epoch 3/60
+250/250 - 129s - 517ms/step - loss: 6.8264e-04 - masked_mae: 0.0186 - masked_psnr: 31.9431 - val_loss: 5.5077e-04 - val_masked_mae: 0.0160 - val_masked_psnr: 33.4967 - learning_rate: 1.0000e-03
+Epoch 4/60
+250/250 - 136s - 543ms/step - loss: 5.8896e-04 - masked_mae: 0.0169 - masked_psnr: 32.6455 - val_loss: 5.2796e-04 - val_masked_mae: 0.0159 - val_masked_psnr: 33.6345 - learning_rate: 1.0000e-03
+Epoch 5/60
+2026-10-04 18:55:37.431011: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(29.57), 'val_psnr_P50': np.float64(33.19), 'val_psnr_P100': np.float64(34.22), 'val_psnr_P250': np.float64(35.15), 'val_psnr_P500': np.float64(35.56), 'val_psnr_P1000': np.float64(35.81)}
+250/250 - 177s - 708ms/step - loss: 4.4776e-04 - masked_mae: 0.0144 - masked_psnr: 33.7479 - val_loss: 4.6804e-04 - val_masked_mae: 0.0151 - val_masked_psnr: 34.1975 - learning_rate: 1.0000e-03
+Epoch 6/60
+250/250 - 148s - 591ms/step - loss: 4.3824e-04 - masked_mae: 0.0144 - masked_psnr: 33.8178 - val_loss: 4.1473e-04 - val_masked_mae: 0.0139 - val_masked_psnr: 34.8781 - learning_rate: 1.0000e-03
+Epoch 7/60
+250/250 - 145s - 582ms/step - loss: 4.5399e-04 - masked_mae: 0.0150 - masked_psnr: 33.6916 - val_loss: 3.8432e-04 - val_masked_mae: 0.0134 - val_masked_psnr: 35.2959 - learning_rate: 1.0000e-03
+Epoch 8/60
+250/250 - 141s - 562ms/step - loss: 3.7487e-04 - masked_mae: 0.0133 - masked_psnr: 34.5260 - val_loss: 3.7272e-04 - val_masked_mae: 0.0132 - val_masked_psnr: 35.4498 - learning_rate: 1.0000e-03
+Epoch 9/60
+250/250 - 141s - 565ms/step - loss: 3.9265e-04 - masked_mae: 0.0138 - masked_psnr: 34.3358 - val_loss: 3.7533e-04 - val_masked_mae: 0.0133 - val_masked_psnr: 35.3971 - learning_rate: 1.0000e-03
+Epoch 10/60
+
+Epoch 10: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+2026-10-04 19:08:20.338913: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(30.15), 'val_psnr_P50': np.float64(33.75), 'val_psnr_P100': np.float64(34.89), 'val_psnr_P250': np.float64(35.94), 'val_psnr_P500': np.float64(36.41), 'val_psnr_P1000': np.float64(36.7)}
+250/250 - 188s - 752ms/step - loss: 3.9909e-04 - masked_mae: 0.0141 - masked_psnr: 34.2575 - val_loss: 4.0164e-04 - val_masked_mae: 0.0141 - val_masked_psnr: 34.8718 - learning_rate: 1.0000e-03
+Epoch 11/60
+250/250 - 162s - 650ms/step - loss: 3.5182e-04 - masked_mae: 0.0128 - masked_psnr: 34.7897 - val_loss: 3.3531e-04 - val_masked_mae: 0.0124 - val_masked_psnr: 36.0319 - learning_rate: 5.0000e-04
+Epoch 12/60
+250/250 - 193s - 773ms/step - loss: 3.2923e-04 - masked_mae: 0.0124 - masked_psnr: 35.0985 - val_loss: 3.2786e-04 - val_masked_mae: 0.0123 - val_masked_psnr: 36.1350 - learning_rate: 5.0000e-04
+Epoch 13/60
+250/250 - 215s - 860ms/step - loss: 3.0953e-04 - masked_mae: 0.0120 - masked_psnr: 35.3676 - val_loss: 3.2678e-04 - val_masked_mae: 0.0123 - val_masked_psnr: 36.1234 - learning_rate: 5.0000e-04
+Epoch 14/60
+
+Epoch 14: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+250/250 - 237s - 948ms/step - loss: 3.1992e-04 - masked_mae: 0.0122 - masked_psnr: 35.1905 - val_loss: 3.2674e-04 - val_masked_mae: 0.0123 - val_masked_psnr: 36.1283 - learning_rate: 5.0000e-04
+Epoch 15/60
+2026-10-04 19:25:54.066942: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(30.8), 'val_psnr_P50': np.float64(34.72), 'val_psnr_P100': np.float64(36.1), 'val_psnr_P250': np.float64(37.51), 'val_psnr_P500': np.float64(38.2), 'val_psnr_P1000': np.float64(38.61)}
+250/250 - 256s - 1s/step - loss: 3.0442e-04 - masked_mae: 0.0118 - masked_psnr: 35.4668 - val_loss: 3.1371e-04 - val_masked_mae: 0.0120 - val_masked_psnr: 36.3678 - learning_rate: 2.5000e-04
+Epoch 16/60
+250/250 - 333s - 1s/step - loss: 3.1905e-04 - masked_mae: 0.0121 - masked_psnr: 35.2421 - val_loss: 3.1280e-04 - val_masked_mae: 0.0120 - val_masked_psnr: 36.3918 - learning_rate: 2.5000e-04
+Epoch 17/60
+250/250 - 294s - 1s/step - loss: 3.1544e-04 - masked_mae: 0.0121 - masked_psnr: 35.3136 - val_loss: 3.0862e-04 - val_masked_mae: 0.0119 - val_masked_psnr: 36.4480 - learning_rate: 2.5000e-04
+Epoch 18/60
+250/250 - 317s - 1s/step - loss: 2.7398e-04 - masked_mae: 0.0113 - masked_psnr: 35.8729 - val_loss: 3.0949e-04 - val_masked_mae: 0.0120 - val_masked_psnr: 36.4092 - learning_rate: 2.5000e-04
+Epoch 19/60
+
+Epoch 19: ReduceLROnPlateau reducing learning rate to 0.0001250000059371814.
+250/250 - 260s - 1s/step - loss: 3.1508e-04 - masked_mae: 0.0122 - masked_psnr: 35.2987 - val_loss: 3.0556e-04 - val_masked_mae: 0.0119 - val_masked_psnr: 36.4886 - learning_rate: 2.5000e-04
+Epoch 20/60
+2026-10-04 19:50:59.949096: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(30.98), 'val_psnr_P50': np.float64(34.83), 'val_psnr_P100': np.float64(36.24), 'val_psnr_P250': np.float64(37.72), 'val_psnr_P500': np.float64(38.47), 'val_psnr_P1000': np.float64(38.94)}
+250/250 - 297s - 1s/step - loss: 3.0480e-04 - masked_mae: 0.0118 - masked_psnr: 35.4697 - val_loss: 3.0047e-04 - val_masked_mae: 0.0117 - val_masked_psnr: 36.5936 - learning_rate: 1.2500e-04
+Epoch 21/60
+250/250 - 219s - 877ms/step - loss: 2.9706e-04 - masked_mae: 0.0116 - masked_psnr: 35.5734 - val_loss: 2.9910e-04 - val_masked_mae: 0.0117 - val_masked_psnr: 36.6131 - learning_rate: 1.2500e-04
+Epoch 22/60
+250/250 - 197s - 787ms/step - loss: 2.9538e-04 - masked_mae: 0.0117 - masked_psnr: 35.6546 - val_loss: 2.9851e-04 - val_masked_mae: 0.0117 - val_masked_psnr: 36.5915 - learning_rate: 1.2500e-04
+Epoch 23/60
+
+Epoch 23: ReduceLROnPlateau reducing learning rate to 6.25000029685907e-05.
+250/250 - 191s - 764ms/step - loss: 2.9909e-04 - masked_mae: 0.0118 - masked_psnr: 35.5153 - val_loss: 2.9588e-04 - val_masked_mae: 0.0116 - val_masked_psnr: 36.6730 - learning_rate: 1.2500e-04
+Epoch 24/60
+250/250 - 184s - 736ms/step - loss: 3.0960e-04 - masked_mae: 0.0119 - masked_psnr: 35.4275 - val_loss: 2.9383e-04 - val_masked_mae: 0.0116 - val_masked_psnr: 36.7042 - learning_rate: 6.2500e-05
+Epoch 25/60
+2026-10-04 20:07:39.341289: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(31.08), 'val_psnr_P50': np.float64(34.91), 'val_psnr_P100': np.float64(36.32), 'val_psnr_P250': np.float64(37.82), 'val_psnr_P500': np.float64(38.6), 'val_psnr_P1000': np.float64(39.11)}
+250/250 - 205s - 821ms/step - loss: 2.7772e-04 - masked_mae: 0.0114 - masked_psnr: 35.8350 - val_loss: 2.9361e-04 - val_masked_mae: 0.0116 - val_masked_psnr: 36.7078 - learning_rate: 6.2500e-05
+Epoch 26/60
+250/250 - 172s - 689ms/step - loss: 2.8537e-04 - masked_mae: 0.0115 - masked_psnr: 35.7400 - val_loss: 2.9284e-04 - val_masked_mae: 0.0116 - val_masked_psnr: 36.7136 - learning_rate: 6.2500e-05
+Epoch 27/60
+
+Epoch 27: ReduceLROnPlateau reducing learning rate to 3.125000148429535e-05.
+250/250 - 171s - 684ms/step - loss: 2.9829e-04 - masked_mae: 0.0116 - masked_psnr: 35.5541 - val_loss: 2.9208e-04 - val_masked_mae: 0.0116 - val_masked_psnr: 36.7332 - learning_rate: 6.2500e-05
+Epoch 28/60
+250/250 - 172s - 687ms/step - loss: 2.8429e-04 - masked_mae: 0.0115 - masked_psnr: 35.7297 - val_loss: 2.9072e-04 - val_masked_mae: 0.0116 - val_masked_psnr: 36.7515 - learning_rate: 3.1250e-05
+Epoch 29/60
+250/250 - 168s - 670ms/step - loss: 2.8564e-04 - masked_mae: 0.0114 - masked_psnr: 35.7223 - val_loss: 2.8999e-04 - val_masked_mae: 0.0115 - val_masked_psnr: 36.7657 - learning_rate: 3.1250e-05
+Epoch 30/60
+2026-10-04 20:22:27.820775: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(31.16), 'val_psnr_P50': np.float64(34.96), 'val_psnr_P100': np.float64(36.38), 'val_psnr_P250': np.float64(37.9), 'val_psnr_P500': np.float64(38.69), 'val_psnr_P1000': np.float64(39.2)}
+250/250 - 209s - 835ms/step - loss: 2.8932e-04 - masked_mae: 0.0116 - masked_psnr: 35.6298 - val_loss: 2.8901e-04 - val_masked_mae: 0.0115 - val_masked_psnr: 36.7811 - learning_rate: 3.1250e-05
+Epoch 31/60
+
+Epoch 31: ReduceLROnPlateau reducing learning rate to 1.5625000742147677e-05.
+250/250 - 185s - 739ms/step - loss: 3.0834e-04 - masked_mae: 0.0118 - masked_psnr: 35.4216 - val_loss: 2.8848e-04 - val_masked_mae: 0.0115 - val_masked_psnr: 36.7877 - learning_rate: 3.1250e-05
+Epoch 32/60
+250/250 - 191s - 764ms/step - loss: 2.7776e-04 - masked_mae: 0.0113 - masked_psnr: 35.8528 - val_loss: 2.8785e-04 - val_masked_mae: 0.0115 - val_masked_psnr: 36.8030 - learning_rate: 1.5625e-05
+Epoch 33/60
+250/250 - 184s - 736ms/step - loss: 2.7349e-04 - masked_mae: 0.0113 - masked_psnr: 35.9009 - val_loss: 2.8783e-04 - val_masked_mae: 0.0115 - val_masked_psnr: 36.8050 - learning_rate: 1.5625e-05
+Epoch 34/60
+250/250 - 184s - 737ms/step - loss: 2.9532e-04 - masked_mae: 0.0116 - masked_psnr: 35.6250 - val_loss: 2.8722e-04 - val_masked_mae: 0.0115 - val_masked_psnr: 36.8130 - learning_rate: 1.5625e-05
+Epoch 35/60
+
+Epoch 35: ReduceLROnPlateau reducing learning rate to 1e-05.
+2026-10-04 20:38:28.648860: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(31.18), 'val_psnr_P50': np.float64(34.97), 'val_psnr_P100': np.float64(36.4), 'val_psnr_P250': np.float64(37.95), 'val_psnr_P500': np.float64(38.75), 'val_psnr_P1000': np.float64(39.28)}
+250/250 - 213s - 854ms/step - loss: 2.7939e-04 - masked_mae: 0.0113 - masked_psnr: 35.8415 - val_loss: 2.8682e-04 - val_masked_mae: 0.0115 - val_masked_psnr: 36.8205 - learning_rate: 1.5625e-05
+Epoch 36/60
+250/250 - 169s - 676ms/step - loss: 2.9136e-04 - masked_mae: 0.0116 - masked_psnr: 35.6321 - val_loss: 2.8634e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8300 - learning_rate: 1.0000e-05
+Epoch 37/60
+250/250 - 166s - 665ms/step - loss: 2.7286e-04 - masked_mae: 0.0112 - masked_psnr: 35.9109 - val_loss: 2.8663e-04 - val_masked_mae: 0.0115 - val_masked_psnr: 36.8257 - learning_rate: 1.0000e-05
+Epoch 38/60
+250/250 - 167s - 667ms/step - loss: 2.5470e-04 - masked_mae: 0.0109 - masked_psnr: 36.2005 - val_loss: 2.8616e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8362 - learning_rate: 1.0000e-05
+Epoch 39/60
+250/250 - 162s - 646ms/step - loss: 2.7697e-04 - masked_mae: 0.0113 - masked_psnr: 35.8440 - val_loss: 2.8580e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8442 - learning_rate: 1.0000e-05
+Epoch 40/60
+2026-10-04 20:52:40.828431: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(31.2), 'val_psnr_P50': np.float64(34.98), 'val_psnr_P100': np.float64(36.41), 'val_psnr_P250': np.float64(37.96), 'val_psnr_P500': np.float64(38.77), 'val_psnr_P1000': np.float64(39.29)}
+250/250 - 187s - 748ms/step - loss: 2.9832e-04 - masked_mae: 0.0116 - masked_psnr: 35.5954 - val_loss: 2.8600e-04 - val_masked_mae: 0.0115 - val_masked_psnr: 36.8312 - learning_rate: 1.0000e-05
+Epoch 41/60
+250/250 - 157s - 629ms/step - loss: 2.9496e-04 - masked_mae: 0.0116 - masked_psnr: 35.6297 - val_loss: 2.8542e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8434 - learning_rate: 1.0000e-05
+Epoch 42/60
+250/250 - 176s - 702ms/step - loss: 2.8544e-04 - masked_mae: 0.0114 - masked_psnr: 35.7533 - val_loss: 2.8494e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8536 - learning_rate: 1.0000e-05
+Epoch 43/60
+250/250 - 202s - 807ms/step - loss: 2.7117e-04 - masked_mae: 0.0112 - masked_psnr: 35.9411 - val_loss: 2.8493e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8563 - learning_rate: 1.0000e-05
+Epoch 44/60
+250/250 - 202s - 809ms/step - loss: 2.7548e-04 - masked_mae: 0.0112 - masked_psnr: 35.9397 - val_loss: 2.8432e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8660 - learning_rate: 1.0000e-05
+Epoch 45/60
+2026-10-04 21:08:44.704237: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(31.22), 'val_psnr_P50': np.float64(35.0), 'val_psnr_P100': np.float64(36.43), 'val_psnr_P250': np.float64(37.98), 'val_psnr_P500': np.float64(38.8), 'val_psnr_P1000': np.float64(39.35)}
+250/250 - 229s - 918ms/step - loss: 2.9147e-04 - masked_mae: 0.0116 - masked_psnr: 35.6838 - val_loss: 2.8437e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8646 - learning_rate: 1.0000e-05
+Epoch 46/60
+250/250 - 196s - 782ms/step - loss: 2.6685e-04 - masked_mae: 0.0111 - masked_psnr: 36.0443 - val_loss: 2.8394e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8741 - learning_rate: 1.0000e-05
+Epoch 47/60
+250/250 - 210s - 839ms/step - loss: 2.7878e-04 - masked_mae: 0.0114 - masked_psnr: 35.8479 - val_loss: 2.8380e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8731 - learning_rate: 1.0000e-05
+Epoch 48/60
+250/250 - 207s - 828ms/step - loss: 2.8646e-04 - masked_mae: 0.0115 - masked_psnr: 35.7484 - val_loss: 2.8372e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8729 - learning_rate: 1.0000e-05
+Epoch 49/60
+250/250 - 215s - 859ms/step - loss: 2.8135e-04 - masked_mae: 0.0113 - masked_psnr: 35.8244 - val_loss: 2.8305e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8858 - learning_rate: 1.0000e-05
+Epoch 50/60
+2026-10-04 21:26:40.074876: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(31.24), 'val_psnr_P50': np.float64(35.02), 'val_psnr_P100': np.float64(36.45), 'val_psnr_P250': np.float64(38.01), 'val_psnr_P500': np.float64(38.82), 'val_psnr_P1000': np.float64(39.35)}
+250/250 - 248s - 991ms/step - loss: 2.9130e-04 - masked_mae: 0.0116 - masked_psnr: 35.6483 - val_loss: 2.8306e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8809 - learning_rate: 1.0000e-05
+Epoch 51/60
+250/250 - 215s - 859ms/step - loss: 2.8653e-04 - masked_mae: 0.0115 - masked_psnr: 35.6866 - val_loss: 2.8236e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8986 - learning_rate: 1.0000e-05
+Epoch 52/60
+250/250 - 214s - 858ms/step - loss: 2.6877e-04 - masked_mae: 0.0111 - masked_psnr: 35.9941 - val_loss: 2.8275e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.8917 - learning_rate: 1.0000e-05
+Epoch 53/60
+250/250 - 208s - 831ms/step - loss: 2.7839e-04 - masked_mae: 0.0113 - masked_psnr: 35.8574 - val_loss: 2.8204e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.9070 - learning_rate: 1.0000e-05
+Epoch 54/60
+250/250 - 208s - 833ms/step - loss: 2.7088e-04 - masked_mae: 0.0112 - masked_psnr: 35.9712 - val_loss: 2.8170e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.9114 - learning_rate: 1.0000e-05
+Epoch 55/60
+2026-10-04 21:44:40.048501: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(31.26), 'val_psnr_P50': np.float64(35.03), 'val_psnr_P100': np.float64(36.45), 'val_psnr_P250': np.float64(38.04), 'val_psnr_P500': np.float64(38.88), 'val_psnr_P1000': np.float64(39.43)}
+250/250 - 242s - 970ms/step - loss: 2.7915e-04 - masked_mae: 0.0114 - masked_psnr: 35.8251 - val_loss: 2.8166e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.9113 - learning_rate: 1.0000e-05
+Epoch 56/60
+250/250 - 232s - 928ms/step - loss: 2.7565e-04 - masked_mae: 0.0112 - masked_psnr: 35.9092 - val_loss: 2.8145e-04 - val_masked_mae: 0.0114 - val_masked_psnr: 36.9150 - learning_rate: 1.0000e-05
+Epoch 57/60
+250/250 - 227s - 908ms/step - loss: 2.7714e-04 - masked_mae: 0.0113 - masked_psnr: 35.8869 - val_loss: 2.8086e-04 - val_masked_mae: 0.0113 - val_masked_psnr: 36.9269 - learning_rate: 1.0000e-05
+Epoch 58/60
+250/250 - 227s - 909ms/step - loss: 2.8132e-04 - masked_mae: 0.0114 - masked_psnr: 35.8356 - val_loss: 2.8090e-04 - val_masked_mae: 0.0113 - val_masked_psnr: 36.9236 - learning_rate: 1.0000e-05
+Epoch 59/60
+250/250 - 213s - 852ms/step - loss: 2.7125e-04 - masked_mae: 0.0112 - masked_psnr: 35.9715 - val_loss: 2.8043e-04 - val_masked_mae: 0.0113 - val_masked_psnr: 36.9312 - learning_rate: 1.0000e-05
+Epoch 60/60
+2026-10-04 22:03:51.436328: E tensorflow/core/framework/node_def_util.cc:680] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+  per-level val PSNR: {'val_psnr_P10': np.float64(31.28), 'val_psnr_P50': np.float64(35.05), 'val_psnr_P100': np.float64(36.49), 'val_psnr_P250': np.float64(38.06), 'val_psnr_P500': np.float64(38.89), 'val_psnr_P1000': np.float64(39.44)}
+250/250 - 248s - 992ms/step - loss: 2.7083e-04 - masked_mae: 0.0112 - masked_psnr: 35.9603 - val_loss: 2.8021e-04 - val_masked_mae: 0.0113 - val_masked_psnr: 36.9380 - learning_rate: 1.0000e-05
+{
+ "model": "model_A_baseline_unet",
+ "parameters": 1941139,
+ "epochs_run": 60,
+ "best_epoch": 60,
+ "best_val_loss": 0.0002802139788400382,
+ "best_val_psnr_patches": 36.937957763671875,
+ "train_seconds": 12017,
+ "train_hours": 3.34,
+ "patches_seen": 120000,
+ "hardware": {
+  "cpu": "AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD",
+  "machine": "AMD64",
+  "os": "Windows-11-10.0.26200-SP0",
+  "gpus_visible_to_tf": [],
+  "tensorflow": "2.20.0",
+  "keras": "3.11.3",
+  "python": "3.13.7"
+ },
+ "train_images": 341,
+ "val_images": 75,
+ "val_patches": 900
+}

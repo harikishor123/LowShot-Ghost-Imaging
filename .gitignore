@@ -1,0 +1,170 @@
+# ============================================================
+# MTP Ghost Imaging — Root .gitignore
+# ============================================================
+
+# --- Python caches ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Virtual environments ---
+.venv/
+.venv-linux/
+.venv-replacement/
+
+# --- Nested .git directories (sub-repos preserved locally) ---
+01_UNet_Baseline/.git
+02_DiffTransFuse/.git
+
+# ============================================================
+# 01_UNet_Baseline exclusions
+# ============================================================
+
+# Pending decision (kept locally)
+01_UNet_Baseline/archive_review_required/
+
+# Raw data: public downloads (see REPRODUCIBILITY.md)
+01_UNet_Baseline/train/
+01_UNet_Baseline/valid/
+01_UNet_Baseline/data/extension_medmnist/raw/
+
+# Processed data (regenerable)
+01_UNet_Baseline/data/extension_medmnist/processed/
+01_UNet_Baseline/data/v2/*
+!01_UNet_Baseline/data/v2/splits/
+!01_UNet_Baseline/data/v2/metadata/
+
+# Training pools and selection sets (62 GB; MD5s in freeze manifests)
+01_UNet_Baseline/outputs/**/pool_train*.npy
+01_UNet_Baseline/outputs/**/selection_val.npz
+01_UNet_Baseline/outputs/phase_final_low_shot_to_10k_reference/*.npy
+01_UNet_Baseline/outputs/phase_final_low_shot_to_10k_reference/*.npz
+
+# Checkpoints: release via GitHub Release / Zenodo
+01_UNet_Baseline/**/*.pt
+01_UNet_Baseline/**/*.keras
+
+# Exploratory arrays
+01_UNet_Baseline/results/**/*.npz
+01_UNet_Baseline/outputs/phase1_single_image/**/*.npz
+01_UNet_Baseline/outputs/phase1b_dgi/**/*.npz
+01_UNet_Baseline/outputs/phase2a_dgi_dataset/**/*.npz
+01_UNet_Baseline/outputs/phase2b_unet/**/*.npz
+01_UNet_Baseline/outputs/phase3_strong_baselines/**/*.npz
+01_UNet_Baseline/outputs/phase4a_noisy_baselines/**/*.npz
+01_UNet_Baseline/outputs/phase*/**/*.npy
+
+# Training-index arrays (regenerable from seed)
+01_UNet_Baseline/outputs/**/realisations_used.npy
+
+# Audit galleries (generated visualizations, regenerable)
+01_UNet_Baseline/audit/test40_gallery/
+01_UNet_Baseline/audit/visual_gallery/
+01_UNet_Baseline/audit/poisson_visual_analysis/
+
+# Comparison gallery (2289 generated PNGs, regenerable)
+01_UNet_Baseline/final_comparison_gallery/
+
+# Generated research report (content in thesis)
+01_UNet_Baseline/research_report/
+
+# Empty numbered guide directories (just README pointers)
+01_UNet_Baseline/01_Original_Onion_Study/
+01_UNet_Baseline/02_Microscopy_Extension/
+01_UNet_Baseline/03_Poisson_Noise_Experiments/
+01_UNet_Baseline/04_Comparison_Galleries/
+01_UNet_Baseline/05_Analysis_and_Visualisations/
+01_UNet_Baseline/06_Thesis_and_Documentation/
+
+# Git planning docs (done)
+01_UNet_Baseline/07_Reproducibility_and_Audit/git_plan/
+01_UNet_Baseline/07_Reproducibility_and_Audit/gitignore_PROPOSED.txt
+01_UNet_Baseline/07_Reproducibility_and_Audit/release_plan/
+
+# Meta-audit docs (process reports, not science)
+01_UNet_Baseline/CLEANUP_REPORT.md
+01_UNet_Baseline/FILE_INDEX.md
+01_UNet_Baseline/FINAL_AUDIT_REPORT.md
+01_UNet_Baseline/FINAL_GITHUB_READINESS_REPORT.md
+01_UNet_Baseline/PROJECT_COMPLETION_AUDIT.md
+01_UNet_Baseline/README.roboflow.txt
+
+# Large per-image CSVs (regenerable from evaluation)
+01_UNet_Baseline/outputs/**/per_image_results.csv
+
+# Large audit file
+01_UNet_Baseline/results/audit/contact_sheet.png
+
+# Release build output
+01_UNet_Baseline/dist/
+01_UNet_Baseline/demo_out/
+
+# ---- Permission pending: onion micrographs ----
+01_UNet_Baseline/outputs/phase_final_low_shot_to_10k_reference/**/*.png
+01_UNet_Baseline/outputs/phase_final_original_target/**/*.png
+01_UNet_Baseline/outputs/phase1_single_image/**/*.png
+01_UNet_Baseline/outputs/phase1b_dgi/**/*.png
+01_UNet_Baseline/outputs/phase2a_dgi_dataset/**/*.png
+01_UNet_Baseline/outputs/phase2b_unet/**/*.png
+01_UNet_Baseline/outputs/phase3_strong_baselines/**/*.png
+01_UNet_Baseline/outputs/phase4a_noisy_baselines/**/*.png
+01_UNet_Baseline/results/**/*.png
+01_UNet_Baseline/results/**/*.jpg
+01_UNet_Baseline/thesis/figures/*.png
+01_UNet_Baseline/presentation/*.pptx
+01_UNet_Baseline/presentation/assets/
+# Re-include metric plots (no micrographs)
+!01_UNet_Baseline/outputs/**/*_vs_shots*.png
+!01_UNet_Baseline/outputs/**/metrics_vs_shots_by_split.png
+!01_UNet_Baseline/outputs/**/loss_curves.png
+!01_UNet_Baseline/outputs/**/metric_curves*.png
+!01_UNet_Baseline/outputs/**/psnr_ssim_distributions.png
+!01_UNet_Baseline/outputs/**/psnr10000_vs_object_contrast.png
+!01_UNet_Baseline/results/**/training_curves.png
+!01_UNet_Baseline/results/**/metrics_vs_photon_level_test.png
+!01_UNet_Baseline/results/**/group_distributions.png
+!01_UNet_Baseline/results/**/dimensions_by_group.png
+!01_UNet_Baseline/results/**/final_dimensions.png
+!01_UNet_Baseline/results/**/source_groups_original_vs_final.png
+!01_UNet_Baseline/results/**/split_by_source_group.png
+!01_UNet_Baseline/thesis/figures/phase2_metrics_vs_shots.png
+
+# Permission pending: MedMNIST derived arrays
+01_UNet_Baseline/audit/final_verification/exact_test_dgi_six_images.npz
+
+# Local verification records
+01_UNet_Baseline/local_records/
+
+# ---- Not for public release ----
+01_UNet_Baseline/thesis/MTP_Thesis_Final_with_extension.md
+01_UNet_Baseline/thesis/merge_proposal/MERGE_DIFF.txt
+01_UNet_Baseline/thesis/merge_proposal/THESIS_MERGE_PROPOSAL.md
+01_UNet_Baseline/thesis/merge_proposal/draft_extension_sections_BEFORE_corrections.md
+01_UNet_Baseline/thesis/draft_extension_sections.md
+01_UNet_Baseline/thesis/ext_draft_template.md
+01_UNet_Baseline/thesis/MTP_Thesis_Final.md
+01_UNet_Baseline/thesis/review/GUIDE_REVIEW_PACKAGE.md
+01_UNet_Baseline/thesis/review/PLACEHOLDERS_TO_PROVIDE.md
+01_UNet_Baseline/thesis/review/REQUIRED_INFORMATION.md
+01_UNet_Baseline/thesis/merge_proposal/PRESENTATION_COMPARISON.md
+01_UNet_Baseline/presentation/VIVA_QA.md
+01_UNet_Baseline/presentation/PPT_FINAL_CHECK.md
+01_UNet_Baseline/presentation/REVIEW_DRAFT_CORRECTIONS.md
+01_UNet_Baseline/presentation/build_deck.js
+01_UNet_Baseline/DECISIONS_REQUIRED.md
+
+# ============================================================
+# 02_DiffTransFuse exclusions
+# ============================================================
+
+# Cleanup plan (meta-document, not needed in repo)
+02_DiffTransFuse/CLEANUP_PLAN.md
+
+# Large per-image CSVs (regenerable from evaluation)
+02_DiffTransFuse/results/**/per_image_results.csv
+02_DiffTransFuse/reports/**/test_metrics.csv

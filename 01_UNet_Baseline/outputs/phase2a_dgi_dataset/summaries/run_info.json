@@ -1,0 +1,143 @@
+{
+  "n_images": 490,
+  "split_counts": {
+    "train": 341,
+    "val": 75,
+    "test": 74
+  },
+  "shots": [
+    500,
+    1000,
+    5000,
+    10000
+  ],
+  "seed": 2026,
+  "robustness_seeds": [
+    2027,
+    2028,
+    2029
+  ],
+  "size": 64,
+  "batch": 500,
+  "pattern_model": "i.i.d. Bernoulli(0.5) binary; ONE sequence (seed 2026) shared by all images",
+  "estimate": "O_hat = DGI_N/0.25 + <B>_N/<R>_N, clip [0,1]",
+  "n_reconstructions_evaluated": 1960,
+  "nan_or_inf_in_metrics": 0,
+  "monotonic": {
+    "psnr": {
+      "all_steps_improve_n_images": 490,
+      "n_images": 490,
+      "per_step_fraction_improved": {
+        "500->1000": 1.0,
+        "1000->5000": 1.0,
+        "5000->10000": 1.0
+      },
+      "first_vs_last_improved_fraction": 1.0,
+      "violating_images": []
+    },
+    "ssim": {
+      "all_steps_improve_n_images": 490,
+      "n_images": 490,
+      "per_step_fraction_improved": {
+        "500->1000": 1.0,
+        "1000->5000": 1.0,
+        "5000->10000": 1.0
+      },
+      "first_vs_last_improved_fraction": 1.0,
+      "violating_images": []
+    },
+    "correlation": {
+      "all_steps_improve_n_images": 490,
+      "n_images": 490,
+      "per_step_fraction_improved": {
+        "500->1000": 1.0,
+        "1000->5000": 1.0,
+        "5000->10000": 1.0
+      },
+      "first_vs_last_improved_fraction": 1.0,
+      "violating_images": []
+    },
+    "mse": {
+      "all_steps_improve_n_images": 490,
+      "n_images": 490,
+      "per_step_fraction_improved": {
+        "500->1000": 1.0,
+        "1000->5000": 1.0,
+        "5000->10000": 1.0
+      },
+      "first_vs_last_improved_fraction": 1.0,
+      "violating_images": []
+    }
+  },
+  "C_16_percentile_rank_in_dataset": {
+    "500": {
+      "psnr": 68.4,
+      "ssim": 31.2,
+      "correlation": 98.2
+    },
+    "1000": {
+      "psnr": 71.4,
+      "ssim": 50.0,
+      "correlation": 97.1
+    },
+    "5000": {
+      "psnr": 80.6,
+      "ssim": 56.5,
+      "correlation": 79.4
+    },
+    "10000": {
+      "psnr": 82.2,
+      "ssim": 63.1,
+      "correlation": 49.2
+    }
+  },
+  "sample_images": [
+    {
+      "split": "train",
+      "percentile": 10,
+      "image_id": "A_65"
+    },
+    {
+      "split": "train",
+      "percentile": 50,
+      "image_id": "A_345"
+    },
+    {
+      "split": "train",
+      "percentile": 90,
+      "image_id": "C_51"
+    },
+    {
+      "split": "val",
+      "percentile": 25,
+      "image_id": "F_84"
+    },
+    {
+      "split": "val",
+      "percentile": 75,
+      "image_id": "C_68"
+    },
+    {
+      "split": "test",
+      "percentile": 10,
+      "image_id": "A_3"
+    },
+    {
+      "split": "test",
+      "percentile": 50,
+      "image_id": "A_371"
+    },
+    {
+      "split": "test",
+      "percentile": 90,
+      "image_id": "C_25"
+    }
+  ],
+  "timing_s": {
+    "load_objects": 56.6,
+    "dgi_stream": 1.2,
+    "metrics": 2.3,
+    "robustness": 10.7,
+    "total": 78.0
+  }
+}

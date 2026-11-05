@@ -1,0 +1,58 @@
+{
+  "originals": 644,
+  "kept": 490,
+  "excluded": 154,
+  "excluded_by_reason": {
+    "A_134": 1,
+    "duplicate": 137,
+    "A_384": 1,
+    "group E (provenance/watermarks)": 15
+  },
+  "duplicate_groups": 136,
+  "duplicates_removed": 137,
+  "split_counts": {
+    "train": 341,
+    "val": 75,
+    "test": 74
+  },
+  "split_by_group": {
+    "train": {
+      "A": 182,
+      "B": 1,
+      "C": 59,
+      "D": 38,
+      "F": 61
+    },
+    "val": {
+      "A": 39,
+      "C": 13,
+      "D": 9,
+      "F": 14
+    },
+    "test": {
+      "A": 39,
+      "C": 13,
+      "D": 8,
+      "F": 14
+    }
+  },
+  "split_classes": {
+    "train": {
+      "d": 1293,
+      "nd": 9012
+    },
+    "val": {
+      "d": 320,
+      "nd": 2116
+    },
+    "test": {
+      "d": 287,
+      "nd": 2301
+    }
+  },
+  "related_links": 0,
+  "related_cross_split": 0,
+  "boxes_orig_kept_images": 15340,
+  "boxes_kept": 15329,
+  "max_caption_overlap_px": 0
+}

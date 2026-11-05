@@ -1,0 +1,143 @@
+frozen sigma (train-selected): {500: 1.75, 1000: 1.5}
+
+smoothing tuning (train):
+      train_MSE         train_PSNR          train_SSIM        
+shots      500     1000       500      1000       500     1000
+sigma                                                         
+0.00     0.0756  0.0493    12.5585  14.6988     0.1150  0.1850
+0.50     0.0355  0.0228    15.9457  18.1584     0.2078  0.3095
+0.75     0.0176  0.0111    19.2980  21.5767     0.3583  0.4780
+1.00     0.0137  0.0087    20.6543  22.8645     0.4379  0.5491
+1.25     0.0123  0.0081    21.3508  23.4246     0.4819  0.5791
+1.50     0.0118  0.0080    21.6966  23.6105     0.5025  0.5854
+1.75     0.0117  0.0082    21.8391  23.5964     0.5074  0.5773
+2.00     0.0119  0.0086    21.8638  23.4795     0.5027  0.5613
+2.25     0.0121  0.0089    21.8210  23.3136     0.4924  0.5414
+2.50     0.0124  0.0093    21.7405  23.1279     0.4793  0.5205
+3.00     0.0130  0.0101    21.5306  22.7533     0.4513  0.4808
+3.50     0.0135  0.0108    21.3070  22.4103     0.4260  0.4478
+4.00     0.0141  0.0114    21.0952  22.1097     0.4051  0.4218
+5.00     0.0150  0.0125    20.7310  21.6224     0.3756  0.3863
+
+per-seed summary:
+                   method  shots  seed    PSNR   SSIM    MSE  Pearson_r
+                      DGI  10000  2026 23.5156 0.6093 0.0070     0.8413
+                      DGI    500  2026 12.4175 0.1168 0.0776     0.3066
+Smoothed DGI (sigma=1.75)    500  2026 21.8489 0.5058 0.0115     0.7785
+                  U-Net A    500  2026 24.1208 0.5613 0.0064     0.8151
+                      DGI   1000  2026 14.5590 0.1876 0.0504     0.4187
+ Smoothed DGI (sigma=1.5)   1000  2026 23.5157 0.5815 0.0079     0.8326
+                  U-Net B   1000  2026 25.6486 0.6623 0.0047     0.8703
+                      DGI  10000  2027 23.4570 0.6068 0.0071     0.8408
+                      DGI    500  2027 12.3161 0.1155 0.0792     0.3075
+Smoothed DGI (sigma=1.75)    500  2027 21.5763 0.4945 0.0120     0.7631
+                  U-Net A    500  2027 22.5493 0.4872 0.0088     0.7570
+                      DGI   1000  2027 14.4193 0.1850 0.0520     0.4233
+ Smoothed DGI (sigma=1.5)   1000  2027 23.4658 0.5831 0.0079     0.8339
+                  U-Net B   1000  2027 23.7318 0.5754 0.0071     0.8206
+                      DGI  10000  2028 23.5776 0.6130 0.0069     0.8438
+                      DGI    500  2028 12.3433 0.1177 0.0788     0.3044
+Smoothed DGI (sigma=1.75)    500  2028 21.7741 0.5027 0.0117     0.7702
+                  U-Net A    500  2028 22.7629 0.4969 0.0085     0.7657
+                      DGI   1000  2028 14.5115 0.1878 0.0507     0.4214
+ Smoothed DGI (sigma=1.5)   1000  2028 23.5118 0.5828 0.0079     0.8327
+                  U-Net B   1000  2028 23.8428 0.5776 0.0069     0.8224
+                      DGI  10000  2029 23.5372 0.6118 0.0069     0.8411
+                      DGI    500  2029 12.3431 0.1158 0.0784     0.3086
+Smoothed DGI (sigma=1.75)    500  2029 21.7498 0.4951 0.0116     0.7697
+                  U-Net A    500  2029 22.5371 0.4837 0.0089     0.7586
+                      DGI   1000  2029 14.4967 0.1859 0.0511     0.4193
+ Smoothed DGI (sigma=1.5)   1000  2029 23.5432 0.5839 0.0078     0.8316
+                  U-Net B   1000  2029 23.8169 0.5795 0.0071     0.8201
+
+smoothing baseline:
+             seeds  shots                        method    PSNR   SSIM    MSE  Pearson_r
+   2026 (official)    500                       DGI-500 12.4175 0.1168 0.0776     0.3066
+   2026 (official)    500 Smoothed DGI-500 (sigma=1.75) 21.8489 0.5058 0.0115     0.7785
+   2026 (official)    500                       U-Net A 24.1208 0.5613 0.0064     0.8151
+   2026 (official)   1000                      DGI-1000 14.5590 0.1876 0.0504     0.4187
+   2026 (official)   1000 Smoothed DGI-1000 (sigma=1.5) 23.5157 0.5815 0.0079     0.8326
+   2026 (official)   1000                       U-Net B 25.6486 0.6623 0.0047     0.8703
+2027-2029 (unseen)    500                       DGI-500 12.3342 0.1163 0.0788     0.3068
+2027-2029 (unseen)    500 Smoothed DGI-500 (sigma=1.75) 21.7000 0.4974 0.0118     0.7677
+2027-2029 (unseen)    500                       U-Net A 22.6164 0.4892 0.0088     0.7604
+2027-2029 (unseen)   1000                      DGI-1000 14.4758 0.1862 0.0513     0.4213
+2027-2029 (unseen)   1000 Smoothed DGI-1000 (sigma=1.5) 23.5069 0.5833 0.0079     0.8327
+2027-2029 (unseen)   1000                       U-Net B 23.7972 0.5775 0.0071     0.8211
+
+smoothing vs U-Net:
+                                                                               0                             1                            2                             3
+seeds                                                            2026 (official)               2026 (official)           2027-2029 (unseen)            2027-2029 (unseen)
+comparison                                           U-Net A vs smoothed DGI-500  U-Net B vs smoothed DGI-1000  U-Net A vs smoothed DGI-500  U-Net B vs smoothed DGI-1000
+n_image_seed_pairs                                                            75                            75                          225                           225
+PSNR_mean_gain                                                          2.271895                      2.132926                     0.916389                      0.290234
+PSNR_median_gain                                                        2.837791                      2.738318                      1.25763                      0.377783
+PSNR_pct_unet_better                                                   70.666667                     78.666667                    68.888889                     67.555556
+SSIM_mean_gain                                                          0.055469                      0.080744                    -0.008165                     -0.005758
+SSIM_median_gain                                                        0.097261                      0.120954                    -0.009316                     -0.012875
+SSIM_pct_unet_better                                                   65.333333                     66.666667                    45.333333                          40.0
+Pearson_r_mean_gain                                                     0.036682                       0.03764                    -0.007214                     -0.011666
+Pearson_r_median_gain                                                   0.048167                      0.050824                    -0.005147                     -0.011397
+Pearson_r_pct_unet_better                                              70.666667                     81.333333                    42.222222                     18.222222
+PSNR_gain_over_DGI_smoothing                                            9.431395                      8.956737                     9.365887                      9.031107
+PSNR_gain_over_DGI_unet                                                11.703289                     11.089663                    10.282277                      9.321341
+share_of_unet_PSNR_gain_explained_by_smoothing                          0.805876                      0.807665                     0.910877                      0.968863
+share_of_unet_SSIM_gain_explained_by_smoothing                          0.875204                      0.829879                     1.021895                      1.014715
+share_of_unet_Pearson_r_gain_explained_by_smoothing                     0.927874                      0.916639                     1.015904                      1.029183
+PSNR_pct_unet_beats_DGI10000                                           58.666667                     94.666667                     6.222222                          64.0
+PSNR_pct_smoothing_beats_DGI10000                                      10.666667                          44.0                     8.888889                     39.111111
+SSIM_pct_unet_beats_DGI10000                                                32.0                     70.666667                    12.444444                     40.444444
+SSIM_pct_smoothing_beats_DGI10000                                           32.0                          44.0                         28.0                     44.444444
+Pearson_r_pct_unet_beats_DGI10000                                           40.0                     70.666667                     1.777778                     26.666667
+Pearson_r_pct_smoothing_beats_DGI10000                                  6.666667                     37.333333                     0.888889                          36.0
+
+checks: {
+ "best_epochs": {
+  "A": 62,
+  "B": 67
+ },
+ "sigma_selected_DGI500_by_train_MSE": 1.75,
+ "sigma_that_would_max_train_SSIM_DGI500_info_only": 1.75,
+ "sigma_DGI500_at_grid_edge": false,
+ "sigma_selected_DGI1000_by_train_MSE": 1.5,
+ "sigma_that_would_max_train_SSIM_DGI1000_info_only": 1.5,
+ "sigma_DGI1000_at_grid_edge": false,
+ "val_objects_match_saved_targets_max_abs_diff": 0.0,
+ "seed2026_recomputed_vs_phase2A_saved_max_abs_diff": {
+  "500": 0.0,
+  "1000": 0.0,
+  "10000": 0.0
+ },
+ "unseen_seed_DGI_vs_phase2A_robustness_max_psnr_diff_db": 5.813082992744967e-08,
+ "model_A_seed2026_reproduces_recorded_max_abs_diff": 0.0,
+ "model_B_seed2026_reproduces_recorded_max_abs_diff": 0.0,
+ "unseen_minus_2026_mean": {
+  "U-Net A (500)": {
+   "PSNR": -1.5044018502350482,
+   "SSIM": -0.07201081648900048,
+   "Pearson_r": -0.054692546013853205
+  },
+  "U-Net B (1000)": {
+   "PSNR": -1.8514749067120562,
+   "SSIM": -0.08474980307679114,
+   "Pearson_r": -0.0492165099734605
+  },
+  "DGI (500)": {
+   "PSNR": -0.08338931092880841,
+   "SSIM": -0.0004343431498099598,
+   "Pearson_r": 0.0002841496413996114
+  },
+  "DGI (1000)": {
+   "PSNR": -0.08315236919757929,
+   "SSIM": -0.0014022958220262227,
+   "Pearson_r": 0.002549520825144369
+  },
+  "DGI (10000)": {
+   "PSNR": 0.008382296760977681,
+   "SSIM": 0.0013084301958379285,
+   "Pearson_r": 0.0005806852726272238
+  }
+ }
+}
+
+25.6 s -> C:\Users\vishn\Downloads\Onion-CNN-Final.v1-onion-original-v1.yolov8\outputs\phase2b_unet\generalization_validation

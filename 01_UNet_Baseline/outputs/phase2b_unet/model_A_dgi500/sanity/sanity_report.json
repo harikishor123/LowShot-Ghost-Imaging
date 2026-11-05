@@ -1,0 +1,164 @@
+{
+  "run": "sanity",
+  "model": "A",
+  "n_shots": 500,
+  "pattern_seed": 2026,
+  "architecture": "UNetGI(base=32, depth=3), linear head",
+  "n_params": 1925025,
+  "optimizer": "Adam lr=0.001",
+  "loss": "MSE (raw output vs target)",
+  "batch_size": 16,
+  "epochs": 3,
+  "training_seed": 0,
+  "torch": "2.8.0+cpu",
+  "normalization": {
+    "target": "linear-light luminance object, [0,1], no scaling",
+    "input": "O_hat = DGI_500/0.25 + <B>/<R>, clipped to [0,1], no scaling",
+    "output": "linear; clipped to [0,1] only for metrics/figures"
+  },
+  "checks": {
+    "split_counts": {
+      "train": 341,
+      "val": 75,
+      "test": 74
+    },
+    "split_overlap": {
+      "train&val": 0,
+      "train&test": 0,
+      "val&test": 0
+    },
+    "n_train_loaded": 341,
+    "n_val_loaded": 75,
+    "test_ids_in_loaded_data": 0,
+    "alignment_max_psnr_diff_db_train": 1.8723468997450254e-08,
+    "alignment_max_psnr_diff_db_val": 1.689156192696828e-08,
+    "target_vs_fresh_reference_max_abs_diff": 0.0,
+    "input_range": [
+      0.0,
+      1.0
+    ],
+    "target_range": [
+      0.0,
+      0.974702775478363
+    ],
+    "shapes": {
+      "x_train": [
+        341,
+        1,
+        64,
+        64
+      ],
+      "y_train": [
+        341,
+        1,
+        64,
+        64
+      ],
+      "x_val": [
+        75,
+        1,
+        64,
+        64
+      ],
+      "y_val": [
+        75,
+        1,
+        64,
+        64
+      ]
+    },
+    "data_finite": true,
+    "model_output_shape": [
+      2,
+      1,
+      64,
+      64
+    ],
+    "all_train_images_seen_each_epoch": true,
+    "checkpoint_best_epoch": 3,
+    "checkpoint_reload_val_loss_diff": 0.0,
+    "output_finite": true,
+    "output_shape": [
+      1,
+      64,
+      64
+    ],
+    "output_raw_range": [
+      -0.12498432397842407,
+      0.9320663809776306
+    ],
+    "train_loss_decreased": true,
+    "val_loss_decreased_vs_untrained": true,
+    "unet_PSNR_gain_per_image_fraction_positive": 1.0,
+    "unet_SSIM_gain_per_image_fraction_positive": 1.0,
+    "unet_beats_flat_SSIM_fraction": 0.7333333333333333
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "train_loss": NaN,
+      "val_loss": 0.23222510760528262,
+      "val_PSNR": 12.22167195573878,
+      "val_SSIM": 0.03209622365339425,
+      "val_r": 0.05505435597241878,
+      "seconds": 0.0
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.7178338778770564,
+      "val_loss": 0.024318356846743657,
+      "val_PSNR": 17.37856266687495,
+      "val_SSIM": 0.2533616571614802,
+      "val_r": 0.5139474495315033,
+      "seconds": 6.2
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.016842003556683964,
+      "val_loss": 0.013301251493811544,
+      "val_PSNR": 20.260035877654925,
+      "val_SSIM": 0.3662059961542863,
+      "val_r": 0.6026792202965776,
+      "seconds": 6.1
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.012320335443702436,
+      "val_loss": 0.011397024762785897,
+      "val_PSNR": 20.994637408262125,
+      "val_SSIM": 0.41300656388512186,
+      "val_r": 0.6493642639556734,
+      "seconds": 6.1
+    }
+  ],
+  "val_summary": [
+    {
+      "method": "DGI-500 input (no learning)",
+      "PSNR": 12.417542807471387,
+      "SSIM": 0.11677746695972166,
+      "MSE": 0.07755596362833968,
+      "Pearson_r": 0.3065581813238526
+    },
+    {
+      "method": "flat image at <B>/<R> (no learning)",
+      "PSNR": 19.25974974557807,
+      "SSIM": 0.30066730974088024,
+      "MSE": 0.01914391179529331,
+      "Pearson_r": NaN
+    },
+    {
+      "method": "U-Net (best epoch 3)",
+      "PSNR": 20.994637408262125,
+      "SSIM": 0.41300656388512186,
+      "MSE": 0.01139439668710666,
+      "Pearson_r": 0.6493642639556734
+    }
+  ],
+  "val_example_ids": [
+    "A_15",
+    "F_30",
+    "A_358",
+    "A_274",
+    "A_383"
+  ]
+}

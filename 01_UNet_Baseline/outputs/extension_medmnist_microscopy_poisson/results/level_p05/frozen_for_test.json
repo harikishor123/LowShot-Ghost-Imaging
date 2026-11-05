@@ -1,0 +1,76 @@
+{
+  "frozen_after_validation": true,
+  "level": "p05",
+  "noise_f": 0.05,
+  "models": {
+    "500": {
+      "checkpoint": "outputs/extension_medmnist_microscopy_poisson/models/level_p05/model_500/checkpoints/best.pt",
+      "best_epoch": 79,
+      "md5": "93b3363387f2cdb4f2dfc947f572ab7a"
+    },
+    "1000": {
+      "checkpoint": "outputs/extension_medmnist_microscopy_poisson/models/level_p05/model_1000/checkpoints/best.pt",
+      "best_epoch": 61,
+      "md5": "cf0ed7ed7d421cf1fae59cf7e6362d88"
+    },
+    "2000": {
+      "checkpoint": "outputs/extension_medmnist_microscopy_poisson/models/level_p05/model_2000/checkpoints/best.pt",
+      "best_epoch": 68,
+      "md5": "0eed438062db1597fe6fc70ac36a9002"
+    },
+    "5000": {
+      "checkpoint": "outputs/extension_medmnist_microscopy_poisson/models/level_p05/model_5000/checkpoints/best.pt",
+      "best_epoch": 76,
+      "md5": "af61fb9a8bb400dcf488e5c56ca4fab4"
+    }
+  },
+  "smoothing_sigma": {
+    "500": 1.75,
+    "1000": 1.5,
+    "2000": 1.25,
+    "5000": 1.0
+  },
+  "eval_seeds": [
+    2026,
+    2027,
+    2028,
+    2029
+  ],
+  "criterion": {
+    "definition": "on paired image-level differences [metric(method) - metric(comparator)] pooled over seeds 2026-2029, the lower bound of the 95% bootstrap CI (2,000 resamples over images, seeds kept together, rng default_rng(0) per group) is >= -0.02 for SSIM AND >= -0.01 for Pearson r",
+    "delta": {
+      "SSIM": 0.02,
+      "Pearson_r": 0.01
+    },
+    "minimum_N": "smallest N in {500, 1000, 2000, 5000} meeting the criterion; reduction factor = 10000 / N",
+    "primary": "all 2,000 test images (blood + path)",
+    "secondary": "blood and path separately (same rule, images of that subset only)",
+    "candidates": "AI-original-N and smoothed DGI-N, each vs noisy DGI-10000, separately per noise level"
+  },
+  "validation_minimum_passing_shot_count": {
+    "all": {
+      "smoothed DGI": 2000,
+      "AI-original": 1000
+    },
+    "blood": {
+      "smoothed DGI": 500,
+      "AI-original": 500
+    },
+    "path": {
+      "smoothed DGI": 5000,
+      "AI-original": 5000
+    }
+  },
+  "validation_minimum_vs_noise_free_DGI10000": {
+    "all": {
+      "AI-original": 1000
+    },
+    "blood": {
+      "AI-original": 500
+    },
+    "path": {
+      "AI-original": 5000
+    }
+  },
+  "frozen_at": "2026-11-02T14:07:31"
+}

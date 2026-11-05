@@ -1,0 +1,64 @@
+{
+  "image_id": "C_16",
+  "split": "train",
+  "size": 64,
+  "shots": [
+    500,
+    1000,
+    5000,
+    10000
+  ],
+  "seed": 2026,
+  "pattern_model": "i.i.d. Bernoulli(p=0.5) binary, values in {0,1}",
+  "bucket_model": "B_i = sum_xy P_i(x,y) O(x,y), float64, noise-free",
+  "reconstruction": "GI_N(x,y) = (1/N) sum_i (B_i - <B>_N)(P_i(x,y) - <P(x,y)>_N), first N shots",
+  "normalization_primary": "calibrated: GI / 0.25 (theoretical pattern variance), clip to [0,1]",
+  "normalization_secondary": "min-max of GI",
+  "object_info": {
+    "source_shape_hw": [
+      940,
+      1024
+    ],
+    "crop_box_y0x0_side": [
+      0,
+      42,
+      940
+    ],
+    "fov_valid_fraction_in_crop": 1.0,
+    "object_shape_hw": [
+      64,
+      64
+    ],
+    "object_min": 0.061583228409290314,
+    "object_max": 0.4094260632991791,
+    "object_mean": 0.26665618021797854,
+    "object_std": 0.062043650344838455
+  },
+  "checks": {
+    "prefix_patterns_identical": true,
+    "covariance_identity_max_abs_diff": 1.0313971898767704e-13,
+    "pattern_mean_empirical": 0.499980224609375,
+    "pattern_var_empirical": 0.24999999960893493,
+    "pattern_var_theory": 0.25,
+    "unclipped_MSE_over_theory": {
+      "500": 0.934,
+      "1000": 0.943,
+      "5000": 1.024,
+      "10000": 0.963
+    },
+    "calibrated_PSNR_increasing": true,
+    "calibrated_SSIM_increasing": true,
+    "calibrated_MSE_decreasing": true,
+    "minmax_PSNR_increasing": true,
+    "minmax_SSIM_increasing": true,
+    "minmax_MSE_decreasing": true,
+    "robustness_monotone_per_seed": {
+      "3026": false,
+      "3027": true,
+      "3028": true,
+      "3029": true,
+      "3030": true
+    }
+  },
+  "runtime_s": 7.35
+}

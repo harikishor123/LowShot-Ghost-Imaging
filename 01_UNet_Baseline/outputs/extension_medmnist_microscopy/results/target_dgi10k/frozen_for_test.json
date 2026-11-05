@@ -1,0 +1,65 @@
+{
+  "frozen_after_validation": true,
+  "models": {
+    "500": {
+      "checkpoint": "outputs/extension_medmnist_microscopy/models/target_dgi10k/model_500/checkpoints/best.pt",
+      "best_epoch": 71,
+      "md5": "35e24d52246c038ea35e2d39126e7ee3"
+    },
+    "1000": {
+      "checkpoint": "outputs/extension_medmnist_microscopy/models/target_dgi10k/model_1000/checkpoints/best.pt",
+      "best_epoch": 80,
+      "md5": "4c898c20dd9571a1d12c25e750ad0135"
+    },
+    "2000": {
+      "checkpoint": "outputs/extension_medmnist_microscopy/models/target_dgi10k/model_2000/checkpoints/best.pt",
+      "best_epoch": 77,
+      "md5": "d236a647450f52c3c06c1a5c64253990"
+    },
+    "5000": {
+      "checkpoint": "outputs/extension_medmnist_microscopy/models/target_dgi10k/model_5000/checkpoints/best.pt",
+      "best_epoch": 79,
+      "md5": "383805e9ada96289ce0075feaa5e1f3f"
+    }
+  },
+  "smoothing_sigma": {
+    "500": 1.5,
+    "1000": 1.125,
+    "2000": 0.75,
+    "5000": 0.5
+  },
+  "eval_seeds": [
+    2026,
+    2027,
+    2028,
+    2029
+  ],
+  "criterion": {
+    "definition": "on paired image-level differences [metric(method) - metric(comparator)] pooled over seeds 2026-2029, the lower bound of the 95% bootstrap CI (2,000 resamples over images, seeds kept together, rng default_rng(0) per group) is >= -0.02 for SSIM AND >= -0.01 for Pearson r",
+    "delta": {
+      "SSIM": 0.02,
+      "Pearson_r": 0.01
+    },
+    "minimum_N": "smallest N in {500, 1000, 2000, 5000} meeting the criterion; reduction factor = 10000 / N",
+    "primary": "all 2,000 test images (blood + path)",
+    "secondary": "blood and path separately (same rule, images of that subset only)"
+  },
+  "validation_minimum_passing_shot_count": {
+    "all": {
+      "AI": 1000,
+      "DGI": 5000,
+      "smoothed DGI": 2000
+    },
+    "blood": {
+      "AI": 500,
+      "DGI": 5000,
+      "smoothed DGI": 1000
+    },
+    "path": {
+      "AI": 2000,
+      "DGI": 5000,
+      "smoothed DGI": 2000
+    }
+  },
+  "frozen_at": "2026-11-02T05:57:43"
+}

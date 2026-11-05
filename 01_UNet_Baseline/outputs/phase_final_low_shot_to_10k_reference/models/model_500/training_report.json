@@ -1,0 +1,46 @@
+{
+  "shots": 500,
+  "best_epoch": 80,
+  "best_selection_loss": 0.012097429923932167,
+  "epochs_completed": 80,
+  "stopped_early": false,
+  "n_params": 1925025,
+  "checkpoint": "outputs\\phase_final_low_shot_to_10k_reference\\models\\model_500\\checkpoints\\best.pt",
+  "config": {
+    "shots": 500,
+    "epochs": 80,
+    "patience": 10,
+    "batch_size": 16,
+    "lr": 0.0001,
+    "base": 32,
+    "seed": 0,
+    "threads": 8
+  },
+  "pool_seed_rule": "20,000,000 + 1000*k + train_index",
+  "selection_seeds": [
+    2040,
+    2041,
+    2042
+  ],
+  "epoch_realisation_rule": "default_rng([master_seed, epoch]).integers(0, 32, 341)",
+  "selection_at_best": {
+    "PSNR": 21.188298875341104,
+    "SSIM": 0.40505015370625025,
+    "MSE": 0.012086843839580311,
+    "Pearson_r": 0.7056070773862632
+  },
+  "conventional_on_selection": {
+    "PSNR": 12.521306151955311,
+    "SSIM": 0.20396172181609473,
+    "MSE": 0.07495012282856471,
+    "Pearson_r": 0.37030861118183495
+  },
+  "checks": {
+    "n_train_images": 341,
+    "realisations_per_image": 32,
+    "selection_pairs": 225,
+    "train_ids_from_pool_meta": 341,
+    "best_reload_max_abs_diff": 0.0
+  },
+  "wall_time_s": 580.2
+}

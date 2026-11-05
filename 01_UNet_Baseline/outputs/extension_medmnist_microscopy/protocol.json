@@ -1,0 +1,175 @@
+{
+  "experiment": "Extension: broader microscopy dataset (MedMNIST+ BloodMNIST and PathMNIST, 64x64)",
+  "written_before_pool_training_or_evaluation": "2026-11-02T03:04:06",
+  "relation_to_onion_study": "separate experiment; reuses the onion simulation, DGI, U-Net, training recipe, seeds policy and pass rule unchanged except where listed under deviations. The frozen onion Phase 1 / Phase 2 files are read-only (FREEZE_MANIFEST_phase1_phase2.md5 checked before/after).",
+  "claim_scope": "fewer simulated, noise-free measurement shots; no photon-dose, biological-effect, hardware or quantum claim. DGI-10000 is a study-specific benchmark, not ground truth.",
+  "data": {
+    "sources": {
+      "zenodo_doi": "10.5281/zenodo.10519652",
+      "record_version": "3.0",
+      "license": "CC BY 4.0",
+      "files": {
+        "bloodmnist_64.npz": {
+          "md5": "2b94928a2ae4916078ca51e05b6b800b",
+          "matches_zenodo": true
+        },
+        "pathmnist_64.npz": {
+          "md5": "55aa9c1e0525abe5a6b9d8343a507616",
+          "matches_zenodo": true
+        }
+      }
+    },
+    "objects_npz": "data/extension_medmnist/processed/objects_64.npz",
+    "objects_npz_md5": "73e8ce929c5a7c67111e028032e528c1",
+    "sampling": {
+      "per_subset": {
+        "train": 3500,
+        "val": 500,
+        "test": 1000
+      },
+      "stratified_by": "class label within each official split",
+      "seed": 42,
+      "oversample_for_screening": 0.15
+    },
+    "conversion": "uint8 sRGB -> linear (IEC 61966-2-1) -> Y = 0.2126R + 0.7152G + 0.0722B -> clip [0,1]; 64x64 as provided",
+    "final_counts": {
+      "test": {
+        "blood": 1000,
+        "path": 1000
+      },
+      "train": {
+        "blood": 3500,
+        "path": 3500
+      },
+      "val": {
+        "blood": 500,
+        "path": 500
+      }
+    },
+    "screening": {
+      "n_candidates": 11524,
+      "pairs_flagged_among_candidates": {
+        "similar (review)": 2918,
+        "exact": 1
+      },
+      "removed_as_duplicates": 1,
+      "removed_duplicates_by_subset": {
+        "blood": 1
+      },
+      "low_information_flagged": 47,
+      "min_std_rule": 0.005
+    },
+    "splits": "MedMNIST official train / val / test (PathMNIST test = CRC-VAL-HE-7K, a different centre from its train/val NCT-CRC-HE-100K)"
+  },
+  "simulation": {
+    "patterns": "i.i.d. Bernoulli(0.5) binary 64x64",
+    "buckets": "noise-free, float64",
+    "reconstruction": "calibrated DGI (final_build_pool.dgi_readouts, unchanged), clipped to [0,1]",
+    "shots": [
+      500,
+      1000,
+      2000,
+      5000,
+      10000
+    ],
+    "nesting": "DGI-N uses the first N shots of the same 10,000-shot sequence"
+  },
+  "training": {
+    "images": "7,000 training images (3,500 blood + 3,500 path); one model per N and target, trained on both subsets",
+    "sequences": "pool of K = 32 independent sequences per training image; seed = 30,000,000 + 10,000*k + train_index; one realisation per image per epoch via default_rng([0, epoch])",
+    "targets": {
+      "clean": "original clean object (models AI-original-N; as onion Phase 2)",
+      "dgi10k": "DGI-10000 of the same acquisition (models AI-N; as onion Phase 1)"
+    },
+    "architecture": "UNetGI(base=32, depth=3), 1,925,025 parameters",
+    "optimiser": "Adam lr 1e-4",
+    "loss": "MSE",
+    "batch_size": 16,
+    "max_epochs": 80,
+    "patience": 10,
+    "master_seed": 0,
+    "selection": "1,000 validation images x shared sequences [2040, 2041, 2042]; checkpoint = lowest selection MSE",
+    "hardware": "NVIDIA RTX A5000 (CUDA), torch.use_deterministic_algorithms(True), CUBLAS_WORKSPACE_CONFIG=:4096:8"
+  },
+  "evaluation": {
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029
+    ],
+    "test_pairs": "2,000 test images x 4 sequences = 8,000 (4,000 per subset)",
+    "clean_target": {
+      "reference": "original clean object",
+      "comparator": "conventional DGI-10000 of the same sequence",
+      "methods": [
+        "DGI-500..10000",
+        "AI-original-500..5000"
+      ]
+    },
+    "dgi10k_target": {
+      "reference": "DGI-10000 of the same acquisition",
+      "comparator": "independent 10k acquisition (seed + 7000)",
+      "methods": [
+        "conventional DGI-N",
+        "smoothed DGI-N (Gaussian sigma tuned on training pool k=0,1)",
+        "AI-N"
+      ],
+      "context": "every image also scored against the clean object"
+    },
+    "metrics": [
+      "SSIM (skimage, data_range 1)",
+      "Pearson r",
+      "PSNR",
+      "MSE",
+      "edge r (Pearson r of Sobel magnitude maps)"
+    ]
+  },
+  "criterion": {
+    "definition": "on paired image-level differences [metric(method) - metric(comparator)] pooled over seeds 2026-2029, the lower bound of the 95% bootstrap CI (2,000 resamples over images, seeds kept together, rng default_rng(0) per group) is >= -0.02 for SSIM AND >= -0.01 for Pearson r",
+    "delta": {
+      "SSIM": 0.02,
+      "Pearson_r": 0.01
+    },
+    "minimum_N": "smallest N in {500, 1000, 2000, 5000} meeting the criterion; reduction factor = 10000 / N",
+    "primary": "all 2,000 test images (blood + path)",
+    "secondary": "blood and path separately (same rule, images of that subset only)"
+  },
+  "order_of_work": [
+    "build dataset (done)",
+    "this protocol",
+    "training pool + selection set",
+    "train 8 models",
+    "validation evaluation -> freeze checkpoints (MD5) in results/target_*/frozen_for_test.json",
+    "single test evaluation per target (script refuses a second run)",
+    "extension freeze manifest"
+  ],
+  "deviations_from_onion": [
+    "dataset: MedMNIST+ blood smears and H&E tissue instead of onion; images are already 64x64, so no centre crop or area downsampling",
+    "pool seed rule 30,000,000 + 10,000*k + i (onion 20,000,000 + 1000*k + i would collide for i >= 1000)",
+    "training on GPU with deterministic algorithms (onion: CPU); not bit-identical to CPU training",
+    "an epoch has 7,000 images (onion 341), so 80 epochs is ~20x more gradient steps",
+    "duplicate screening vectorised; same thresholds as src/dataset_audit_full.py, NCC for flips taken at the best pHash transform",
+    "near-blank images (object std < 0.005) excluded before the final draw"
+  ],
+  "seed_ranges_reserved": {
+    "pool": "30,000,000-30,316,999",
+    "selection": [
+      2040,
+      2041,
+      2042
+    ],
+    "evaluation": [
+      2026,
+      2027,
+      2028,
+      2029
+    ],
+    "retest": [
+      9026,
+      9027,
+      9028,
+      9029
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+/home/ss_students/.local/lib/python3.10/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+seed 2026 done (48s)
+seed 2027 done (96s)
+seed 2028 done (142s)
+seed 2029 done (189s)
+group                 label  n_pairs  SSIM_mean  correlation_mean  PSNR_mean  edge_r_mean
+  all                AI-500     8000     0.3654            0.7117    17.5624       0.4259
+  all               AI-1000     8000     0.4613            0.7720    18.3495       0.5248
+  all               AI-2000     8000     0.5777            0.8295    19.3736       0.6258
+  all               AI-5000     8000     0.7917            0.9141    22.0518       0.7881
+  all               DGI-500     8000     0.2278            0.3676    10.1393       0.1390
+  all              DGI-1000     8000     0.3423            0.5092    12.0443       0.2537
+  all              DGI-2000     8000     0.5040            0.6739    14.6518       0.4246
+  all              DGI-5000     8000     0.7751            0.8802    19.9207       0.7269
+  all independent 10k-10000     8000     0.4156            0.7204    16.7140       0.5275
+  all      smoothed DGI-500     8000     0.2727            0.6423    16.0833       0.2576
+  all     smoothed DGI-1000     8000     0.3736            0.7150    17.1272       0.3744
+  all     smoothed DGI-2000     8000     0.5353            0.7930    18.4583       0.5157
+  all     smoothed DGI-5000     8000     0.7875            0.9068    21.6871       0.7556
+blood                AI-500     4000     0.3234            0.8063    15.3696       0.4503
+blood               AI-1000     4000     0.4048            0.8355    16.0237       0.5183
+blood               AI-2000     4000     0.5150            0.8652    16.8157       0.5906
+blood               AI-5000     4000     0.7472            0.9223    19.0831       0.7366
+blood               DGI-500     4000     0.1789            0.3585     7.7817       0.0897
+blood              DGI-1000     4000     0.2768            0.4997     9.3148       0.1762
+blood              DGI-2000     4000     0.4335            0.6680    11.6347       0.3254
+blood              DGI-5000     4000     0.7284            0.8791    16.6630       0.6485
+blood independent 10k-10000     4000     0.2816            0.7235    13.3974       0.4034
+blood      smoothed DGI-500     4000     0.2090            0.7225    13.3866       0.2343
+blood     smoothed DGI-1000     4000     0.3001            0.7685    14.3621       0.3196
+blood     smoothed DGI-2000     4000     0.4593            0.8178    15.5355       0.4316
+blood     smoothed DGI-5000     4000     0.7420            0.9117    18.5469       0.6867
+ path                AI-500     4000     0.4074            0.6172    19.7551       0.4016
+ path               AI-1000     4000     0.5177            0.7085    20.6753       0.5312
+ path               AI-2000     4000     0.6404            0.7939    21.9315       0.6610
+ path               AI-5000     4000     0.8361            0.9060    25.0205       0.8397
+ path               DGI-500     4000     0.2768            0.3767    12.4969       0.1883
+ path              DGI-1000     4000     0.4077            0.5188    14.7738       0.3312
+ path              DGI-2000     4000     0.5744            0.6798    17.6690       0.5238
+ path              DGI-5000     4000     0.8218            0.8814    23.1783       0.8052
+ path independent 10k-10000     4000     0.5495            0.7173    20.0305       0.6517
+ path      smoothed DGI-500     4000     0.3363            0.5622    18.7801       0.2809
+ path     smoothed DGI-1000     4000     0.4471            0.6616    19.8922       0.4292
+ path     smoothed DGI-2000     4000     0.6113            0.7682    21.3810       0.5999
+ path     smoothed DGI-5000     4000     0.8330            0.9018    24.8274       0.8246
+group                                    comparison  SSIM_mean  SSIM_ci_low  correlation_mean  correlation_ci_low criterion_pass
+  all           DGI-500 minus independent 10k-10000    -0.1877      -0.1926           -0.3528             -0.3537          False
+  all  smoothed DGI-500 minus independent 10k-10000    -0.1429      -0.1480           -0.0781             -0.0828          False
+  all            AI-500 minus independent 10k-10000    -0.0502      -0.0554           -0.0087             -0.0139          False
+  all          DGI-1000 minus independent 10k-10000    -0.0733      -0.0772           -0.2112             -0.2121          False
+  all smoothed DGI-1000 minus independent 10k-10000    -0.0419      -0.0462           -0.0054             -0.0085          False
+  all           AI-1000 minus independent 10k-10000     0.0457       0.0415            0.0516              0.0480           True
+  all          DGI-2000 minus independent 10k-10000     0.0884       0.0849           -0.0465             -0.0472          False
+  all smoothed DGI-2000 minus independent 10k-10000     0.1198       0.1164            0.0726              0.0711           True
+  all           AI-2000 minus independent 10k-10000     0.1621       0.1581            0.1091              0.1073           True
+  all          DGI-5000 minus independent 10k-10000     0.3595       0.3541            0.1598              0.1594           True
+  all smoothed DGI-5000 minus independent 10k-10000     0.3719       0.3664            0.1864              0.1860           True
+  all           AI-5000 minus independent 10k-10000     0.3761       0.3706            0.1937              0.1933           True
+blood           DGI-500 minus independent 10k-10000    -0.1027      -0.1048           -0.3649             -0.3660          False
+blood  smoothed DGI-500 minus independent 10k-10000    -0.0726      -0.0743           -0.0010             -0.0016          False
+blood            AI-500 minus independent 10k-10000     0.0418       0.0400            0.0828              0.0819           True
+blood          DGI-1000 minus independent 10k-10000    -0.0048      -0.0068           -0.2238             -0.2248          False
+blood smoothed DGI-1000 minus independent 10k-10000     0.0185       0.0169            0.0450              0.0445           True
+blood           AI-1000 minus independent 10k-10000     0.1232       0.1218            0.1120              0.1115           True
+blood          DGI-2000 minus independent 10k-10000     0.1519       0.1503           -0.0555             -0.0563          False
+blood smoothed DGI-2000 minus independent 10k-10000     0.1777       0.1763            0.0943              0.0938           True
+blood           AI-2000 minus independent 10k-10000     0.2334       0.2322            0.1417              0.1413           True
+blood          DGI-5000 minus independent 10k-10000     0.4468       0.4450            0.1556              0.1551           True
+blood smoothed DGI-5000 minus independent 10k-10000     0.4604       0.4589            0.1882              0.1878           True
+blood           AI-5000 minus independent 10k-10000     0.4656       0.4640            0.1988              0.1983           True
+ path           DGI-500 minus independent 10k-10000    -0.2728      -0.2781           -0.3407             -0.3419          False
+ path  smoothed DGI-500 minus independent 10k-10000    -0.2132      -0.2211           -0.1551             -0.1612          False
+ path            AI-500 minus independent 10k-10000    -0.1422      -0.1491           -0.1001             -0.1066          False
+ path          DGI-1000 minus independent 10k-10000    -0.1418      -0.1469           -0.1986             -0.1996          False
+ path smoothed DGI-1000 minus independent 10k-10000    -0.1024      -0.1084           -0.0558             -0.0598          False
+ path           AI-1000 minus independent 10k-10000    -0.0318      -0.0370           -0.0088             -0.0128          False
+ path          DGI-2000 minus independent 10k-10000     0.0249       0.0203           -0.0376             -0.0383          False
+ path smoothed DGI-2000 minus independent 10k-10000     0.0618       0.0574            0.0509              0.0490           True
+ path           AI-2000 minus independent 10k-10000     0.0909       0.0863            0.0765              0.0743           True
+ path          DGI-5000 minus independent 10k-10000     0.2722       0.2654            0.1640              0.1635           True
+ path smoothed DGI-5000 minus independent 10k-10000     0.2835       0.2762            0.1845              0.1840           True
+ path           AI-5000 minus independent 10k-10000     0.2865       0.2794            0.1886              0.1881           True
+minimum passing N: {"all": {"AI": 1000, "DGI": 5000, "smoothed DGI": 2000}, "blood": {"AI": 500, "DGI": 5000, "smoothed DGI": 1000}, "path": {"AI": 2000, "DGI": 5000, "smoothed DGI": 2000}} | 218.6 s -> /home/ss_students/Downloads/Onion-CNN-Final.v1-onion-original-v1.yolov8/outputs/extension_medmnist_microscopy/results/target_dgi10k/test

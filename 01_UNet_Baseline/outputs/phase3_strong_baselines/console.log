@@ -1,0 +1,247 @@
+tune N=500 lam=0: train MSE 0.019086 PSNR 19.62 SSIM 0.324
+tune N=500 lam=0.0001: train MSE 0.005113 PSNR 26.35 SSIM 0.688
+tune N=500 lam=0.0003: train MSE 0.005163 PSNR 26.31 SSIM 0.684
+tune N=500 lam=0.001: train MSE 0.005187 PSNR 26.25 SSIM 0.681
+tune N=500 lam=0.003: train MSE 0.005295 PSNR 26.01 SSIM 0.666
+tune N=500 lam=0.01: train MSE 0.005807 PSNR 25.00 SSIM 0.606
+tune N=500 lam=0.03: train MSE 0.007572 PSNR 23.03 SSIM 0.474
+tune N=1000 lam=0: train MSE 0.016389 PSNR 20.31 SSIM 0.393
+tune N=1000 lam=0.0001: train MSE 0.002401 PSNR 29.78 SSIM 0.842
+tune N=1000 lam=0.0003: train MSE 0.002463 PSNR 29.73 SSIM 0.839
+tune N=1000 lam=0.001: train MSE 0.002478 PSNR 29.65 SSIM 0.837
+tune N=1000 lam=0.003: train MSE 0.002567 PSNR 29.30 SSIM 0.826
+tune N=1000 lam=0.01: train MSE 0.002998 PSNR 27.92 SSIM 0.774
+tune N=1000 lam=0.03: train MSE 0.004527 PSNR 25.43 SSIM 0.635
+tune N=2000 lam=0: train MSE 0.010898 PSNR 22.07 SSIM 0.525
+tune N=2000 lam=0.0001: train MSE 0.000640 PSNR 35.29 SSIM 0.948
+tune N=2000 lam=0.0003: train MSE 0.000626 PSNR 35.33 SSIM 0.949
+tune N=2000 lam=0.001: train MSE 0.000637 PSNR 35.19 SSIM 0.948
+tune N=2000 lam=0.003: train MSE 0.000683 PSNR 34.56 SSIM 0.942
+tune N=2000 lam=0.01: train MSE 0.000928 PSNR 32.41 SSIM 0.910
+tune N=2000 lam=0.03: train MSE 0.001888 PSNR 28.84 SSIM 0.809
+tune N=5000 lam=0: train MSE 0.000000 PSNR inf SSIM 1.000
+tune N=5000 lam=0.0001: train MSE 0.000000 PSNR 76.94 SSIM 1.000
+tune N=5000 lam=0.0003: train MSE 0.000000 PSNR 67.50 SSIM 1.000
+tune N=5000 lam=0.001: train MSE 0.000002 PSNR 57.38 SSIM 0.999
+tune N=5000 lam=0.003: train MSE 0.000014 PSNR 48.75 SSIM 0.996
+tune N=5000 lam=0.01: train MSE 0.000091 PSNR 40.64 SSIM 0.977
+tune N=5000 lam=0.03: train MSE 0.000429 PSNR 34.23 SSIM 0.930
+tune N=10000 lam=0: train MSE 0.000000 PSNR inf SSIM 1.000
+tune N=10000 lam=0.0001: train MSE 0.000000 PSNR 76.94 SSIM 1.000
+tune N=10000 lam=0.0003: train MSE 0.000000 PSNR 67.50 SSIM 1.000
+tune N=10000 lam=0.001: train MSE 0.000002 PSNR 57.38 SSIM 0.999
+tune N=10000 lam=0.003: train MSE 0.000014 PSNR 48.75 SSIM 0.996
+tune N=10000 lam=0.01: train MSE 0.000091 PSNR 40.64 SSIM 0.977
+tune N=10000 lam=0.03: train MSE 0.000429 PSNR 34.23 SSIM 0.930
+frozen lambda: {500: 0.0001, 1000: 0.0001, 2000: 0.0003, 5000: 0.0, 10000: 0.0}
+seed 2026 N=500: done in 66.2s (pinv max err 6.77e-01, cond 34.3)
+seed 2026 N=1000: done in 69.0s (pinv max err 7.17e-01, cond 62.5)
+seed 2026 N=2000: done in 74.5s (pinv max err 6.58e-01, cond 146.7)
+seed 2026 N=5000: done in 29.5s (pinv max err 3.40e-12, cond 664.6)
+seed 2026 N=10000: done in 39.9s (pinv max err 1.91e-12, cond 177.2)
+seed 2027 N=500: done in 66.1s (pinv max err 6.45e-01, cond 34.1)
+seed 2027 N=1000: done in 67.6s (pinv max err 6.15e-01, cond 61.6)
+seed 2027 N=2000: done in 74.4s (pinv max err 6.36e-01, cond 147.8)
+seed 2027 N=5000: done in 31.8s (pinv max err 2.46e-12, cond 664.0)
+seed 2027 N=10000: done in 41.0s (pinv max err 2.34e-12, cond 176.8)
+seed 2028 N=500: done in 65.9s (pinv max err 6.14e-01, cond 34.4)
+seed 2028 N=1000: done in 67.8s (pinv max err 6.50e-01, cond 61.9)
+seed 2028 N=2000: done in 73.9s (pinv max err 5.98e-01, cond 147.9)
+seed 2028 N=5000: done in 31.3s (pinv max err 5.15e-13, cond 671.9)
+seed 2028 N=10000: done in 40.7s (pinv max err 1.46e-12, cond 176.3)
+seed 2029 N=500: done in 66.3s (pinv max err 6.35e-01, cond 34.3)
+seed 2029 N=1000: done in 68.5s (pinv max err 6.50e-01, cond 62.6)
+seed 2029 N=2000: done in 73.2s (pinv max err 5.67e-01, cond 148.0)
+seed 2029 N=5000: done in 30.9s (pinv max err 1.92e-12, cond 656.0)
+seed 2029 N=10000: done in 40.2s (pinv max err 6.86e-13, cond 177.1)
+C:\Users\vishn\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\nanops.py:1016: RuntimeWarning: invalid value encountered in subtract
+  sqr = _ensure_numeric((avg - values) ** 2)
+C:\Users\vishn\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\nanops.py:1016: RuntimeWarning: invalid value encountered in subtract
+  sqr = _ensure_numeric((avg - values) ** 2)
+C:\Users\vishn\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\nanops.py:1016: RuntimeWarning: invalid value encountered in subtract
+  sqr = _ensure_numeric((avg - values) ** 2)
+C:\Users\vishn\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\nanops.py:1016: RuntimeWarning: invalid value encountered in subtract
+  sqr = _ensure_numeric((avg - values) ** 2)
+C:\Users\vishn\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\nanops.py:1016: RuntimeWarning: invalid value encountered in subtract
+  sqr = _ensure_numeric((avg - values) ** 2)
+C:\Users\vishn\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\nanops.py:1016: RuntimeWarning: invalid value encountered in subtract
+  sqr = _ensure_numeric((avg - values) ** 2)
+C:\Users\vishn\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\nanops.py:1016: RuntimeWarning: invalid value encountered in subtract
+  sqr = _ensure_numeric((avg - values) ** 2)
+C:\Users\vishn\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\nanops.py:1016: RuntimeWarning: invalid value encountered in subtract
+  sqr = _ensure_numeric((avg - values) ** 2)
+
+UNSEEN seeds 2027-2029:
+       method  shots  PSNR_mean  PSNR_std  PSNR_median  SSIM_mean  SSIM_std  SSIM_median  MSE_mean   MSE_std  MSE_median  Pearson_r_mean  Pearson_r_std  Pearson_r_median
+      raw DGI    500      12.33     3.751        11.25     0.1163   0.02215       0.1149   0.07877   0.05036     0.07501          0.3068        0.01112            0.3066
+ smoothed DGI    500       21.7     5.185        21.85     0.4974    0.1362       0.4923   0.01177   0.01025    0.006538          0.7677        0.03307             0.768
+pseudoinverse    500      19.78     4.671        19.43     0.3304     0.137       0.2897   0.01689    0.0142     0.01141          0.3375        0.01856            0.3412
+           TV    500      26.84     5.763        27.55     0.7024    0.1357       0.7194  0.004302  0.004516    0.001757          0.8998        0.04442            0.9028
+      Model D    500      24.22     4.842        24.06     0.5525    0.1226       0.5617  0.006356  0.005681    0.003925          0.8221        0.04702            0.8249
+      raw DGI   1000      14.48     4.121        13.65     0.1862   0.03253       0.1833   0.05127   0.03644     0.04319          0.4213        0.01211            0.4204
+ smoothed DGI   1000      23.45     5.091        23.64     0.5838   0.09718       0.5717  0.007869  0.007035    0.004321          0.8278         0.0229            0.8289
+pseudoinverse   1000      20.48     4.676        20.15     0.3938    0.1072       0.3527   0.01439    0.0121    0.009667          0.4946        0.01267            0.4958
+           TV   1000      30.25     5.907        31.38     0.8482   0.07395       0.8579  0.002079  0.002397    0.000728          0.9531        0.02598            0.9576
+      Model C   1000      25.38     4.908        25.26     0.6485   0.09442       0.6486   0.00493  0.004463    0.002978          0.8684        0.03402            0.8702
+      raw DGI   2000         17      4.35        16.32     0.2909   0.04561       0.2914      0.03   0.02298     0.02331          0.5541        0.01301            0.5545
+ smoothed DGI   2000      25.12     4.988        25.41     0.6688   0.06997       0.6493   0.00529  0.004746    0.002878          0.8762        0.01609            0.8776
+pseudoinverse   2000      22.18     4.682        21.95     0.5208   0.07899       0.4996  0.009731  0.008191    0.006376          0.6996       0.008181            0.7004
+           TV   2000      35.84     5.885        35.68     0.9504   0.02715       0.9525 0.0005756  0.000702   0.0002704          0.9857         0.0103            0.9889
+      raw DGI   5000      20.63     4.499        20.33     0.4677   0.06363       0.4659   0.01343   0.01082    0.009278          0.7347       0.007253            0.7344
+ smoothed DGI   5000       27.3     4.834        27.65      0.762   0.04821       0.7498  0.003119  0.002739    0.001717          0.9231        0.01106             0.924
+pseudoinverse   5000        inf       NaN        278.8          1         0            1 3.062e-28  3.58e-28   1.328e-28               1      4.673e-16                 1
+           TV   5000        inf       NaN        278.8          1         0            1 3.062e-28  3.58e-28   1.328e-28               1      4.673e-16                 1
+      raw DGI  10000      23.52     4.547        23.18     0.6106   0.06866        0.609  0.006964  0.005695    0.004811          0.8419       0.003365            0.8419
+ smoothed DGI  10000      28.96     4.771         29.3     0.8204   0.03797       0.8121  0.002107   0.00184    0.001175          0.9478       0.008524            0.9487
+pseudoinverse  10000        inf       NaN        280.8          1         0            1 1.669e-28 2.226e-28   8.369e-29               1      3.554e-16                 1
+           TV  10000        inf       NaN        280.8          1         0            1 1.669e-28 2.226e-28   8.369e-29               1      3.554e-16                 1
+
+seed 2026:
+       method  shots  PSNR_mean  PSNR_std  PSNR_median  SSIM_mean  SSIM_std  SSIM_median  MSE_mean   MSE_std  MSE_median  Pearson_r_mean  Pearson_r_std  Pearson_r_median
+      raw DGI    500      12.42     3.786        11.45     0.1168   0.02136       0.1128   0.07756   0.05007     0.07164          0.3066       0.009276            0.3052
+ smoothed DGI    500      21.85     5.254        21.73     0.5058    0.1346        0.526   0.01149    0.0101    0.006709          0.7785        0.03639            0.7768
+pseudoinverse    500      19.77     4.681        19.45     0.3286     0.138       0.2808   0.01689   0.01425     0.01134           0.336        0.01849            0.3415
+           TV    500      26.77     5.747        27.47     0.7031     0.134       0.7119  0.004333  0.004539    0.001792          0.8987        0.04398            0.9035
+      Model D    500      24.36     4.911        24.27     0.5609    0.1237       0.5671  0.006215  0.005661    0.003737          0.8268        0.04974            0.8272
+      raw DGI   1000      14.56     4.159        13.81     0.1876   0.03261       0.1838   0.05044   0.03604     0.04157          0.4187        0.01191            0.4163
+ smoothed DGI   1000      23.46      5.17        23.77      0.582   0.09879       0.5674  0.007918  0.007083    0.004201          0.8272        0.02516            0.8287
+pseudoinverse   1000      20.46     4.703        20.09     0.3929    0.1097       0.3487   0.01445   0.01219    0.009788          0.4918        0.01124            0.4916
+           TV   1000       30.2     5.979        31.32     0.8471   0.07457       0.8531  0.002113  0.002424   0.0007373          0.9528        0.02593            0.9561
+      Model C   1000      25.51     4.982        25.61     0.6506   0.09383       0.6433  0.004828  0.004418    0.002751          0.8708        0.03557             0.875
+      raw DGI   2000      17.02     4.378        16.26     0.2902   0.04666       0.2861   0.02988   0.02288     0.02363          0.5564        0.01218            0.5578
+ smoothed DGI   2000      25.17     5.001        25.41     0.6665   0.06981       0.6525  0.005207  0.004634    0.002877          0.8781        0.01735            0.8775
+pseudoinverse   2000       22.2      4.69        21.91     0.5198   0.07985        0.501  0.009648  0.008091    0.006443          0.7015       0.007275            0.7006
+           TV   2000      35.78     5.917        35.82       0.95   0.02727        0.953 0.0005868 0.0007336   0.0002619          0.9856        0.01039            0.9888
+      raw DGI   5000       20.6     4.527        20.22     0.4662    0.0635       0.4637   0.01355   0.01098    0.009516          0.7338       0.007409            0.7333
+ smoothed DGI   5000      27.25     4.852        27.24     0.7608   0.04791       0.7484  0.003154  0.002797    0.001887          0.9231        0.01114            0.9243
+pseudoinverse   5000        inf       NaN        281.4          1         0            1 1.395e-28 1.477e-28    7.22e-29               1      4.877e-16                 1
+           TV   5000        inf       NaN        281.4          1         0            1 1.395e-28 1.477e-28    7.22e-29               1      4.877e-16                 1
+      raw DGI  10000      23.52     4.583        23.23     0.6093   0.07012       0.6091  0.006994  0.005768    0.004748          0.8413       0.003419            0.8413
+ smoothed DGI  10000      28.95     4.778        29.24     0.8196   0.03838       0.8105  0.002108  0.001846    0.001191          0.9475       0.008613            0.9482
+pseudoinverse  10000        inf       NaN          280          1         0            1 2.319e-28 2.401e-28    1.01e-28               1       5.43e-16                 1
+           TV  10000        inf       NaN          280          1         0            1 2.319e-28 2.401e-28    1.01e-28               1       5.43e-16                 1
+
+conditioning:
+ shots          regime  rank  s_max   s_2  s_min  condition_number  seed  pinv_max_abs_error_vs_truth_diagnostic_only  pinv_data_residual_rel  pinv_fraction_outside_0_1
+   500 underdetermined   500  716.4 43.09  20.87             34.33  2026                                        0.677               1.456e-15                  3.255e-06
+  1000 underdetermined  1000   1013 47.57  16.21             62.49  2026                                       0.7169               1.477e-15                  0.0003809
+  2000 underdetermined  2000   1432 54.21  9.766             146.7  2026                                       0.6577               1.669e-15                   0.006318
+  5000  overdetermined  4096   2263 67.15  3.406             664.6  2026                                    3.403e-12               2.689e-15                    0.05338
+ 10000  overdetermined  4096   3200 81.82  18.06             177.2  2026                                    1.911e-12               2.253e-15                     0.0534
+   500 underdetermined   500  715.8 43.12  20.96             34.15  2027                                        0.645               2.452e-15                  9.766e-06
+  1000 underdetermined  1000   1012 47.54  16.43             61.59  2027                                       0.6149               2.094e-15                  0.0006608
+  2000 underdetermined  2000   1431  54.3  9.681             147.8  2027                                       0.6361               1.894e-15                    0.00695
+  5000  overdetermined  4096   2263 67.23  3.408               664  2027                                    2.459e-12                 2.2e-15                    0.05652
+ 10000  overdetermined  4096   3200 81.87   18.1             176.8  2027                                    2.345e-12               2.039e-15                    0.05417
+   500 underdetermined   500    716  42.9  20.82             34.39  2028                                       0.6141               1.761e-15                  3.255e-06
+  1000 underdetermined  1000   1012 47.55  16.36             61.85  2028                                       0.6502               1.618e-15                  0.0006576
+  2000 underdetermined  2000   1431 54.18  9.675             147.9  2028                                       0.5975               1.824e-15                    0.00735
+  5000  overdetermined  4096   2263 67.18  3.369             671.9  2028                                    5.152e-13               1.616e-15                    0.05561
+ 10000  overdetermined  4096   3201 81.83  18.15             176.3  2028                                    1.456e-12               1.663e-15                    0.05734
+   500 underdetermined   500  715.7 42.95  20.89             34.26  2029                                       0.6353               2.159e-15                          0
+  1000 underdetermined  1000   1012 47.61  16.17             62.59  2029                                       0.6498               1.799e-15                  0.0003385
+  2000 underdetermined  2000   1432 54.53  9.675               148  2029                                       0.5665               1.547e-15                   0.006022
+  5000  overdetermined  4096   2264 67.28  3.451               656  2029                                    1.919e-12               2.368e-15                    0.05681
+ 10000  overdetermined  4096   3201 81.99  18.07             177.1  2029                                    6.856e-13                1.48e-15                    0.05385
+
+paired (unseen):
+           A                  B  PSNR_mean_diff  PSNR_median_diff  PSNR_pct_A_better  SSIM_mean_diff  SSIM_median_diff  SSIM_pct_A_better  Pearson_r_mean_diff  Pearson_r_median_diff  Pearson_r_pct_A_better
+ Model D-500  pseudoinverse-500           4.439             4.319            100.000           0.222             0.230            100.000                0.485                  0.486                 100.000
+ Model D-500             TV-500          -2.626            -2.232              0.000          -0.150            -0.138              0.000               -0.078                 -0.064                   0.000
+ Model D-500   smoothed DGI-500           2.518             2.893             95.556           0.055             0.065             92.889                0.054                  0.063                  93.333
+ Model D-500            TV-1000          -6.033            -5.630              0.000          -0.296            -0.317              0.000               -0.131                 -0.126                   0.000
+Model C-1000 pseudoinverse-1000           4.904             4.823            100.000           0.255             0.269            100.000                0.374                  0.377                 100.000
+Model C-1000            TV-1000          -4.869            -4.472              0.000          -0.200            -0.207              0.000               -0.085                 -0.081                   0.000
+Model C-1000  smoothed DGI-1000           1.934             2.141             95.111           0.065             0.073             95.111                0.041                  0.044                  95.556
+Model C-1000            TV-2000         -10.458           -10.106              0.000          -0.302            -0.310              0.000               -0.117                 -0.117                   0.000
+Model C-1000 pseudoinverse-2000           3.201             3.121            100.000           0.128             0.130             93.333                0.169                  0.171                 100.000
+Model C-1000  smoothed DGI-2000           0.261             0.335             56.444          -0.020            -0.016             32.444               -0.008                 -0.006                  36.889
+      TV-500   smoothed DGI-500           5.143             4.879            100.000           0.205             0.205            100.000                0.132                  0.129                 100.000
+     TV-1000  smoothed DGI-1000           6.803             6.724            100.000           0.264             0.285            100.000                0.125                  0.124                 100.000
+
+checks: {
+ "tv_tuning_train_images": [
+  "A_10",
+  "A_105",
+  "A_11",
+  "A_117",
+  "A_120",
+  "A_220",
+  "A_229",
+  "A_233",
+  "A_264",
+  "A_269",
+  "A_300",
+  "A_307",
+  "A_312",
+  "A_320",
+  "A_354",
+  "A_5",
+  "A_61",
+  "A_64",
+  "A_69",
+  "A_87",
+  "A_96",
+  "A_99",
+  "B_27",
+  "C_19",
+  "C_21",
+  "C_32",
+  "C_34",
+  "C_53",
+  "C_75",
+  "C_9",
+  "D_25",
+  "D_30",
+  "D_38",
+  "F_12",
+  "F_13",
+  "F_19",
+  "F_22",
+  "F_37",
+  "F_43",
+  "F_72"
+ ],
+ "tv_lambda_frozen": {
+  "500": 0.0001,
+  "1000": 0.0001,
+  "2000": 0.0003,
+  "5000": 0.0,
+  "10000": 0.0
+ },
+ "tv_lambda_at_grid_edge": {
+  "500": false,
+  "1000": false,
+  "2000": false,
+  "5000": false,
+  "10000": false
+ },
+ "dgi_seed2026_vs_phase2A_max_abs_diff": 0.0,
+ "tv_convergence_300_vs_900_iterations": {
+  "500": {
+   "PSNR_300it": 26.15865276609939,
+   "PSNR_900it": 26.150017202877347,
+   "SSIM_300it": 0.6633947221136931,
+   "SSIM_900it": 0.6622294782309754,
+   "max_abs_image_change": 0.16686631077496028
+  },
+  "1000": {
+   "PSNR_300it": 29.930570691214275,
+   "PSNR_900it": 29.92869592188496,
+   "SSIM_300it": 0.8398834877241501,
+   "SSIM_900it": 0.8391369554989515,
+   "max_abs_image_change": 0.05399511900457421
+  },
+  "2000": {
+   "PSNR_300it": 36.4747248725111,
+   "PSNR_900it": 36.47771461594477,
+   "SSIM_300it": 0.9594127629683594,
+   "SSIM_900it": 0.9594017717224543,
+   "max_abs_image_change": 0.007423069785502667
+  }
+ },
+ "model_D_unseen_PSNR_vs_report_abs_diff": 3.552713678800501e-15,
+ "model_C_unseen_PSNR_vs_report_abs_diff": 3.552713678800501e-15
+}
+
+2432.5 s -> C:\Users\vishn\Downloads\Onion-CNN-Final.v1-onion-original-v1.yolov8\outputs\phase3_strong_baselines

@@ -1,0 +1,193 @@
+{
+  "run": "full",
+  "model": "B",
+  "n_shots": 1000,
+  "pattern_seed": 2026,
+  "architecture": "UNetGI(base=32, depth=3): 32/64/128 + 256 bottleneck, linear head",
+  "n_params": 1925025,
+  "optimizer": "Adam lr=0.0001 (constant)",
+  "loss": "MSE (raw output vs target)",
+  "batch_size": 16,
+  "max_epochs": 80,
+  "patience": 10,
+  "epochs_completed": 77,
+  "stopped_early": true,
+  "best_epoch": 67,
+  "best_val_loss": 0.004720859122194254,
+  "training_seed": 0,
+  "torch": "2.8.0+cpu",
+  "wall_time_s": 470.9,
+  "normalization": {
+    "target": "linear-light luminance object, [0,1], no scaling",
+    "input": "O_hat = DGI_1000/0.25 + <B>/<R>, clipped to [0,1], no scaling",
+    "output": "linear; clipped to [0,1] only for metrics/figures"
+  },
+  "checks": {
+    "split_counts": {
+      "train": 341,
+      "val": 75,
+      "test": 74
+    },
+    "split_overlap": {
+      "train&val": 0,
+      "train&test": 0,
+      "val&test": 0
+    },
+    "n_train_loaded": 341,
+    "n_val_loaded": 75,
+    "test_ids_in_loaded_data": 0,
+    "alignment_max_psnr_diff_db_train": 2.3729491260837676e-08,
+    "alignment_max_psnr_diff_db_val": 2.6486429050009974e-08,
+    "target_vs_fresh_reference_max_abs_diff": 0.0,
+    "input_range": [
+      0.0,
+      1.0
+    ],
+    "target_range": [
+      0.0,
+      0.974702775478363
+    ],
+    "data_finite": true,
+    "dgi10000_alignment_max_psnr_diff_db": 5.446809581144407e-08,
+    "model_output_shape": [
+      2,
+      1,
+      64,
+      64
+    ],
+    "all_train_images_seen_each_epoch": true,
+    "best_epoch": 67,
+    "best_reload_reproduces_recorded": {
+      "val_loss_abs_diff": 0.0,
+      "psnr_abs_diff": 0.0,
+      "ssim_abs_diff": 0.0,
+      "r_abs_diff": 0.0
+    },
+    "best_reload_exact": true,
+    "output_finite": true,
+    "output_shape": [
+      1,
+      64,
+      64
+    ],
+    "output_raw_range": [
+      -0.19657792150974274,
+      0.9139652252197266
+    ]
+  },
+  "overfitting": {
+    "train_loss_at_best_eval_mode": 0.0029685792726132153,
+    "val_loss_at_best": 0.004720859122194254,
+    "val_over_train_loss_ratio": 1.590275579212854,
+    "train_PSNR_at_best": 27.155049967752866,
+    "val_PSNR_at_best": 25.648645420762872,
+    "train_SSIM_at_best": 0.7309851628687754,
+    "val_SSIM_at_best": 0.6622533088534923,
+    "epochs_after_best": 10,
+    "val_loss_last_minus_best": 2.9061363344890997e-05,
+    "train_loss_last_epoch": 0.0027065424581776618
+  },
+  "val_summary": [
+    {
+      "method": "DGI-1000 input",
+      "PSNR": 14.558982058836854,
+      "SSIM": 0.1876260099962355,
+      "MSE": 0.05043870819115856,
+      "Pearson_r": 0.41874760167729674
+    },
+    {
+      "method": "flat image at <B>/<R>",
+      "PSNR": 19.25975018753006,
+      "SSIM": 0.30066745659876204,
+      "MSE": 0.01914391113446753,
+      "Pearson_r": NaN
+    },
+    {
+      "method": "U-Net DGI-1000 (best epoch 67)",
+      "PSNR": 25.648645420762872,
+      "SSIM": 0.6622533088534923,
+      "MSE": 0.0046796550247357105,
+      "Pearson_r": 0.87027904870943
+    },
+    {
+      "method": "DGI-10,000 (conventional)",
+      "PSNR": 23.515584046331686,
+      "SSIM": 0.6092598086135191,
+      "MSE": 0.006994414130842041,
+      "Pearson_r": 0.8413348275265078
+    }
+  ],
+  "per_image_analysis": {
+    "UNet_vs_DGI1000_PSNR": {
+      "mean": 11.089663361926016,
+      "median": 10.915584020924788,
+      "std": 1.6216022415661249,
+      "pct_positive": 100.0,
+      "min": 6.993793150252628,
+      "max": 15.629059285796604
+    },
+    "UNet_vs_DGI1000_SSIM": {
+      "mean": 0.4746272988572569,
+      "median": 0.4566685683808014,
+      "std": 0.09348162349798177,
+      "pct_positive": 100.0,
+      "min": 0.24078649177520065,
+      "max": 0.6801649973296914
+    },
+    "UNet_vs_DGI10000_PSNR": {
+      "mean": 2.133061374431186,
+      "median": 1.7104972135084502,
+      "std": 1.633459616325555,
+      "pct_positive": 94.66666666666667,
+      "min": -0.8180971841473905,
+      "max": 6.700519588470435
+    },
+    "UNet_vs_DGI10000_SSIM": {
+      "mean": 0.052993500239973304,
+      "median": 0.05350457633252437,
+      "std": 0.10327455722620488,
+      "pct_positive": 70.66666666666667,
+      "min": -0.2046536780343195,
+      "max": 0.31655243004060496
+    },
+    "UNet_vs_DGI1000_r": {
+      "mean": 0.4515314470321332,
+      "median": 0.4545448761777697,
+      "std": 0.05650951356256583,
+      "pct_positive": 100.0,
+      "min": 0.32207445391830086,
+      "max": 0.5534034540758225
+    },
+    "UNet_vs_DGI10000_r": {
+      "mean": 0.02894422118292225,
+      "median": 0.02863435707024653,
+      "std": 0.050783447420515895,
+      "pct_positive": 70.66666666666667,
+      "min": -0.09095994734257917,
+      "max": 0.12490408860302915
+    },
+    "UNet_vs_flat_PSNR": {
+      "mean": 6.388895233232816,
+      "median": 6.135905057122276,
+      "std": 1.7538969783503107,
+      "pct_positive": 100.0,
+      "min": 3.568518833240045,
+      "max": 11.065997069737907
+    },
+    "UNet_vs_flat_SSIM": {
+      "mean": 0.3615858522547303,
+      "median": 0.4215244654035157,
+      "std": 0.17715860796974742,
+      "pct_positive": 98.66666666666667,
+      "min": -0.02897517341393463,
+      "max": 0.603213366090873
+    }
+  },
+  "val_example_ids": [
+    "A_71",
+    "F_1",
+    "A_358",
+    "C_47",
+    "A_383"
+  ]
+}

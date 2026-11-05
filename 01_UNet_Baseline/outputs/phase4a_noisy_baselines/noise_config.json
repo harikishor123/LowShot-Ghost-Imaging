@@ -1,0 +1,98 @@
+{
+  "forward_model": "B_clean = sum_xy P_i(x,y) O(x,y) (unchanged Phase 2A physics)",
+  "noise_model": {
+    "photon_scale": "s = N_ph / mu_ref; mu_ref = mean clean bucket over the 341 training images, seed-2026 patterns (a fixed constant for all images)",
+    "shot_noise": "K ~ Poisson(s * B_clean)",
+    "detector_noise": "e ~ Normal(0, kappa * sqrt(N_ph)) photo-electrons, independent per bucket",
+    "reading": "B_noisy = (K + e) / s, signed, not clipped",
+    "rng": "noise generator = numpy default_rng(SeedSequence([pattern_seed, 4040, regime_index])); patterns from the established pattern_batches(seed); one noise draw for all 10,000 buckets of each (image, seed), so shot-count prefixes are nested"
+  },
+  "mu_ref": 515.2641492246298,
+  "train_bucket_stats": {
+    "mean_of_image_means": 515.2641492246293,
+    "median_relative_fluctuation": 0.018232651426995424,
+    "relative_fluctuation_p10_p90": [
+      0.016144942266944427,
+      0.01875758520551165
+    ],
+    "median_bucket_std_over_patterns": 9.889524598854404
+  },
+  "regime_rule": {
+    "LOW": {
+      "kappa": 0.1,
+      "target_fluct_snr": 10.0
+    },
+    "MEDIUM": {
+      "kappa": 0.5,
+      "target_fluct_snr": 3.0
+    },
+    "HIGH": {
+      "kappa": 1.0,
+      "target_fluct_snr": 1.0
+    },
+    "selection": "half-decade photon budget whose median training fluctuation SNR is closest in log10 to target",
+    "revision": "first version used whole decades only; it mapped LOW and MEDIUM onto the same budget (1e5; fluct SNR 5.9 vs 5.3), so the grid was refined to half-decades BEFORE any reconstruction was run"
+  },
+  "regimes": {
+    "LOW": {
+      "photons_per_mean_bucket": 316227.7660168379,
+      "kappa": 0.1,
+      "detector_sigma_photoelectrons": 56.23413251903491,
+      "photon_scale_s": 613.7197134570645,
+      "target_fluct_snr": 10.0,
+      "fluct_snr_median_train": 10.444139312568094,
+      "fluct_snr_p10_p90_train": [
+        6.788000996801017,
+        12.275918623998688
+      ],
+      "dc_snr_median_train": 576.2040273058774,
+      "noise_std_normalised_median": 0.9477304319424851
+    },
+    "MEDIUM": {
+      "photons_per_mean_bucket": 31622.776601683792,
+      "kappa": 0.5,
+      "detector_sigma_photoelectrons": 88.91397050194614,
+      "photon_scale_s": 61.37197134570645,
+      "target_fluct_snr": 3.0,
+      "fluct_snr_median_train": 2.985293812714676,
+      "fluct_snr_p10_p90_train": [
+        1.729587352960393,
+        3.5874330785332815
+      ],
+      "dc_snr_median_train": 164.67427243868812,
+      "noise_std_normalised_median": 3.3161591279470723
+    },
+    "HIGH": {
+      "photons_per_mean_bucket": 3162.2776601683795,
+      "kappa": 1.0,
+      "detector_sigma_photoelectrons": 56.23413251903491,
+      "photon_scale_s": 6.137197134570645,
+      "target_fluct_snr": 1.0,
+      "fluct_snr_median_train": 0.7521667288471048,
+      "fluct_snr_p10_p90_train": [
+        0.3764844102424983,
+        0.9497374385482502
+      ],
+      "dc_snr_median_train": 41.52568363813434,
+      "noise_std_normalised_median": 13.150562347012407
+    }
+  },
+  "user_suggested_budgets_at_kappa_0.5": [
+    {
+      "photons_per_mean_bucket": 100.0,
+      "fluct_snr_median": 0.16787540787245206,
+      "dc_snr_median": 9.260314858792846
+    },
+    {
+      "photons_per_mean_bucket": 1000.0,
+      "fluct_snr_median": 0.5308686520067101,
+      "dc_snr_median": 29.283686804085917
+    },
+    {
+      "photons_per_mean_bucket": 10000.0,
+      "fluct_snr_median": 1.6787540787245205,
+      "dc_snr_median": 92.60314858792846
+    }
+  ],
+  "fixed_before_validation": true
+}

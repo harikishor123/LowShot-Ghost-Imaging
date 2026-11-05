@@ -1,0 +1,76 @@
+{
+  "target": "clean",
+  "split": "test",
+  "criterion": {
+    "definition": "on paired image-level differences [metric(method) - metric(comparator)] pooled over seeds 2026-2029, the lower bound of the 95% bootstrap CI (2,000 resamples over images, seeds kept together, rng default_rng(0) per group) is >= -0.02 for SSIM AND >= -0.01 for Pearson r",
+    "delta": {
+      "SSIM": 0.02,
+      "Pearson_r": 0.01
+    },
+    "minimum_N": "smallest N in {500, 1000, 2000, 5000} meeting the criterion; reduction factor = 10000 / N",
+    "primary": "all 2,000 test images (blood + path)",
+    "secondary": "blood and path separately (same rule, images of that subset only)"
+  },
+  "checks": {
+    "split": "test",
+    "n_images": 2000,
+    "n_by_subset": {
+      "blood": 1000,
+      "path": 1000
+    },
+    "models": {
+      "500": {
+        "checkpoint": "outputs/extension_medmnist_microscopy/models/target_clean/model_500/checkpoints/best.pt",
+        "best_epoch": 79,
+        "md5": "14292ff849960596941c8fe50a1c7b99"
+      },
+      "1000": {
+        "checkpoint": "outputs/extension_medmnist_microscopy/models/target_clean/model_1000/checkpoints/best.pt",
+        "best_epoch": 80,
+        "md5": "25784148b599d3a967a2042e57d3eef8"
+      },
+      "2000": {
+        "checkpoint": "outputs/extension_medmnist_microscopy/models/target_clean/model_2000/checkpoints/best.pt",
+        "best_epoch": 59,
+        "md5": "bf4a264dd6df34a9936e6367f614d57c"
+      },
+      "5000": {
+        "checkpoint": "outputs/extension_medmnist_microscopy/models/target_clean/model_5000/checkpoints/best.pt",
+        "best_epoch": 79,
+        "md5": "103f5c4eda854fc27f9a26fb62967612"
+      }
+    },
+    "smoothing_sigma": {}
+  },
+  "minimum_passing_shot_count": {
+    "all": {
+      "AI-original": 1000
+    },
+    "blood": {
+      "AI-original": 500
+    },
+    "path": {
+      "AI-original": 5000
+    }
+  },
+  "reduction_factor_vs_10000": {
+    "all": {
+      "AI-original": 10.0
+    },
+    "blood": {
+      "AI-original": 20.0
+    },
+    "path": {
+      "AI-original": 2.0
+    }
+  },
+  "example_ids": [
+    "blood_test_002765",
+    "blood_test_002103",
+    "blood_test_003004",
+    "path_test_002838",
+    "path_test_006597",
+    "path_test_002868"
+  ],
+  "runtime_s": 90.6
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Train, Validate, Test: Evidence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* layout: single reading column; a pipeline strip on top, then one numbered answer per question with evidence tables */
+  --bg: #f4f5f3; --surface: #ffffff; --ink: #1d2320; --muted: #5b6560; --line: #d9ddd9; --accent: #c2410c;
+  --train: #2a78d6; --val: #1f7a4d; --test: #b42318;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #141816; --surface: #1c211e; --ink: #e7ebe8; --muted: #a2aca6; --line: #313934; --accent: #f08a4b; --train: #6aa8f0; --val: #5cc38f; --test: #f2867b; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #141816; --surface: #1c211e; --ink: #e7ebe8; --muted: #a2aca6; --line: #313934; --accent: #f08a4b; --train: #6aa8f0; --val: #5cc38f; --test: #f2867b; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.6 var(--font-body); }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; }
+h1, h2 { text-wrap: balance; line-height: 1.25; }
+h1 { font-size: 1.8rem; margin: 0 0 .3rem; }
+h2 { font-size: 1.2rem; margin: 2.2rem 0 .5rem; padding-top: .5rem; border-top: 2px solid var(--ink); }
+p, li { max-width: 74ch; }
+.lede { color: var(--muted); }
+code { font-family: var(--font-mono); font-size: .86em; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 0 .25em; }
+.strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin: 1.2rem 0; }
+.step { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--muted); border-radius: 8px; padding: .7rem .8rem; }
+.step b { display: block; font-size: .95rem; }
+.step span { color: var(--muted); font-size: .85rem; }
+.step.train { border-top-color: var(--train); } .step.val { border-top-color: var(--val); } .step.test { border-top-color: var(--test); }
+.tablebox { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; margin: .8rem 0; }
+table { border-collapse: collapse; width: 100%; font-size: .88rem; font-variant-numeric: tabular-nums; }
+th, td { padding: .45rem .7rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+.ans { font-weight: 600; }
+.chip { font-size: .78rem; font-weight: 600; padding: .05rem .5rem; border-radius: 99px; border: 1px solid currentColor; white-space: nowrap; }
+.chip.train { color: var(--train); } .chip.val { color: var(--val); } .chip.test { color: var(--test); }
+.note { border-left: 3px solid var(--accent); padding: .2rem 0 .2rem .9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>How the U-Net was trained, validated and tested</h1>
+<p class="lede">MedMNIST microscopy extension (blood smears + H&amp;E tissue) and its Poisson-noise version. Every statement below was checked against the project code, the frozen training reports, freeze records and result CSVs. The onion study used the same procedure on its own split (341 / 75 / 74 images).</p>
+
+<div class="strip">
+  <div class="step"><b>1 · Dataset</b><span>10,000 images from the official MedMNIST splits</span></div>
+  <div class="step train"><b>2 · Train</b><span>7,000 training images, 32 measurement sequences each</span></div>
+  <div class="step val"><b>3 · Validate each epoch</b><span>1,000 validation images × 3 sequences</span></div>
+  <div class="step val"><b>4 · Select + freeze</b><span>lowest validation MSE → <code>best.pt</code>, MD5 recorded</span></div>
+  <div class="step test"><b>5 · Test once</b><span>2,000 test images × 4 sequences</span></div>
+</div>
+
+<h2>1. Training data</h2>
+<p class="ans">The U-Net was trained on the 7,000 <span class="chip train">train</span> images only: 3,500 BloodMNIST + 3,500 PathMNIST.</p>
+<ul>
+<li>Source split: <code>data/extension_medmnist/processed/objects_64.npz</code> (field <code>split</code>), drawn from MedMNIST's official train split. Counts in the file: train 3,500 + 3,500, validation 500 + 500, test 1,000 + 1,000.</li>
+<li>Training code takes only <code>split == "train"</code>: <code>ext_train.py:76</code>, <code>ext_poisson_train.py:70</code>. The training pool <code>pool/pool_train*.npy</code> holds exactly those 7,000 IDs (<code>pool_meta.json</code>: 7,000 IDs, all prefixed <code>…_train_…</code>).</li>
+<li>Each training image has 32 simulated measurement sequences; each epoch uses one of them per image (<code>ext_poisson_train.py:100</code>), so the network sees 7,000 input–target pairs per epoch.</li>
+<li>Input = DGI image from <em>N</em> shots; target = the original clean image (<code>ext_poisson_train.py:74–75</code>). Loss MSE, Adam 1 × 10⁻⁴, batch 16, at most 80 epochs.</li>
+<li>Every one of the 20 training reports records <code>n_train_images = 7000</code>, <code>realisations_per_image = 32</code>.</li>
+</ul>
+
+<h2>2. Validation during training</h2>
+<p class="ans">Yes: a separate <span class="chip val">validation</span> set was scored after <b>every epoch</b>.</p>
+<ul>
+<li>Validation (selection) set: all 1,000 validation images (500 + 500) × 3 measurement sequences (seeds 2040–2042) = <b>3,000 pairs</b>. Recorded as <code>selection_pairs = 3000</code> in every training report; stored in <code>pool/selection_val.npz</code> (1,000 IDs, all <code>…_val_…</code>).</li>
+<li>Scored after each epoch: <code>ext_poisson_train.py:121</code> (<code>ev = sel_eval(model)</code>), likewise <code>ext_train.py:134</code>. The per-epoch values are in each model's <code>history.csv</code> (columns <code>val_loss, val_psnr, val_ssim, val_correlation</code>; for example, 81 rows = epoch 0 + 80 epochs for p10 / 1,000 shots).</li>
+</ul>
+
+<h2>3. Model selection</h2>
+<p class="ans">The checkpoint with the <b>lowest validation MSE</b> (validation loss) was kept as <code>best.pt</code>. PSNR, SSIM and correlation were logged but not used for selection.</p>
+<ul>
+<li>Code: <code>improved = ev["loss"] &lt; best</code> → save <code>best.pt</code> (<code>ext_poisson_train.py:130–133</code>; <code>ext_train.py:142–145</code>).</li>
+<li>Early stopping: training stops after 10 epochs without improvement (<code>since &gt;= args.patience</code>, line 139 / 151). Best epochs ranged from 59 to 80; 7 of 20 models stopped early.</li>
+<li>After training, the best checkpoint was reloaded and re-scored; the reload matched the logged numbers exactly (<code>best_reload_max_abs_diff = 0.0</code> in every report).</li>
+<li>A second, separate validation step followed: <code>ext_poisson_evaluate.py --level …</code> (default split = validation) scored the selected checkpoints on the same 1,000 validation images with 4 new sequences (2026–2029; 4,000 pairs) and applied the pass rule. This run then <b>froze</b> the checkpoints by recording their MD5 hashes in <code>results/…/frozen_for_test.json</code> (<code>ext_poisson_evaluate.py:188</code>).</li>
+<li>The Gaussian-smoothing σ of the smoothed-DGI baseline was tuned on <b>training</b> images (<code>tune_sigmas</code>, line 99) and frozen with the checkpoints.</li>
+</ul>
+
+<h2>4. Testing</h2>
+<p class="ans">Yes: the frozen models were tested once on a separate <span class="chip test">test</span> set of <b>2,000 images</b> (1,000 blood + 1,000 tissue) × 4 measurement sequences = 8,000 pairs per model family.</p>
+<ul>
+<li>The test images come from MedMNIST's official test split. For PathMNIST this split (CRC-VAL-HE-7K) comes from a different clinical centre than the training images.</li>
+<li>Guards in the code (<code>ext_poisson_evaluate.py:86–95</code>, <code>ext_evaluate.py:144–153</code>): the test split is loaded only with <code>--final-test</code> and only if <code>frozen_for_test.json</code> exists; every checkpoint's MD5 must equal the frozen value; the script refuses to run if a test report already exists.</li>
+<li>Result files: <code>results/level_{p05,p10,p30}/test/</code> and <code>outputs/extension_medmnist_microscopy/results/target_{clean,dgi10k}/test/</code> (<code>per_image_results.csv</code> has 2,000 test IDs × 4 seeds; <code>comparisons.csv</code>; <code>evaluation_report.json</code>).</li>
+</ul>
+
+<h2>5. What the test compared</h2>
+<p class="ans">Yes: every U-Net output and every conventional DGI image was scored against the original image.</p>
+<div class="tablebox"><table>
+<thead><tr><th>Metric</th><th>Column in the CSVs</th><th>Code</th></tr></thead>
+<tbody>
+<tr><td>SSIM (scikit-image, data range 1)</td><td><code>SSIM</code></td><td><code>src/metrics.py:19</code></td></tr>
+<tr><td>PSNR (dB)</td><td><code>PSNR</code></td><td><code>src/metrics.py:18</code></td></tr>
+<tr><td>MSE</td><td><code>MSE</code></td><td><code>src/metrics.py:20</code></td></tr>
+<tr><td>NCC: zero-mean normalised cross-correlation, i.e. Pearson <em>r</em></td><td><code>correlation</code></td><td><code>src/metrics.py:21</code></td></tr>
+<tr><td>Edge correlation (Sobel)</td><td><code>edge_r</code></td><td><code>final_evaluate.py:60</code></td></tr>
+</tbody></table></div>
+<ul>
+<li>Methods scored: conventional DGI-500 … DGI-10000, Gaussian-smoothed DGI-<em>N</em>, the U-Net (AI-original-<em>N</em>), and in the noise runs the noise-free DGI-10000 as context.</li>
+<li>Pass rule (fixed before training): the U-Net must not be worse than DGI-10000, judged by the lower 95% bootstrap bound ≥ −0.02 SSIM and ≥ −0.01 <em>r</em> (<code>ext_poisson_evaluate.py:154</code>). The test also reports U-Net vs DGI at the same shot count.</li>
+<li>NCC is reported as Pearson <em>r</em> (the CSV column is named <code>correlation</code>); there is no separate "NCC" column.</li>
+</ul>
+
+<h2>6. Separation of the three sets</h2>
+<p class="ans">Training, validation and test images are completely separate.</p>
+<ul>
+<li>10,000 unique image IDs; overlaps train–val 0, train–test 0, val–test 0. No two of the 10,000 images are pixel-identical, and the duplicate screen found no near-duplicate or flipped/rotated copies among them.</li>
+<li>The training scripts assert that no test ID is in the training or selection data (<code>ext_poisson_train.py:72, 78</code>); every report records <code>test_ids_in_training_or_selection = 0</code>.</li>
+<li>The network input is the DGI image only. The original image is used as the training target (training images) and for scoring, never as an input.</li>
+<li>All test result files contain only <code>…_test_…</code> IDs; all validation files only <code>…_val_…</code> IDs.</li>
+</ul>
+<p class="note"><b>Disclosure:</b> before any model was trained, the evaluation code was smoke-tested on 24 test images with <em>untrained</em> placeholder networks to check that the script runs. Nothing from it was used for training, tuning or selection. The test set was never used for training or model selection.</p>
+
+<h2>7. Noise levels</h2>
+<p class="ans">Yes: a separate set of models was trained, validated, frozen and tested for each noise level.</p>
+<div class="tablebox"><table>
+<thead><tr><th>Noise</th><th>Models (500 / 1,000 / 2,000 / 5,000 shots)</th><th>Training + validation data</th><th>Frozen</th><th>Test used frozen checkpoints</th></tr></thead>
+<tbody>
+<tr><td>0%</td><td><code>outputs/extension_medmnist_microscopy/models/target_clean/</code> (4)</td><td>noise-free DGI</td><td>2026-11-02 05:54:13</td><td>yes (MD5 match)</td></tr>
+<tr><td>5%</td><td><code>…_poisson/models/level_p05/</code> (4)</td><td>5% Poisson DGI only</td><td>2026-11-02 14:07:31</td><td>yes</td></tr>
+<tr><td>10%</td><td><code>…_poisson/models/level_p10/</code> (4)</td><td>10% Poisson DGI only</td><td>2026-11-02 14:07:34</td><td>yes</td></tr>
+<tr><td>30%</td><td><code>…_poisson/models/level_p30/</code> (4)</td><td>30% Poisson DGI only</td><td>2026-11-02 14:07:35</td><td>yes</td></tr>
+</tbody></table></div>
+<p>A further 4 noise-free models trained towards the 10,000-shot DGI (<code>target_dgi10k</code>, the onion Phase 1 design) were handled the same way. In total, 20 models were trained, each once, with master seed 0.</p>
+
+<h2>8. Validation performance vs test performance</h2>
+<p>Validation numbers were used to select and freeze; test numbers are the reported results. Minimum number of shots at which the U-Net passes the pre-registered rule against DGI-10000 of the same acquisition (noisy at 5/10/30%), shown as validation → test:</p>
+<div class="tablebox"><table>
+<thead><tr><th>Noise</th><th>All 2,000 images (primary analysis)</th><th>Blood only (1,000)</th><th>Tissue only (1,000)</th></tr></thead>
+<tbody>
+<tr><td>0%</td><td>1,000 → 1,000</td><td>500 → 500</td><td>5,000 → 5,000</td></tr>
+<tr><td>5%</td><td>1,000 → 1,000</td><td>500 → 500</td><td>5,000 → 5,000</td></tr>
+<tr><td>10%</td><td>1,000 → 1,000</td><td>500 → 500</td><td>5,000 → <b>2,000</b> (borderline)</td></tr>
+<tr><td>30%</td><td>1,000 → 1,000</td><td>500 → 500</td><td>2,000 → 2,000</td></tr>
+</tbody></table></div>
+<p><b>1,000 shots is the minimum for all images together at every noise level; it is not the minimum for tissue alone.</b> Tissue at 1,000 shots fails at every noise level on both validation and test (for example, test at 30%: lower bounds −0.042 SSIM and −0.068 <em>r</em>). It passes at 2,000 shots at 10% and 30% noise, and only at 5,000 at 0% and 5%. The earlier pass at 2,000 for tissue at 10–30% is partly because noise weakens the DGI-10000 comparator. Source: <code>comparisons.csv</code> and <code>evaluation_report.json</code> in each <code>results/…/{val,test}/</code> folder; decisions re-derived independently in <code>audit/final_verification/E_pass_fail_by_subset.csv</code> (96 of 96 agree).</p>
+<p>Across all 27 noise-experiment cases (all images, blood and tissue separately, three comparisons) validation and test agree in 25. The two differences are borderline 10% results (tissue against noisy DGI-10000, shown above, and all images against the noise-free DGI-10000).</p>
+
+<h2>The complete sequence</h2>
+<ol>
+<li><b>Dataset preparation</b> (<code>ext_build_dataset.py</code>): download MedMNIST+ 64 × 64 (MD5-checked), draw 3,500 / 500 / 1,000 images per collection from the official splits, screen for duplicates, convert to grey [0, 1].</li>
+<li><b>Protocol</b> (<code>ext_write_protocol.py</code>, <code>ext_poisson_write_protocol.py</code>): design and pass rule written to <code>protocol.json</code> before any training data existed.</li>
+<li><b>Simulation</b> (<code>ext_build_pool.py</code>, <code>ext_poisson_build_pool.py</code>): training pool from training images; validation (selection) set from validation images. No test image is used.</li>
+<li><b>Training</b> (<code>ext_train.py</code>, <code>ext_poisson_train.py</code>): train on 7,000 images; score the 3,000 validation pairs after every epoch; keep the lowest-MSE checkpoint; early stopping.</li>
+<li><b>Validation evaluation and freezing</b> (<code>…evaluate.py</code> without <code>--split test</code>): score the selected checkpoints on validation images with 4 new sequences, apply the pass rule, write MD5s to <code>frozen_for_test.json</code>.</li>
+<li><b>Single test evaluation</b> (<code>…evaluate.py --split test --final-test</code>): load the 2,000 test images, verify the checkpoint MD5s, score U-Net and DGI against the original images, apply the same pass rule. Run once per model family.</li>
+<li><b>Freeze manifests</b>: all results hashed (<code>FREEZE_MANIFEST_extension.md5</code>, 131 files; <code>FREEZE_MANIFEST_poisson.md5</code>, 180 files); all checks pass.</li>
+</ol>
+</div>
+</body>
+</html>

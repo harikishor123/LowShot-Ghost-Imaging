@@ -1,0 +1,223 @@
+{
+  "color_self_test": {
+    "max_abs_roundtrip_err_uint8_grid": 5.960464477539063e-08,
+    "max_abs_roundtrip_err_uint16_grid": 0.0,
+    "monotonic": true,
+    "linear_of_srgb_0.5": 0.21404114365577698,
+    "endpoints": [
+      0.0,
+      1.0
+    ]
+  },
+  "rim_erosion_area_loss_circular_fov": {
+    "median": 0.014085721268726096,
+    "max": 0.01718935561908951
+  },
+  "max_abs_diff_png_vs_npz_srgb": 0.0019532442092895508,
+  "intensity_preservation": {
+    "pearson_r_orig_vs_processed_mean_srgb": 0.9999153051593328,
+    "median_abs_diff": 0.0008683333333333321,
+    "note": "original = audit specimen-region mean (sRGB, 0-1); processed = mean inside FOV mask"
+  },
+  "final_dims": {
+    "width": {
+      "min": 559,
+      "median": 1024.0,
+      "max": 1024
+    },
+    "height": {
+      "min": 579,
+      "median": 1009.5,
+      "max": 1024
+    },
+    "aspect_w_over_h": {
+      "min": 0.5458984375,
+      "median": 1.0143657858791388,
+      "max": 1.768566493955095
+    },
+    "long_side_eq_1024": 490,
+    "long_side_lt_1024_not_upscaled": 0,
+    "top_sizes": [
+      [
+        "1024x579",
+        55
+      ],
+      [
+        "1020x1024",
+        36
+      ],
+      [
+        "1021x1024",
+        28
+      ],
+      [
+        "1023x1024",
+        17
+      ],
+      [
+        "1024x941",
+        17
+      ],
+      [
+        "1024x942",
+        15
+      ],
+      [
+        "1018x1024",
+        12
+      ],
+      [
+        "1024x1021",
+        12
+      ]
+    ],
+    "by_group": {
+      "A": [
+        [
+          "1020x1024",
+          35
+        ],
+        [
+          "1021x1024",
+          27
+        ],
+        [
+          "1023x1024",
+          17
+        ]
+      ],
+      "B": [
+        [
+          "1021x1024",
+          1
+        ]
+      ],
+      "C": [
+        [
+          "1024x787",
+          3
+        ],
+        [
+          "1024x813",
+          3
+        ],
+        [
+          "1024x893",
+          2
+        ]
+      ],
+      "D": [
+        [
+          "1024x579",
+          55
+        ]
+      ],
+      "F": [
+        [
+          "1024x941",
+          17
+        ],
+        [
+          "1024x942",
+          14
+        ],
+        [
+          "1024x943",
+          11
+        ]
+      ]
+    }
+  },
+  "fov_valid_frac": {
+    "A": 0.7759,
+    "B": 0.7751,
+    "C": 0.9999,
+    "D": 0.9999,
+    "F": 0.7735
+  },
+  "boxes": {
+    "orig_in_kept_images": 15340,
+    "kept": 15329,
+    "dropped": {
+      "A_107": "{\"centre_outside_fov_mask\": 1}",
+      "A_123": "{\"centre_outside_fov_mask\": 1}",
+      "A_22": "{\"centre_outside_fov_mask\": 2}",
+      "A_304": "{\"centre_outside_fov_mask\": 1}",
+      "A_32": "{\"centre_outside_fov_mask\": 1}",
+      "A_51": "{\"centre_outside_fov_mask\": 1}",
+      "F_22": "{\"centre_outside_fov_mask\": 1}",
+      "F_33": "{\"centre_outside_fov_mask\": 1}",
+      "F_35": "{\"centre_outside_fov_mask\": 1}",
+      "F_64": "{\"centre_outside_fov_mask\": 1}"
+    }
+  },
+  "split_counts": {
+    "train": 341,
+    "val": 75,
+    "test": 74
+  },
+  "split_by_group": {
+    "train": {
+      "A": 182,
+      "B": 1,
+      "C": 59,
+      "D": 38,
+      "F": 61
+    },
+    "val": {
+      "A": 39,
+      "C": 13,
+      "D": 9,
+      "F": 14
+    },
+    "test": {
+      "A": 39,
+      "C": 13,
+      "D": 8,
+      "F": 14
+    }
+  },
+  "split_classes": {
+    "train": {
+      "d": 1293,
+      "nd": 9012
+    },
+    "val": {
+      "d": 320,
+      "nd": 2116
+    },
+    "test": {
+      "d": 287,
+      "nd": 2301
+    }
+  },
+  "split_flags": {
+    "train": {
+      "flag_blur": 2,
+      "flag_artefact": 8,
+      "flag_low_contrast": 12,
+      "flag_overexposed": 0
+    },
+    "val": {
+      "flag_blur": 1,
+      "flag_artefact": 4,
+      "flag_low_contrast": 3,
+      "flag_overexposed": 0
+    },
+    "test": {
+      "flag_blur": 4,
+      "flag_artefact": 2,
+      "flag_low_contrast": 1,
+      "flag_overexposed": 1
+    }
+  },
+  "dup_groups_with_more_than_one_kept": 0,
+  "kept_from_original_split": {
+    "train->train": 321,
+    "train->test": 70,
+    "train->val": 69,
+    "valid->train": 20,
+    "valid->val": 6,
+    "valid->test": 4
+  }
+}

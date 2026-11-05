@@ -1,0 +1,322 @@
+tuned N=500 in 599s: sigma {'LOW': 1.75, 'MEDIUM': 2.0, 'HIGH': 3.5} tik {'LOW': 31.622776601683793, 'MEDIUM': 316.22776601683796, 'HIGH': 10000.0} tv {'LOW': 0.003, 'MEDIUM': 0.3, 'HIGH': 1.0}
+tuned N=1000 in 610s: sigma {'LOW': 1.375, 'MEDIUM': 1.625, 'HIGH': 3.0} tik {'LOW': 31.622776601683793, 'MEDIUM': 316.22776601683796, 'HIGH': 10000.0} tv {'LOW': 0.01, 'MEDIUM': 0.1, 'HIGH': 1.0}
+tuned N=2000 in 664s: sigma {'LOW': 1.125, 'MEDIUM': 1.375, 'HIGH': 2.25} tik {'LOW': 31.622776601683793, 'MEDIUM': 316.22776601683796, 'HIGH': 10000.0} tv {'LOW': 0.01, 'MEDIUM': 0.1, 'HIGH': 1.0}
+tuned N=5000 in 720s: sigma {'LOW': 0.875, 'MEDIUM': 1.0, 'HIGH': 1.75} tik {'LOW': 31.622776601683793, 'MEDIUM': 316.22776601683796, 'HIGH': 10000.0} tv {'LOW': 0.01, 'MEDIUM': 0.1, 'HIGH': 0.3}
+tuned N=10000 in 738s: sigma {'LOW': 0.75, 'MEDIUM': 0.875, 'HIGH': 1.375} tik {'LOW': 31.622776601683793, 'MEDIUM': 316.22776601683796, 'HIGH': 10000.0} tv {'LOW': 0.01, 'MEDIUM': 0.03, 'HIGH': 0.3}
+val seed 2027 N=500 done in 94s
+val seed 2027 N=1000 done in 96s
+val seed 2027 N=2000 done in 99s
+val seed 2027 N=5000 done in 120s
+val seed 2027 N=10000 done in 125s
+val seed 2028 N=500 done in 85s
+val seed 2028 N=1000 done in 86s
+val seed 2028 N=2000 done in 90s
+val seed 2028 N=5000 done in 114s
+val seed 2028 N=10000 done in 125s
+val seed 2029 N=500 done in 85s
+val seed 2029 N=1000 done in 86s
+val seed 2029 N=2000 done in 90s
+val seed 2029 N=5000 done in 113s
+val seed 2029 N=10000 done in 123s
+sanity sweeps done
+
+PSNR (mean):
+regime  shots  raw DGI  smoothed DGI  pseudoinverse  Tikhonov     TV
+   LOW    500   12.036        21.429         19.713    19.717 25.450
+   LOW   1000   14.144        23.203         20.303    20.317 27.568
+   LOW   2000   16.638        24.880         21.498    21.590 30.103
+   LOW   5000   20.248        27.061         24.801    27.016 33.989
+   LOW  10000   23.138        28.728         32.887    33.008 36.558
+MEDIUM    500   10.153        19.258         19.038    19.322 22.839
+MEDIUM   1000   12.077        21.432         18.812    19.481 23.948
+MEDIUM   2000   14.343        23.355         17.842    19.744 25.729
+MEDIUM   5000   17.728        25.493         14.581    20.984 27.152
+MEDIUM  10000   20.530        27.185         21.977    23.464 29.443
+  HIGH    500    6.449        13.881         14.793    19.188 19.206
+  HIGH   1000    7.252        15.093         12.844    19.226 20.837
+  HIGH   2000    8.428        16.753         10.101    19.245 20.725
+  HIGH   5000   10.679        19.585          7.229    19.312 22.615
+  HIGH  10000   12.850        21.721         11.453    19.490 23.622
+
+SSIM (mean):
+regime  shots  raw DGI  smoothed DGI  pseudoinverse  Tikhonov    TV
+   LOW    500    0.109         0.488          0.321     0.322 0.649
+   LOW   1000    0.175         0.573          0.374     0.377 0.768
+   LOW   2000    0.275         0.658          0.470     0.477 0.856
+   LOW   5000    0.449         0.753          0.650     0.735 0.931
+   LOW  10000    0.593         0.813          0.890     0.892 0.960
+MEDIUM    500    0.072         0.416          0.246     0.271 0.470
+MEDIUM   1000    0.117         0.498          0.257     0.293 0.577
+MEDIUM   2000    0.189         0.586          0.265     0.339 0.677
+MEDIUM   5000    0.330         0.687          0.217     0.453 0.740
+MEDIUM  10000    0.465         0.759          0.531     0.586 0.833
+  HIGH    500    0.024         0.264          0.076     0.269 0.312
+  HIGH   1000    0.034         0.292          0.066     0.269 0.361
+  HIGH   2000    0.054         0.342          0.053     0.264 0.351
+  HIGH   5000    0.099         0.440          0.035     0.270 0.492
+  HIGH  10000    0.158         0.522          0.121     0.300 0.520
+
+Pearson_r (mean):
+regime  shots  raw DGI  smoothed DGI  pseudoinverse  Tikhonov    TV
+   LOW    500    0.294         0.756          0.324     0.323 0.865
+   LOW   1000    0.405         0.819          0.468     0.469 0.918
+   LOW   2000    0.536         0.869          0.646     0.650 0.953
+   LOW   5000    0.719         0.918          0.854     0.899 0.980
+   LOW  10000    0.830         0.945          0.970     0.970 0.988
+MEDIUM    500    0.222         0.678          0.243     0.242 0.738
+MEDIUM   1000    0.310         0.754          0.338     0.346 0.804
+MEDIUM   2000    0.419         0.819          0.424     0.467 0.873
+MEDIUM   5000    0.597         0.881          0.445     0.658 0.915
+MEDIUM  10000    0.729         0.919          0.768     0.794 0.943
+  HIGH    500    0.087         0.421          0.094     0.076 0.441
+  HIGH   1000    0.123         0.511          0.122     0.128 0.528
+  HIGH   2000    0.173         0.587          0.135     0.188 0.528
+  HIGH   5000    0.268         0.690          0.121     0.292 0.728
+  HIGH  10000    0.364         0.754          0.305     0.392 0.789
+
+selected parameters:
+regime  shots  smoothing_sigma  tikhonov_lambda  tv_lambda  tv_rho
+   LOW    500            1.750        31.622777      0.003    0.03
+   LOW   1000            1.375        31.622777      0.010    0.10
+   LOW   2000            1.125        31.622777      0.010    0.10
+   LOW   5000            0.875        31.622777      0.010    0.10
+   LOW  10000            0.750        31.622777      0.010    0.10
+MEDIUM    500            2.000       316.227766      0.300    3.00
+MEDIUM   1000            1.625       316.227766      0.100    1.00
+MEDIUM   2000            1.375       316.227766      0.100    1.00
+MEDIUM   5000            1.000       316.227766      0.100    1.00
+MEDIUM  10000            0.875       316.227766      0.030    0.30
+  HIGH    500            3.500     10000.000000      1.000   10.00
+  HIGH   1000            3.000     10000.000000      1.000   10.00
+  HIGH   2000            2.250     10000.000000      1.000   10.00
+  HIGH   5000            1.750     10000.000000      0.300    3.00
+  HIGH  10000            1.375     10000.000000      0.300    3.00
+
+bucket statistics:
+                seed  clean_mean  clean_std_over_patterns_median  noise_std_median  fluct_snr_median  dc_snr_median  negative_readings
+split regime                                                                                                                          
+train HIGH    2026.0     515.264                           9.890            13.093             0.754         41.419                0.0
+      LOW     2026.0     515.264                           9.890             0.943            10.410        573.630                0.0
+      MEDIUM  2026.0     515.264                           9.890             3.310             2.991        164.350                0.0
+val   HIGH    2028.0     533.733                          10.384            13.298             0.778         43.079                0.0
+      LOW     2028.0     533.733                          10.384             0.965            10.648        589.778                0.0
+      MEDIUM  2028.0     533.733                          10.384             3.382             3.069        168.890                0.0
+
+useful regime verdict: {
+ "LOW": {
+  "gain_10000_vs_500_1000_db": 8.990178096618777,
+  "best_PSNR_10000": 36.558057533133756,
+  "best_SSIM_10000": 0.9597449274666261,
+  "meets_gain": true,
+  "not_trivial": true,
+  "not_impossible": true,
+  "useful": true
+ },
+ "MEDIUM": {
+  "gain_10000_vs_500_1000_db": 5.495210983865189,
+  "best_PSNR_10000": 29.443095540733232,
+  "best_SSIM_10000": 0.833175712248982,
+  "meets_gain": true,
+  "not_trivial": true,
+  "not_impossible": true,
+  "useful": true
+ },
+ "HIGH": {
+  "gain_10000_vs_500_1000_db": 2.7842151700164557,
+  "best_PSNR_10000": 23.62150555223316,
+  "best_SSIM_10000": 0.5217408645330017,
+  "meets_gain": false,
+  "not_trivial": true,
+  "not_impossible": true,
+  "useful": false
+ }
+}
+
+sanity: {
+ "A_more_photons_better_regimes": {
+  "raw DGI-500": true,
+  "raw DGI-1000": true,
+  "raw DGI-2000": true,
+  "raw DGI-5000": true,
+  "raw DGI-10000": true,
+  "smoothed DGI-500": true,
+  "smoothed DGI-1000": true,
+  "smoothed DGI-2000": true,
+  "smoothed DGI-5000": true,
+  "smoothed DGI-10000": true,
+  "pseudoinverse-500": true,
+  "pseudoinverse-1000": true,
+  "pseudoinverse-2000": true,
+  "pseudoinverse-5000": true,
+  "pseudoinverse-10000": true,
+  "Tikhonov-500": true,
+  "Tikhonov-1000": true,
+  "Tikhonov-2000": true,
+  "Tikhonov-5000": true,
+  "Tikhonov-10000": true,
+  "TV-500": true,
+  "TV-1000": true,
+  "TV-2000": true,
+  "TV-5000": true,
+  "TV-10000": true
+ },
+ "B_more_shots_better": {
+  "raw DGI-LOW": true,
+  "raw DGI-MEDIUM": true,
+  "raw DGI-HIGH": true,
+  "smoothed DGI-LOW": true,
+  "smoothed DGI-MEDIUM": true,
+  "smoothed DGI-HIGH": true,
+  "pseudoinverse-LOW": true,
+  "pseudoinverse-MEDIUM": false,
+  "pseudoinverse-HIGH": false,
+  "Tikhonov-LOW": true,
+  "Tikhonov-MEDIUM": true,
+  "Tikhonov-HIGH": true,
+  "TV-LOW": true,
+  "TV-MEDIUM": true,
+  "TV-HIGH": false
+ },
+ "C_more_detector_noise_worse": {
+  "Tikhonov-1000": true,
+  "Tikhonov-10000": true,
+  "smoothed DGI-1000": true,
+  "smoothed DGI-10000": true
+ },
+ "D_high_budget_approaches_noise_free": {
+  "Tikhonov-1000": {
+   "noise_free_PSNR": 20.497049603675762,
+   "1e10_PSNR": 20.49704319110522,
+   "1e8_PSNR": 20.496484548176877
+  },
+  "Tikhonov-10000": {
+   "noise_free_PSNR": Infinity,
+   "1e10_PSNR": 77.82961957569216,
+   "1e8_PSNR": 57.8920454892893
+  },
+  "smoothed DGI-1000": {
+   "noise_free_PSNR": 23.40643811401184,
+   "1e10_PSNR": 23.406427700565953,
+   "1e8_PSNR": 23.40557286702531
+  },
+  "smoothed DGI-10000": {
+   "noise_free_PSNR": 28.990840160300486,
+   "1e10_PSNR": 28.990825768234785,
+   "1e8_PSNR": 28.990046787652798
+  }
+ },
+ "E_low_budget_hard": {
+  "Tikhonov-1000": {
+   "1e2_PSNR": 18.980232345204133,
+   "1e2_SSIM": 0.2307497391553511
+  },
+  "Tikhonov-10000": {
+   "1e2_PSNR": 19.156761663066423,
+   "1e2_SSIM": 0.25461376034453714
+  },
+  "smoothed DGI-1000": {
+   "1e2_PSNR": 12.209913883417228,
+   "1e2_SSIM": 0.2425086650522456
+  },
+  "smoothed DGI-10000": {
+   "1e2_PSNR": 14.632720699196849,
+   "1e2_SSIM": 0.2803952462113368
+  }
+ },
+ "photon_sweep_monotone_finite_budgets": {
+  "Tikhonov-1000": false,
+  "Tikhonov-10000": false,
+  "smoothed DGI-1000": true,
+  "smoothed DGI-10000": true
+ }
+}
+
+checks: {
+ "useful_regime_criteria": {
+  "min_gain_db_10000_over_500_and_1000": 3.0,
+  "max_best_psnr_10000_db": 45.0,
+  "min_best_ssim_10000": 0.5
+ },
+ "dgi_from_buckets_matches_phase2A_clean_max_abs_diff": 5.960464477539063e-08,
+ "parameters_at_grid_edge": {
+  "sigma": [],
+  "tikhonov": [],
+  "tv": []
+ },
+ "tv_convergence": [
+  {
+   "regime": "LOW",
+   "shots": 1000,
+   "lambda": 0.01,
+   "PSNR_200it_meanMSE": 24.855783666673034,
+   "PSNR_600it_meanMSE": 24.85565903063309,
+   "max_abs_image_change": 0.000909440196942629,
+   "trace_first_last_objective": [
+    2.716474055412012,
+    1.7585095051906052
+   ]
+  },
+  {
+   "regime": "LOW",
+   "shots": 10000,
+   "lambda": 0.01,
+   "PSNR_200it_meanMSE": 36.09693153699417,
+   "PSNR_600it_meanMSE": 36.09711006408505,
+   "max_abs_image_change": 0.0010135622330563173,
+   "trace_first_last_objective": [
+    4.015100285864484,
+    3.2611781888881453
+   ]
+  },
+  {
+   "regime": "MEDIUM",
+   "shots": 1000,
+   "lambda": 0.1,
+   "PSNR_200it_meanMSE": 22.365070534044953,
+   "PSNR_600it_meanMSE": 22.364905149851072,
+   "max_abs_image_change": 0.0009805790484216925,
+   "trace_first_last_objective": [
+    32.27970435612787,
+    22.025578241253815
+   ]
+  },
+  {
+   "regime": "MEDIUM",
+   "shots": 10000,
+   "lambda": 0.03,
+   "PSNR_200it_meanMSE": 28.684769637958546,
+   "PSNR_600it_meanMSE": 28.684761747955918,
+   "max_abs_image_change": 0.000693341770380397,
+   "trace_first_last_objective": [
+    24.861035384402193,
+    21.64998848793828
+   ]
+  },
+  {
+   "regime": "HIGH",
+   "shots": 1000,
+   "lambda": 1.0,
+   "PSNR_200it_meanMSE": 19.43505680228465,
+   "PSNR_600it_meanMSE": 19.433611924965724,
+   "max_abs_image_change": 0.0070612368489682,
+   "trace_first_last_objective": [
+    399.5131345779734,
+    334.92815719389927
+   ]
+  },
+  {
+   "regime": "HIGH",
+   "shots": 10000,
+   "lambda": 0.3,
+   "PSNR_200it_meanMSE": 21.830842238775826,
+   "PSNR_600it_meanMSE": 21.8301609307945,
+   "max_abs_image_change": 0.0018683586012292475,
+   "trace_first_last_objective": [
+    356.3555125481049,
+    330.96957362890873
+   ]
+  }
+ ]
+}
+
+5461.4 s -> C:\Users\vishn\Downloads\Onion-CNN-Final.v1-onion-original-v1.yolov8\outputs\phase4a_noisy_baselines

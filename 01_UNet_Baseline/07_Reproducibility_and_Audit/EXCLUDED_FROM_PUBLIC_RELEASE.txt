@@ -1,0 +1,18 @@
+# Files kept out of the PUBLIC repository (decision 2026-11-05: repository is public). They stay on disk.
+# One project-relative path per line. Explanation: EXCLUDED_FROM_PUBLIC_RELEASE.md
+thesis/MTP_Thesis_Final_with_extension.md
+thesis/merge_proposal/MERGE_DIFF.txt
+thesis/merge_proposal/THESIS_MERGE_PROPOSAL.md
+thesis/merge_proposal/draft_extension_sections_BEFORE_corrections.md
+thesis/draft_extension_sections.md
+thesis/ext_draft_template.md
+thesis/MTP_Thesis_Final.md
+thesis/review/GUIDE_REVIEW_PACKAGE.md
+thesis/review/PLACEHOLDERS_TO_PROVIDE.md
+thesis/review/REQUIRED_INFORMATION.md
+thesis/merge_proposal/PRESENTATION_COMPARISON.md
+presentation/VIVA_QA.md
+presentation/PPT_FINAL_CHECK.md
+presentation/REVIEW_DRAFT_CORRECTIONS.md
+presentation/build_deck.js
+DECISIONS_REQUIRED.md

@@ -1,0 +1,49 @@
+{
+  "images": {
+    "C_16": "train",
+    "A_103": "val",
+    "A_115": "test"
+  },
+  "batched_patterns_identical_to_single_call": true,
+  "C_16_object_identical_to_phase1": true,
+  "patterns_identical_to_phase1": true,
+  "streaming_vs_validated_batch_max_abs_diff_estimate": 5.0562887210503504e-12,
+  "streaming_vs_validated_batch_max_abs_diff_k": 1.0547118733938987e-15,
+  "C_16_metrics_vs_phase1b_max_abs_diff": 1.7141843500212417e-12,
+  "ordering": {
+    "A_103": {
+      "500_worse_than_10000": true,
+      "1000_better_than_500": true,
+      "5000_better_than_1000": true,
+      "unclipped_mse_over_theory": {
+        "500": 0.897,
+        "1000": 0.933,
+        "5000": 1.017,
+        "10000": 0.993
+      }
+    },
+    "A_115": {
+      "500_worse_than_10000": true,
+      "1000_better_than_500": true,
+      "5000_better_than_1000": true,
+      "unclipped_mse_over_theory": {
+        "500": 0.976,
+        "1000": 0.974,
+        "5000": 0.994,
+        "10000": 0.992
+      }
+    },
+    "C_16": {
+      "500_worse_than_10000": true,
+      "1000_better_than_500": true,
+      "5000_better_than_1000": true,
+      "unclipped_mse_over_theory": {
+        "500": 1.074,
+        "1000": 0.993,
+        "5000": 1.003,
+        "10000": 0.995
+      }
+    }
+  },
+  "PASSED": true
+}

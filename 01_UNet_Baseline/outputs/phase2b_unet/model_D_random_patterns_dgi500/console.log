@@ -1,0 +1,207 @@
+U-Net 1,925,025 params | train seeds (10001000, 10080340) | val seeds [2040, 2041, 2042] | unseen [2027, 2028, 2029]
+{
+ "n_train": 341,
+ "n_val": 75,
+ "test_ids_loaded": 0,
+ "objects_vs_targets_max_abs_diff": 0.0,
+ "train_seed_range": [
+  10001000,
+  10080340
+ ],
+ "train_seeds_unique": true,
+ "train_seeds_overlap_reserved": false,
+ "val_unseen_overlap": [],
+ "dgi_single_seed2026_vs_phase2A_max_abs_diff": 0.0
+}
+epoch   1: train 0.06443 | val(2040-42) 0.03533 | PSNR 16.16 SSIM 0.148 r 0.342  *best | gen 10.4s train 5.9s
+epoch   2: train 0.02884 | val(2040-42) 0.02491 | PSNR 17.47 SSIM 0.201 r 0.421  *best | gen 10.5s train 5.6s
+epoch   3: train 0.02211 | val(2040-42) 0.02029 | PSNR 18.34 SSIM 0.242 r 0.480  *best | gen 9.2s train 5.9s
+epoch   4: train 0.01868 | val(2040-42) 0.01772 | PSNR 18.95 SSIM 0.273 r 0.528  *best | gen 7.9s train 5.6s
+epoch   5: train 0.01659 | val(2040-42) 0.01588 | PSNR 19.47 SSIM 0.297 r 0.560  *best | gen 7.8s train 5.5s
+epoch   6: train 0.01516 | val(2040-42) 0.01461 | PSNR 19.86 SSIM 0.315 r 0.586  *best | gen 7.9s train 5.4s
+epoch   7: train 0.01412 | val(2040-42) 0.01364 | PSNR 20.20 SSIM 0.329 r 0.602  *best | gen 7.9s train 5.5s
+epoch   8: train 0.01330 | val(2040-42) 0.01286 | PSNR 20.48 SSIM 0.343 r 0.622  *best | gen 8.1s train 5.6s
+epoch   9: train 0.01251 | val(2040-42) 0.01217 | PSNR 20.74 SSIM 0.356 r 0.640  *best | gen 7.9s train 5.4s
+epoch  10: train 0.01201 | val(2040-42) 0.01159 | PSNR 20.99 SSIM 0.367 r 0.655  *best | gen 7.9s train 5.6s
+epoch  11: train 0.01143 | val(2040-42) 0.01107 | PSNR 21.22 SSIM 0.379 r 0.670  *best | gen 7.9s train 5.5s
+epoch  12: train 0.01094 | val(2040-42) 0.01079 | PSNR 21.34 SSIM 0.388 r 0.679  *best | gen 7.9s train 5.6s
+epoch  13: train 0.01062 | val(2040-42) 0.01033 | PSNR 21.59 SSIM 0.399 r 0.693  *best | gen 8.0s train 5.4s
+epoch  14: train 0.01023 | val(2040-42) 0.00997 | PSNR 21.80 SSIM 0.407 r 0.704  *best | gen 7.8s train 5.4s
+epoch  15: train 0.00993 | val(2040-42) 0.00982 | PSNR 21.88 SSIM 0.418 r 0.714  *best | gen 7.6s train 5.5s
+epoch  16: train 0.00962 | val(2040-42) 0.00937 | PSNR 22.14 SSIM 0.424 r 0.722  *best | gen 7.7s train 5.4s
+epoch  17: train 0.00942 | val(2040-42) 0.00922 | PSNR 22.23 SSIM 0.432 r 0.728  *best | gen 7.7s train 5.4s
+epoch  18: train 0.00916 | val(2040-42) 0.00895 | PSNR 22.38 SSIM 0.439 r 0.735  *best | gen 7.9s train 5.5s
+epoch  19: train 0.00898 | val(2040-42) 0.00880 | PSNR 22.48 SSIM 0.446 r 0.740  *best | gen 7.8s train 5.5s
+epoch  20: train 0.00882 | val(2040-42) 0.00858 | PSNR 22.60 SSIM 0.449 r 0.743  *best | gen 7.8s train 5.4s
+epoch  21: train 0.00869 | val(2040-42) 0.00848 | PSNR 22.66 SSIM 0.455 r 0.750  *best | gen 7.8s train 5.4s
+epoch  22: train 0.00852 | val(2040-42) 0.00833 | PSNR 22.76 SSIM 0.460 r 0.754  *best | gen 7.8s train 5.4s
+epoch  23: train 0.00842 | val(2040-42) 0.00821 | PSNR 22.84 SSIM 0.465 r 0.756  *best | gen 7.8s train 5.4s
+epoch  24: train 0.00828 | val(2040-42) 0.00807 | PSNR 22.93 SSIM 0.470 r 0.761  *best | gen 7.8s train 5.5s
+epoch  25: train 0.00821 | val(2040-42) 0.00804 | PSNR 22.95 SSIM 0.474 r 0.765  *best | gen 7.8s train 5.5s
+epoch  26: train 0.00812 | val(2040-42) 0.00795 | PSNR 23.00 SSIM 0.476 r 0.767  *best | gen 7.8s train 5.5s
+epoch  27: train 0.00794 | val(2040-42) 0.00785 | PSNR 23.07 SSIM 0.481 r 0.768  *best | gen 7.8s train 5.6s
+epoch  28: train 0.00791 | val(2040-42) 0.00794 | PSNR 23.01 SSIM 0.482 r 0.773 | gen 7.7s train 5.5s
+epoch  29: train 0.00782 | val(2040-42) 0.00769 | PSNR 23.17 SSIM 0.487 r 0.774  *best | gen 8.2s train 5.5s
+epoch  30: train 0.00772 | val(2040-42) 0.00776 | PSNR 23.15 SSIM 0.489 r 0.774 | gen 8.6s train 5.9s
+epoch  31: train 0.00771 | val(2040-42) 0.00754 | PSNR 23.27 SSIM 0.493 r 0.778  *best | gen 8.6s train 5.4s
+epoch  32: train 0.00763 | val(2040-42) 0.00752 | PSNR 23.29 SSIM 0.495 r 0.779  *best | gen 8.6s train 5.4s
+epoch  33: train 0.00755 | val(2040-42) 0.00739 | PSNR 23.36 SSIM 0.497 r 0.782  *best | gen 8.0s train 5.5s
+epoch  34: train 0.00757 | val(2040-42) 0.00748 | PSNR 23.33 SSIM 0.499 r 0.781 | gen 7.8s train 5.4s
+epoch  35: train 0.00749 | val(2040-42) 0.00737 | PSNR 23.40 SSIM 0.503 r 0.785  *best | gen 8.9s train 5.6s
+epoch  36: train 0.00747 | val(2040-42) 0.00733 | PSNR 23.42 SSIM 0.504 r 0.786  *best | gen 8.2s train 5.5s
+epoch  37: train 0.00736 | val(2040-42) 0.00731 | PSNR 23.46 SSIM 0.506 r 0.787  *best | gen 8.0s train 5.5s
+epoch  38: train 0.00729 | val(2040-42) 0.00731 | PSNR 23.46 SSIM 0.509 r 0.791  *best | gen 8.0s train 5.4s
+epoch  39: train 0.00728 | val(2040-42) 0.00715 | PSNR 23.53 SSIM 0.510 r 0.791  *best | gen 8.0s train 5.4s
+epoch  40: train 0.00736 | val(2040-42) 0.00710 | PSNR 23.57 SSIM 0.511 r 0.792  *best | gen 7.7s train 5.4s
+epoch  41: train 0.00725 | val(2040-42) 0.00718 | PSNR 23.53 SSIM 0.512 r 0.795 | gen 8.0s train 5.5s
+epoch  42: train 0.00720 | val(2040-42) 0.00706 | PSNR 23.60 SSIM 0.514 r 0.794  *best | gen 8.1s train 5.5s
+epoch  43: train 0.00714 | val(2040-42) 0.00702 | PSNR 23.64 SSIM 0.516 r 0.796  *best | gen 8.1s train 5.4s
+epoch  44: train 0.00712 | val(2040-42) 0.00701 | PSNR 23.65 SSIM 0.518 r 0.797  *best | gen 8.0s train 5.4s
+epoch  45: train 0.00705 | val(2040-42) 0.00701 | PSNR 23.67 SSIM 0.519 r 0.797  *best | gen 7.9s train 5.6s
+epoch  46: train 0.00702 | val(2040-42) 0.00700 | PSNR 23.67 SSIM 0.521 r 0.800  *best | gen 8.4s train 5.4s
+epoch  47: train 0.00706 | val(2040-42) 0.00696 | PSNR 23.68 SSIM 0.523 r 0.799  *best | gen 8.2s train 5.3s
+epoch  48: train 0.00698 | val(2040-42) 0.00701 | PSNR 23.69 SSIM 0.522 r 0.799 | gen 8.0s train 5.8s
+epoch  49: train 0.00697 | val(2040-42) 0.00686 | PSNR 23.77 SSIM 0.525 r 0.803  *best | gen 8.0s train 5.4s
+epoch  50: train 0.00690 | val(2040-42) 0.00687 | PSNR 23.77 SSIM 0.526 r 0.804 | gen 7.7s train 5.5s
+epoch  51: train 0.00688 | val(2040-42) 0.00680 | PSNR 23.82 SSIM 0.527 r 0.804  *best | gen 8.2s train 5.3s
+epoch  52: train 0.00691 | val(2040-42) 0.00693 | PSNR 23.76 SSIM 0.527 r 0.802 | gen 7.9s train 5.4s
+epoch  53: train 0.00683 | val(2040-42) 0.00682 | PSNR 23.81 SSIM 0.530 r 0.805 | gen 7.8s train 5.7s
+epoch  54: train 0.00687 | val(2040-42) 0.00682 | PSNR 23.82 SSIM 0.530 r 0.806 | gen 8.9s train 5.5s
+epoch  55: train 0.00684 | val(2040-42) 0.00675 | PSNR 23.87 SSIM 0.533 r 0.807  *best | gen 8.5s train 5.5s
+epoch  56: train 0.00677 | val(2040-42) 0.00674 | PSNR 23.88 SSIM 0.533 r 0.808  *best | gen 7.8s train 5.3s
+epoch  57: train 0.00682 | val(2040-42) 0.00674 | PSNR 23.89 SSIM 0.534 r 0.808  *best | gen 7.8s train 5.4s
+epoch  58: train 0.00675 | val(2040-42) 0.00680 | PSNR 23.84 SSIM 0.534 r 0.810 | gen 7.9s train 5.4s
+epoch  59: train 0.00683 | val(2040-42) 0.00673 | PSNR 23.91 SSIM 0.537 r 0.812  *best | gen 7.8s train 5.5s
+epoch  60: train 0.00667 | val(2040-42) 0.00662 | PSNR 23.97 SSIM 0.539 r 0.812  *best | gen 7.8s train 5.4s
+epoch  61: train 0.00671 | val(2040-42) 0.00684 | PSNR 23.83 SSIM 0.539 r 0.814 | gen 7.9s train 5.5s
+epoch  62: train 0.00670 | val(2040-42) 0.00659 | PSNR 24.01 SSIM 0.540 r 0.813  *best | gen 7.9s train 5.4s
+epoch  63: train 0.00668 | val(2040-42) 0.00661 | PSNR 24.01 SSIM 0.540 r 0.814 | gen 7.8s train 5.5s
+epoch  64: train 0.00659 | val(2040-42) 0.00657 | PSNR 24.03 SSIM 0.542 r 0.815  *best | gen 7.9s train 5.5s
+epoch  65: train 0.00661 | val(2040-42) 0.00655 | PSNR 24.06 SSIM 0.543 r 0.816  *best | gen 7.8s train 5.4s
+epoch  66: train 0.00658 | val(2040-42) 0.00659 | PSNR 24.04 SSIM 0.543 r 0.815 | gen 7.8s train 5.4s
+epoch  67: train 0.00657 | val(2040-42) 0.00665 | PSNR 24.01 SSIM 0.543 r 0.816 | gen 7.7s train 5.4s
+epoch  68: train 0.00661 | val(2040-42) 0.00659 | PSNR 24.04 SSIM 0.544 r 0.816 | gen 7.8s train 5.5s
+epoch  69: train 0.00660 | val(2040-42) 0.00652 | PSNR 24.08 SSIM 0.546 r 0.818  *best | gen 7.7s train 5.6s
+epoch  70: train 0.00650 | val(2040-42) 0.00651 | PSNR 24.11 SSIM 0.547 r 0.818  *best | gen 7.9s train 5.4s
+epoch  71: train 0.00653 | val(2040-42) 0.00645 | PSNR 24.13 SSIM 0.547 r 0.819  *best | gen 7.9s train 5.6s
+epoch  72: train 0.00649 | val(2040-42) 0.00650 | PSNR 24.10 SSIM 0.549 r 0.819 | gen 7.9s train 5.6s
+epoch  73: train 0.00651 | val(2040-42) 0.00646 | PSNR 24.15 SSIM 0.551 r 0.821 | gen 7.8s train 5.5s
+epoch  74: train 0.00647 | val(2040-42) 0.00640 | PSNR 24.17 SSIM 0.551 r 0.822  *best | gen 8.2s train 5.4s
+epoch  75: train 0.00644 | val(2040-42) 0.00638 | PSNR 24.19 SSIM 0.551 r 0.821  *best | gen 7.9s train 5.4s
+epoch  76: train 0.00642 | val(2040-42) 0.00637 | PSNR 24.21 SSIM 0.552 r 0.822  *best | gen 7.8s train 5.5s
+epoch  77: train 0.00645 | val(2040-42) 0.00642 | PSNR 24.12 SSIM 0.553 r 0.821 | gen 7.8s train 5.4s
+epoch  78: train 0.00641 | val(2040-42) 0.00639 | PSNR 24.19 SSIM 0.555 r 0.823 | gen 7.8s train 5.4s
+epoch  79: train 0.00647 | val(2040-42) 0.00642 | PSNR 24.21 SSIM 0.554 r 0.824 | gen 7.9s train 5.5s
+epoch  80: train 0.00644 | val(2040-42) 0.00640 | PSNR 24.18 SSIM 0.556 r 0.824 | gen 7.9s train 5.5s
+
+unseen seeds 2027-2029:
+method                               DGI  Smoothed DGI (sigma=1.75)  Model D (random seeds)     DGI  Smoothed DGI (sigma=1.5)  Model C (random seeds)     DGI     DGI  Smoothed DGI (sigma=0.75)
+shots                                500                        500                     500    1000                      1000                    1000    5000   10000                      10000
+PSNR_mean                        12.3342                    21.7000                 24.2178 14.4758                   23.5069                 25.3823 20.6282 23.5240                    28.9610
+SSIM_mean                         0.1163                     0.4974                  0.5525  0.1862                    0.5833                  0.6485  0.4677  0.6106                     0.8204
+MSE_mean                          0.0788                     0.0118                  0.0064  0.0513                    0.0079                  0.0049  0.0134  0.0070                     0.0021
+Pearson_r_mean                    0.3068                     0.7677                  0.8221  0.4213                    0.8327                  0.8684  0.7347  0.8419                     0.9478
+PSNR_std_over_seeds               0.0157                     0.1079                  0.0743  0.0495                    0.0389                  0.0985  0.0131  0.0614                     0.0497
+SSIM_std_over_seeds               0.0012                     0.0046                  0.0046  0.0014                    0.0006                  0.0038  0.0007  0.0033                     0.0006
+Pearson_r_std_over_seeds          0.0022                     0.0039                  0.0033  0.0020                    0.0012                  0.0017  0.0022  0.0017                     0.0005
+PSNR_median_per_image            11.2485                    21.8457                 24.0621 13.6459                   23.7484                 25.2606 20.3253 23.1777                    29.2980
+SSIM_median_per_image             0.1149                     0.4923                  0.5617  0.1833                    0.5849                  0.6486  0.4659  0.6090                     0.8121
+Pearson_r_median_per_image        0.3066                     0.7680                  0.8249  0.4204                    0.8341                  0.8702  0.7344  0.8419                     0.9487
+win_pct_vs_DGI10000_PSNR          0.0000                     8.8889                 76.8889  0.0000                   39.1111                 97.3333  0.0000     NaN                   100.0000
+win_pct_vs_DGI10000_SSIM          0.0000                    28.0000                 41.3333  0.0000                   44.4444                 64.0000  0.0000     NaN                   100.0000
+win_pct_vs_DGI10000_Pearson_r     0.0000                     0.8889                 35.1111  0.0000                   36.0000                 79.1111  0.0000     NaN                   100.0000
+win_pct_vs_Smooth10000_PSNR       0.0000                     0.0000                  0.0000  0.0000                    0.0000                  0.0000  0.0000  0.0000                        NaN
+win_pct_vs_Smooth10000_SSIM       0.0000                     0.0000                  0.0000  0.0000                    0.0000                  0.0000  0.0000  0.0000                        NaN
+win_pct_vs_Smooth10000_Pearson_r  0.0000                     0.0000                  0.0000  0.0000                    0.0000                  0.0000  0.0000  0.0000                        NaN
+
+paired (225):
+                                       mean   median     std  pct_ModelD_better  pct_ModelC_better
+ModelD_minus_DGI500_PSNR            11.8836  11.9213  1.4845           100.0000                NaN
+ModelD_minus_DGI500_SSIM             0.4362   0.4502  0.1252           100.0000                NaN
+ModelD_minus_DGI500_Pearson_r        0.5153   0.5176  0.0506           100.0000                NaN
+ModelD_minus_DGI500_MSE             -0.0724  -0.0699  0.0451           100.0000                NaN
+ModelD_minus_Smooth500_PSNR          2.5177   2.8930  1.7497            95.5556                NaN
+ModelD_minus_Smooth500_SSIM          0.0551   0.0646  0.0369            92.8889                NaN
+ModelD_minus_Smooth500_Pearson_r     0.0545   0.0630  0.0324            93.3333                NaN
+ModelD_minus_Smooth500_MSE          -0.0054  -0.0034  0.0052            95.5556                NaN
+ModelD_minus_DGI1000_PSNR            9.7420   9.7565  1.1685           100.0000                NaN
+ModelD_minus_DGI1000_SSIM            0.3663   0.3827  0.1245           100.0000                NaN
+ModelD_minus_DGI1000_Pearson_r       0.4008   0.4038  0.0532           100.0000                NaN
+ModelD_minus_DGI1000_MSE            -0.0449  -0.0399  0.0312           100.0000                NaN
+ModelD_minus_DGI5000_PSNR            3.5896   3.5315  0.9917           100.0000                NaN
+ModelD_minus_DGI5000_SSIM            0.0848   0.0919  0.1317            72.4444                NaN
+ModelD_minus_DGI5000_Pearson_r       0.0874   0.0897  0.0511            95.5556                NaN
+ModelD_minus_DGI5000_MSE            -0.0071  -0.0054  0.0058           100.0000                NaN
+ModelD_minus_DGI10000_PSNR           0.6938   0.6420  0.9750            76.8889                NaN
+ModelD_minus_DGI10000_SSIM          -0.0580  -0.0461  0.1343            41.3333                NaN
+ModelD_minus_DGI10000_Pearson_r     -0.0198  -0.0180  0.0477            35.1111                NaN
+ModelD_minus_DGI10000_MSE           -0.0006  -0.0005  0.0019            76.8889                NaN
+ModelD_minus_Smooth10000_PSNR       -4.7433  -4.6662  0.8073             0.0000                NaN
+ModelD_minus_Smooth10000_SSIM       -0.2679  -0.2413  0.1028             0.0000                NaN
+ModelD_minus_Smooth10000_Pearson_r  -0.1257  -0.1229  0.0410             0.0000                NaN
+ModelD_minus_Smooth10000_MSE         0.0042   0.0029  0.0039             0.0000                NaN
+ModelC_minus_ModelD_PSNR             1.1645   1.1594  0.3413                NaN           100.0000
+ModelC_minus_ModelD_SSIM             0.0960   0.0929  0.0384                NaN           100.0000
+ModelC_minus_ModelD_Pearson_r        0.0462   0.0440  0.0178                NaN           100.0000
+ModelC_minus_ModelD_MSE             -0.0014  -0.0010  0.0013                NaN           100.0000
+ModelC_minus_DGI10000_PSNR           1.8584   1.7731  0.9430                NaN            97.3333
+ModelC_minus_DGI10000_SSIM           0.0379   0.0462  0.1086                NaN            64.0000
+ModelC_minus_DGI10000_Pearson_r      0.0264   0.0289  0.0346                NaN            79.1111
+ModelC_minus_DGI10000_MSE           -0.0020  -0.0015  0.0020                NaN            97.3333
+ModelC_minus_Smooth10000_PSNR       -3.5787  -3.5901  0.6913                NaN             0.0000
+ModelC_minus_Smooth10000_SSIM       -0.1719  -0.1539  0.0746                NaN             0.0000
+ModelC_minus_Smooth10000_Pearson_r  -0.0794  -0.0772  0.0276                NaN             0.0000
+ModelC_minus_Smooth10000_MSE         0.0028   0.0020  0.0027                NaN             0.0000
+ModelC_minus_Smooth1000_PSNR         1.8754   2.1328  1.2373                NaN            93.7778
+ModelC_minus_Smooth1000_SSIM         0.0652   0.0763  0.0361                NaN            94.2222
+ModelC_minus_Smooth1000_Pearson_r    0.0356   0.0405  0.0191                NaN            94.2222
+ModelC_minus_Smooth1000_MSE         -0.0030  -0.0014  0.0031                NaN            93.7778
+
+per seed:
+         PSNR                   Pearson_r                     SSIM                
+tag  DGI10000   ModelC   ModelD  DGI10000  ModelC  ModelD DGI10000  ModelC  ModelD
+seed                                                                              
+2026  23.5156  25.5125  24.3569    0.8413  0.8708  0.8268   0.6093  0.6506  0.5609
+2027  23.4570  25.2710  24.1466    0.8408  0.8665  0.8190   0.6068  0.6443  0.5504
+2028  23.5776  25.4581  24.2948    0.8438  0.8700  0.8255   0.6130  0.6495  0.5578
+2029  23.5372  25.4179  24.2120    0.8411  0.8686  0.8218   0.6118  0.6516  0.5494
+2040  23.4924  25.4711  24.2571    0.8427  0.8705  0.8236   0.6076  0.6554  0.5560
+2041  23.5624  25.5512  24.1636    0.8409  0.8716  0.8203   0.6107  0.6545  0.5492
+2042  23.4910  25.3819  24.2043    0.8417  0.8675  0.8214   0.6078  0.6464  0.5497
+
+overfitting: {
+ "train_images_fresh_seq_PSNR": 24.40948561553754,
+ "train_images_fresh_seq_SSIM": 0.5627483331473578,
+ "val_PSNR_at_best": 24.208330394919546,
+ "val_SSIM_at_best": 0.5516669991956126,
+ "epochs_after_best": 4
+}
+
+checks: {
+ "n_train": 341,
+ "n_val": 75,
+ "test_ids_loaded": 0,
+ "objects_vs_targets_max_abs_diff": 0.0,
+ "train_seed_range": [
+  10001000,
+  10080340
+ ],
+ "train_seeds_unique": true,
+ "train_seeds_overlap_reserved": false,
+ "val_unseen_overlap": [],
+ "dgi_single_seed2026_vs_phase2A_max_abs_diff": 0.0,
+ "epoch1_input_differs_from_seed2026_mean_abs": 0.2729426324367523,
+ "epoch2_vs_epoch1_input_mean_abs_diff": 0.2738130986690521,
+ "best_epoch": 76,
+ "best_reload_max_abs_diff": 0.0,
+ "sigma_used": {
+  "500": 1.75,
+  "1000": 1.5,
+  "10000": 0.75
+ },
+ "sigma10000_at_grid_edge": false,
+ "eval_inputs_match_training_pipeline_max_abs_diff": 0.0,
+ "model_C_best_epoch_loaded": 80
+}
+
+epochs 80, best 76, 1301.7 s -> C:\Users\vishn\Downloads\Onion-CNN-Final.v1-onion-original-v1.yolov8\outputs\phase2b_unet\model_D_random_patterns_dgi500

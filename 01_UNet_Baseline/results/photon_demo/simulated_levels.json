@@ -1,0 +1,36 @@
+{
+  "levels": [
+    0.01,
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "rows": [
+    {
+      "photon_budget": 0.01,
+      "noisy_path": "C:\\Users\\vishn\\Downloads\\Onion-CNN-Final.v1-onion-original-v1.yolov8\\results\\photon_demo\\noisy_0.01.png"
+    },
+    {
+      "photon_budget": 0.05,
+      "noisy_path": "C:\\Users\\vishn\\Downloads\\Onion-CNN-Final.v1-onion-original-v1.yolov8\\results\\photon_demo\\noisy_0.05.png"
+    },
+    {
+      "photon_budget": 0.1,
+      "noisy_path": "C:\\Users\\vishn\\Downloads\\Onion-CNN-Final.v1-onion-original-v1.yolov8\\results\\photon_demo\\noisy_0.10.png"
+    },
+    {
+      "photon_budget": 0.25,
+      "noisy_path": "C:\\Users\\vishn\\Downloads\\Onion-CNN-Final.v1-onion-original-v1.yolov8\\results\\photon_demo\\noisy_0.25.png"
+    },
+    {
+      "photon_budget": 0.5,
+      "noisy_path": "C:\\Users\\vishn\\Downloads\\Onion-CNN-Final.v1-onion-original-v1.yolov8\\results\\photon_demo\\noisy_0.50.png"
+    },
+    {
+      "photon_budget": 1.0,
+      "noisy_path": "C:\\Users\\vishn\\Downloads\\Onion-CNN-Final.v1-onion-original-v1.yolov8\\results\\photon_demo\\noisy_1.00.png"
+    }
+  ]
+}

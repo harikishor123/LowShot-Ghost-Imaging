@@ -1,0 +1,14 @@
+# Minimal install for the extensions, audits, galleries and infer_example.py (Linux, Python 3.10).
+# Versions copied from requirements-linux-freeze.txt (the environment that produced the frozen extension results).
+# Install:  pip install -r requirements-linux-minimal.txt --extra-index-url https://download.pytorch.org/whl/cu126
+# CPU-only: replace the torch line by  torch==2.14.1  and use  --extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1+cu126
+nvidia-cudnn-cu12==9.10.2.21
+numpy==2.2.6
+scipy==1.15.3
+scikit-image==0.25.2
+pandas==2.3.2
+matplotlib==3.10.9
+pillow==12.3.0
+# Not needed here: scikit-learn (only src/dataset_audit_full.py, onion dataset audit, Windows environment) and
+# tensorflow/keras (only the earliest exploratory Models A/B in src/train.py etc.).

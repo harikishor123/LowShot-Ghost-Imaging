@@ -1,0 +1,27 @@
+experiment:
+  name: e3a_eps_only
+  description: "E3a: ε-prediction diffusion with L1 noise loss only"
+
+model:
+  base_ch: 32
+  time_dim: 128
+
+diffusion:
+  timesteps: 1000
+  beta_start: 1.0e-4
+  beta_end: 2.0e-2
+
+training:
+  seed: 0
+  lr: 1.0e-4
+  batch_size: 16
+  max_epochs: 100
+  patience: 15
+  num_workers: 4
+
+loss:
+  type: l1
+  lambda_ssim: 0.0
+
+inference:
+  ddim_steps: 100

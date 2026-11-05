@@ -1,0 +1,32 @@
+{
+  "MAX_SIDE": 1024,
+  "WORK_SIDE": 1024,
+  "RIM_ERODE_PX": 4,
+  "SEED": 42,
+  "SPLIT_FRACS": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "RELATED_NCC": 0.8,
+  "EXCLUDE_GROUPS": {
+    "E": "source group E excluded: web/stock images of heterogeneous, uncertain provenance; 9/15 carry stock-agency watermarks (Getty Images, Shutterstock, Science Photo Library)"
+  },
+  "EXCLUDE_IMAGES": {
+    "A_384": "severe artefact/source mismatch: violet Giemsa-like stain unlike the rest of group A (likely foreign source)",
+    "A_134": "severe artefact: black eyepiece pointer arrow drawn over the specimen"
+  },
+  "F_CAPTION_BOX_2048": [
+    500,
+    0,
+    1550,
+    195
+  ],
+  "colour": "IEC 61966-2-1 sRGB transfer assumed; resampling done in linear light (area average)",
+  "reference_format": "npz: srgb16 = uint16 sRGB-encoded RGB (HxWx3), mask = uint8 FOV mask (HxW)",
+  "audit_inputs": [
+    "results/dataset_audit/per_image_audit.csv",
+    "results/dataset_audit/duplicate_pairs.csv",
+    "results/dataset_audit/manual_visual_review.csv (via per_image_audit.csv)"
+  ]
+}

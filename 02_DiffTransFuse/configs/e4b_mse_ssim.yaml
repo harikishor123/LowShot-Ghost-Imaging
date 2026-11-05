@@ -1,0 +1,25 @@
+experiment:
+  name: e4b_mse_ssim
+  description: "E4b: TransFusionNet with MSE + 0.1×SSIM loss"
+
+model:
+  base_ch: 32
+  embed_dim: 256
+  n_heads: 4
+  n_layers: 4
+
+frozen_encoder:
+  config: configs/e3a_eps_only.yaml
+  checkpoint_template: "checkpoints/e3a_eps_only_N{N}/best.pt"
+
+training:
+  seed: 0
+  lr: 1.0e-4
+  batch_size: 16
+  max_epochs: 100
+  patience: 15
+  num_workers: 4
+
+loss:
+  type: mse_ssim
+  lambda_ssim: 0.1

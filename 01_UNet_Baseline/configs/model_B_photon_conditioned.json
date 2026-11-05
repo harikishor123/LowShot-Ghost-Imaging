@@ -1,0 +1,92 @@
+{
+  "model_name": "model_B_photon_conditioned_unet",
+  "description": "Model B: photon-conditioned U-Net. Input = noisy linear RGB + constant photon-condition map c=(log10 P - 1)/2 from the known simulated P -> clean linear RGB. Identical to Model A except the extra input channel.",
+  "inputs": "4 channels: noisy linear-light RGB (counts / P, unclipped) + spatially constant photon_condition = (log10(P) - 1) / 2 from samples metadata (P=10 -> 0, P=1000 -> 1)",
+  "targets": "clean linear-light RGB from data/v2/reference (sRGB16 -> linear), 3 channels",
+  "architecture": {
+    "type": "U-Net",
+    "base_filters": 16,
+    "depth": 4,
+    "filters_per_level": [
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "block": "2 x (Conv3x3 + ReLU), he_normal init",
+    "downsampling": "MaxPool 2x2",
+    "upsampling": "Conv2DTranspose 2x2 stride 2",
+    "skip_connections": "concatenate",
+    "normalization": "none",
+    "output_head": "Conv1x1 + sigmoid (linear light in (0,1))",
+    "in_channels": 4,
+    "input_name": "noisy_linear_plus_photon_condition"
+  },
+  "loss": "masked MSE in linear light (FOV mask)",
+  "monitor_metrics": [
+    "masked_mae",
+    "masked_psnr"
+  ],
+  "optimizer": {
+    "name": "Adam",
+    "learning_rate": 0.001,
+    "beta_1": 0.9,
+    "beta_2": 0.999,
+    "clipnorm": 1.0
+  },
+  "lr_schedule": {
+    "type": "ReduceLROnPlateau",
+    "monitor": "val_loss",
+    "factor": 0.5,
+    "patience": 4,
+    "min_lr": 1e-05
+  },
+  "early_stopping": {
+    "monitor": "val_loss",
+    "patience": 10,
+    "restore_best_weights": true
+  },
+  "checkpoint": "best val_loss",
+  "max_epochs": 60,
+  "steps_per_epoch": 250,
+  "batch_size": 8,
+  "patch_size": 256,
+  "corner_stride": 16,
+  "min_valid_fraction": 0.9,
+  "patches_per_load": 4,
+  "shuffle_buffer": 256,
+  "loader_threads": 4,
+  "augment_dihedral": true,
+  "augmentation": "random dihedral transform (8: flips + 90-degree rotations), identical on input/target/mask; no intensity or noise augmentation",
+  "val_patches_per_sample": 2,
+  "photon_levels": {
+    "1%": 10,
+    "5%": 50,
+    "10%": 100,
+    "25%": 250,
+    "50%": 500,
+    "100%": 1000
+  },
+  "training_levels": "all six, sampled uniformly (each (image, level) sample once per pass)",
+  "noisy_data": "fixed stored realization 0 from data/v2/photon_sim (no on-the-fly resampling)",
+  "seeds": {
+    "global": 42,
+    "train_stream": 4242,
+    "val_patches": 7
+  },
+  "deterministic_ops": true,
+  "photon_condition": {
+    "formula": "(log10(P) - log10(10)) / (log10(1000) - log10(10))",
+    "values": {
+      "10": 0.0,
+      "50": 0.349485,
+      "100": 0.5,
+      "250": 0.69897,
+      "500": 0.849485,
+      "1000": 1.0
+    },
+    "source": "photon_budget_P column of data/v2/photon_sim/metadata/samples_<split>.csv"
+  },
+  "comparison_baseline": "models/model_A_baseline_unet (configs/model_A_baseline.json)"
+}

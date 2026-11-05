@@ -1,0 +1,43 @@
+{
+ "A1_original_panel_identity": {
+  "all_match_own_id": true,
+  "worst_own_diff": 0.007306568295347926,
+  "smallest_runner_up_diff": 0.3020721613192091
+ },
+ "A2_DGI_panels": {
+  "panels_checked": 138,
+  "best_match_is_labelled_level_and_shots": 138,
+  "max_abs_diff_to_exact_recomputation": 0.0073207094973208875
+ },
+ "A2_smoothed_panels": {
+  "panels_checked": 72,
+  "match_within_8bit": 72,
+  "max_abs_diff": 0.007320530683386561
+ },
+ "A3_unet_panel_labels": {
+  "panels": 96,
+  "uniquely_matched_to_labelled_level_and_N": 95,
+  "max_abs_SSIM_diff": 0.0015886202692748652,
+  "max_abs_PSNR_diff": 0.04348266117518662,
+  "max_abs_NCC_vs_r_diff": 0.0009979064180746233
+ },
+ "A4_copy_check": {
+  "outputs": 96,
+  "most_correlated_stored_image_is_own_original": 96,
+  "min_over_outputs_of_max_abs_diff_to_ANY_of_10000_images": 0.20590029183556052,
+  "mean_own_corr": 0.8833420387543303,
+  "mean_best_other_corr": 0.5949425026284385
+ },
+ "A5_exact_DGI_metrics_vs_csv_max_abs_diff": {
+  "SSIM": 8.326672684688674e-17,
+  "PSNR": 3.552713678800501e-15,
+  "MSE": 9.71445146547012e-17,
+  "NCC": 3.3306690738754696e-16
+ },
+ "A5_decoded_unet_metrics_vs_csv_max_abs_diff": {
+  "SSIM": 0.0013026678248260204,
+  "PSNR": 0.03223994351946757,
+  "MSE": 5.37975007100051e-05,
+  "NCC": 0.0006606807197389042
+ }
+}

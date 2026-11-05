@@ -1,0 +1,39 @@
+evaluation_type: final_held_out_test
+date: '2026-11-22'
+test_images: 2000
+test_seeds:
+- 3040
+- 3041
+- 3042
+n_seeds_per_image: 3
+shot_counts:
+- 500
+- 1000
+- 2000
+- 5000
+bootstrap_resamples: 2000
+bootstrap_confidence: 0.95
+bootstrap_seed: 0
+ddim_steps_e3: 100
+device: cuda
+frozen_root: /home/ss_students/Downloads/Onion-CNN-Final.v1-onion-original-v1.yolov8
+ghost_imaging_v2_root: /home/ss_students/Downloads/ghost_imaging_v2
+models_evaluated:
+- DGI
+- E1
+- E2a
+- E3a
+- E4a
+- E4b
+metrics:
+- PSNR
+- SSIM
+- MSE
+- Pearson_r
+- edge_r
+dgi_generation:
+  method: StreamingDGI (Bernoulli 0.5, noise-free buckets, calibrated DGI, clipped
+    [0,1])
+  max_patterns: 10000
+  pattern_batch_size: 500
+  pattern_variance: 0.25

@@ -1,0 +1,48 @@
+/home/ss_students/.local/lib/python3.10/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+seed 2026 done (10s)
+seed 2027 done (19s)
+seed 2028 done (28s)
+seed 2029 done (37s)
+group            label  n_pairs  SSIM_mean  correlation_mean  PSNR_mean  edge_r_mean
+  all  AI-original-500     4000     0.5642            0.8010    21.0553       0.5624
+  all AI-original-1000     4000     0.6550            0.8575    22.5753       0.6716
+  all AI-original-2000     4000     0.7283            0.8995    24.1001       0.7611
+  all AI-original-5000     4000     0.8132            0.9403    26.3086       0.8538
+  all          DGI-500     4000     0.1316            0.3137     9.7196       0.1138
+  all         DGI-1000     4000     0.1977            0.4345    11.3968       0.2066
+  all         DGI-2000     4000     0.2869            0.5740    13.5034       0.3384
+  all         DGI-5000     4000     0.4298            0.7493    16.7843       0.5475
+  all        DGI-10000     4000     0.5417            0.8485    19.4831       0.6961
+blood  AI-original-500     2000     0.6495            0.9333    20.7289       0.6850
+blood AI-original-1000     2000     0.7257            0.9568    22.5539       0.7713
+blood AI-original-2000     2000     0.7768            0.9712    24.2824       0.8373
+blood AI-original-5000     2000     0.8332            0.9831    26.6409       0.8996
+blood          DGI-500     2000     0.0789            0.3066     7.6725       0.0626
+blood         DGI-1000     2000     0.1202            0.4276     8.9740       0.1265
+blood         DGI-2000     2000     0.1818            0.5703    10.7769       0.2309
+blood         DGI-5000     2000     0.2960            0.7513    13.8138       0.4324
+blood        DGI-10000     2000     0.3981            0.8512    16.3906       0.6008
+ path  AI-original-500     2000     0.4788            0.6687    21.3818       0.4398
+ path AI-original-1000     2000     0.5844            0.7582    22.5966       0.5718
+ path AI-original-2000     2000     0.6797            0.8278    23.9178       0.6849
+ path AI-original-5000     2000     0.7933            0.8974    25.9762       0.8079
+ path          DGI-500     2000     0.1843            0.3208    11.7667       0.1649
+ path         DGI-1000     2000     0.2752            0.4414    13.8197       0.2867
+ path         DGI-2000     2000     0.3920            0.5777    16.2299       0.4458
+ path         DGI-5000     2000     0.5637            0.7474    19.7548       0.6626
+ path        DGI-10000     2000     0.6853            0.8457    22.5757       0.7915
+group                       comparison  SSIM_mean  SSIM_ci_low  correlation_mean  correlation_ci_low criterion_pass
+  all  AI-original-500 minus DGI-10000     0.0224       0.0045           -0.0475             -0.0578          False
+  all AI-original-1000 minus DGI-10000     0.1133       0.0973            0.0090              0.0020           True
+  all AI-original-2000 minus DGI-10000     0.1865       0.1722            0.0511              0.0456           True
+  all AI-original-5000 minus DGI-10000     0.2715       0.2600            0.0918              0.0886           True
+blood  AI-original-500 minus DGI-10000     0.2514       0.2425            0.0821              0.0806           True
+blood AI-original-1000 minus DGI-10000     0.3275       0.3190            0.1056              0.1045           True
+blood AI-original-2000 minus DGI-10000     0.3786       0.3706            0.1200              0.1192           True
+blood AI-original-5000 minus DGI-10000     0.4350       0.4282            0.1319              0.1313           True
+ path  AI-original-500 minus DGI-10000    -0.2065      -0.2226           -0.1771             -0.1889          False
+ path AI-original-1000 minus DGI-10000    -0.1010      -0.1163           -0.0876             -0.0970          False
+ path AI-original-2000 minus DGI-10000    -0.0056      -0.0189           -0.0179             -0.0246          False
+ path AI-original-5000 minus DGI-10000     0.1080       0.0969            0.0516              0.0476           True
+minimum passing N: {"all": {"AI-original": 1000}, "blood": {"AI-original": 500}, "path": {"AI-original": 5000}} | 53.1 s -> /home/ss_students/Downloads/Onion-CNN-Final.v1-onion-original-v1.yolov8/outputs/extension_medmnist_microscopy/results/target_clean/val

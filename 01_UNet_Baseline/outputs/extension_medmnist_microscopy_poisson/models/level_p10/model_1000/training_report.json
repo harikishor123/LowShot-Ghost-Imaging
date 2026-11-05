@@ -1,0 +1,53 @@
+{
+  "label": "AI-original-1000",
+  "level": "p10",
+  "noise_f": 0.1,
+  "shots": 1000,
+  "target": "original clean object",
+  "best_epoch": 80,
+  "best_selection_loss": 0.0077899005041544974,
+  "epochs_completed": 80,
+  "stopped_early": false,
+  "n_params": 1925025,
+  "checkpoint": "outputs/extension_medmnist_microscopy_poisson/models/level_p10/model_1000/checkpoints/best.pt",
+  "config": {
+    "level": "p10",
+    "shots": 1000,
+    "epochs": 80,
+    "patience": 10,
+    "batch_size": 16,
+    "lr": 0.0001,
+    "base": 32,
+    "seed": 0,
+    "threads": 2,
+    "device": "cuda"
+  },
+  "pool_seed_rule": "patterns 30,000,000 + 10,000*k + train_index (as noise-free extension); noise default_rng([pattern_seed, 1000003, round(100 f)])",
+  "selection_seeds": [
+    2040,
+    2041,
+    2042
+  ],
+  "epoch_realisation_rule": "default_rng([master_seed, epoch]).integers(0, 32, 7000)",
+  "selection_at_best": {
+    "PSNR": 22.326775680846,
+    "SSIM": 0.645079294070648,
+    "MSE": 0.007789900504154513,
+    "Pearson_r": 0.8465463317038348
+  },
+  "noisy_dgi_on_selection": {
+    "PSNR": 11.021983756058583,
+    "SSIM": 0.1822190714578819,
+    "MSE": 0.09925781162395518,
+    "Pearson_r": 0.4157440659331256
+  },
+  "checks": {
+    "n_train_images": 7000,
+    "realisations_per_image": 32,
+    "selection_pairs": 3000,
+    "test_ids_in_training_or_selection": 0,
+    "device": "NVIDIA RTX A5000",
+    "best_reload_max_abs_diff": 0.0
+  },
+  "wall_time_s": 2908.8
+}

@@ -1,0 +1,83 @@
+/home/ss_students/.local/lib/python3.10/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+[AI-original-5000] epoch   1: train 0.01649 | sel 0.00739 | PSNR 22.31 SSIM 0.611 r 0.871  *best | 23.4s
+[AI-original-5000] epoch   2: train 0.00648 | sel 0.00606 | PSNR 23.13 SSIM 0.653 r 0.891  *best | 23.8s
+[AI-original-5000] epoch   3: train 0.00569 | sel 0.00556 | PSNR 23.50 SSIM 0.673 r 0.899  *best | 24.3s
+[AI-original-5000] epoch   4: train 0.00528 | sel 0.00520 | PSNR 23.85 SSIM 0.690 r 0.903  *best | 24.8s
+[AI-original-5000] epoch   5: train 0.00500 | sel 0.00501 | PSNR 24.00 SSIM 0.702 r 0.908  *best | 25.1s
+[AI-original-5000] epoch   6: train 0.00472 | sel 0.00467 | PSNR 24.31 SSIM 0.722 r 0.913  *best | 25.2s
+[AI-original-5000] epoch   7: train 0.00448 | sel 0.00446 | PSNR 24.55 SSIM 0.730 r 0.916  *best | 25.3s
+[AI-original-5000] epoch   8: train 0.00433 | sel 0.00432 | PSNR 24.69 SSIM 0.742 r 0.918  *best | 25.2s
+[AI-original-5000] epoch   9: train 0.00420 | sel 0.00420 | PSNR 24.83 SSIM 0.749 r 0.920  *best | 25.1s
+[AI-original-5000] epoch  10: train 0.00409 | sel 0.00415 | PSNR 24.90 SSIM 0.750 r 0.921  *best | 25.0s
+[AI-original-5000] epoch  11: train 0.00401 | sel 0.00404 | PSNR 25.04 SSIM 0.758 r 0.924  *best | 24.6s
+[AI-original-5000] epoch  12: train 0.00393 | sel 0.00399 | PSNR 25.11 SSIM 0.764 r 0.925  *best | 24.5s
+[AI-original-5000] epoch  13: train 0.00387 | sel 0.00406 | PSNR 25.01 SSIM 0.760 r 0.924 | 24.4s
+[AI-original-5000] epoch  14: train 0.00382 | sel 0.00386 | PSNR 25.27 SSIM 0.770 r 0.927  *best | 24.4s
+[AI-original-5000] epoch  15: train 0.00376 | sel 0.00387 | PSNR 25.25 SSIM 0.773 r 0.928 | 24.4s
+[AI-original-5000] epoch  16: train 0.00371 | sel 0.00377 | PSNR 25.40 SSIM 0.775 r 0.928  *best | 24.4s
+[AI-original-5000] epoch  17: train 0.00367 | sel 0.00371 | PSNR 25.49 SSIM 0.780 r 0.929  *best | 24.4s
+[AI-original-5000] epoch  18: train 0.00364 | sel 0.00368 | PSNR 25.54 SSIM 0.781 r 0.930  *best | 24.4s
+[AI-original-5000] epoch  19: train 0.00360 | sel 0.00368 | PSNR 25.54 SSIM 0.787 r 0.931  *best | 24.5s
+[AI-original-5000] epoch  20: train 0.00356 | sel 0.00366 | PSNR 25.54 SSIM 0.786 r 0.931  *best | 24.6s
+[AI-original-5000] epoch  21: train 0.00354 | sel 0.00360 | PSNR 25.65 SSIM 0.789 r 0.932  *best | 24.3s
+[AI-original-5000] epoch  22: train 0.00351 | sel 0.00360 | PSNR 25.66 SSIM 0.790 r 0.932  *best | 24.5s
+[AI-original-5000] epoch  23: train 0.00349 | sel 0.00355 | PSNR 25.74 SSIM 0.791 r 0.933  *best | 24.5s
+[AI-original-5000] epoch  24: train 0.00347 | sel 0.00353 | PSNR 25.77 SSIM 0.793 r 0.933  *best | 24.5s
+[AI-original-5000] epoch  25: train 0.00344 | sel 0.00350 | PSNR 25.81 SSIM 0.792 r 0.933  *best | 24.2s
+[AI-original-5000] epoch  26: train 0.00342 | sel 0.00351 | PSNR 25.79 SSIM 0.793 r 0.933 | 24.7s
+[AI-original-5000] epoch  27: train 0.00341 | sel 0.00348 | PSNR 25.85 SSIM 0.793 r 0.934  *best | 24.7s
+[AI-original-5000] epoch  28: train 0.00339 | sel 0.00347 | PSNR 25.87 SSIM 0.794 r 0.934  *best | 24.7s
+[AI-original-5000] epoch  29: train 0.00336 | sel 0.00345 | PSNR 25.91 SSIM 0.798 r 0.935  *best | 24.7s
+[AI-original-5000] epoch  30: train 0.00336 | sel 0.00342 | PSNR 25.95 SSIM 0.797 r 0.935  *best | 24.7s
+[AI-original-5000] epoch  31: train 0.00334 | sel 0.00341 | PSNR 25.97 SSIM 0.800 r 0.935  *best | 24.7s
+[AI-original-5000] epoch  32: train 0.00332 | sel 0.00342 | PSNR 25.95 SSIM 0.799 r 0.935 | 24.7s
+[AI-original-5000] epoch  33: train 0.00331 | sel 0.00340 | PSNR 26.00 SSIM 0.803 r 0.936  *best | 24.8s
+[AI-original-5000] epoch  34: train 0.00330 | sel 0.00343 | PSNR 25.91 SSIM 0.801 r 0.936 | 24.8s
+[AI-original-5000] epoch  35: train 0.00329 | sel 0.00338 | PSNR 26.01 SSIM 0.800 r 0.936  *best | 24.8s
+[AI-original-5000] epoch  36: train 0.00327 | sel 0.00335 | PSNR 26.07 SSIM 0.802 r 0.936  *best | 24.7s
+[AI-original-5000] epoch  37: train 0.00327 | sel 0.00335 | PSNR 26.07 SSIM 0.804 r 0.936  *best | 24.7s
+[AI-original-5000] epoch  38: train 0.00326 | sel 0.00338 | PSNR 26.01 SSIM 0.804 r 0.937 | 24.7s
+[AI-original-5000] epoch  39: train 0.00325 | sel 0.00334 | PSNR 26.08 SSIM 0.803 r 0.937  *best | 24.7s
+[AI-original-5000] epoch  40: train 0.00323 | sel 0.00334 | PSNR 26.09 SSIM 0.805 r 0.937  *best | 24.7s
+[AI-original-5000] epoch  41: train 0.00323 | sel 0.00332 | PSNR 26.12 SSIM 0.805 r 0.937  *best | 24.7s
+[AI-original-5000] epoch  42: train 0.00322 | sel 0.00332 | PSNR 26.12 SSIM 0.808 r 0.937 | 24.8s
+[AI-original-5000] epoch  43: train 0.00321 | sel 0.00331 | PSNR 26.13 SSIM 0.807 r 0.938  *best | 24.7s
+[AI-original-5000] epoch  44: train 0.00320 | sel 0.00332 | PSNR 26.10 SSIM 0.805 r 0.937 | 24.7s
+[AI-original-5000] epoch  45: train 0.00319 | sel 0.00329 | PSNR 26.16 SSIM 0.808 r 0.938  *best | 24.7s
+[AI-original-5000] epoch  46: train 0.00319 | sel 0.00329 | PSNR 26.16 SSIM 0.807 r 0.938  *best | 24.7s
+[AI-original-5000] epoch  47: train 0.00318 | sel 0.00329 | PSNR 26.16 SSIM 0.809 r 0.938  *best | 24.7s
+[AI-original-5000] epoch  48: train 0.00317 | sel 0.00330 | PSNR 26.15 SSIM 0.808 r 0.938 | 24.7s
+[AI-original-5000] epoch  49: train 0.00317 | sel 0.00328 | PSNR 26.20 SSIM 0.807 r 0.938  *best | 24.7s
+[AI-original-5000] epoch  50: train 0.00315 | sel 0.00327 | PSNR 26.20 SSIM 0.809 r 0.938  *best | 24.6s
+[AI-original-5000] epoch  51: train 0.00315 | sel 0.00327 | PSNR 26.21 SSIM 0.810 r 0.938  *best | 24.6s
+[AI-original-5000] epoch  52: train 0.00315 | sel 0.00326 | PSNR 26.22 SSIM 0.808 r 0.938  *best | 24.6s
+[AI-original-5000] epoch  53: train 0.00313 | sel 0.00327 | PSNR 26.20 SSIM 0.807 r 0.938 | 24.7s
+[AI-original-5000] epoch  54: train 0.00313 | sel 0.00326 | PSNR 26.22 SSIM 0.811 r 0.939  *best | 24.8s
+[AI-original-5000] epoch  55: train 0.00313 | sel 0.00328 | PSNR 26.16 SSIM 0.810 r 0.939 | 24.8s
+[AI-original-5000] epoch  56: train 0.00312 | sel 0.00326 | PSNR 26.21 SSIM 0.811 r 0.939 | 24.7s
+[AI-original-5000] epoch  57: train 0.00311 | sel 0.00325 | PSNR 26.23 SSIM 0.811 r 0.939  *best | 24.8s
+[AI-original-5000] epoch  58: train 0.00310 | sel 0.00328 | PSNR 26.18 SSIM 0.812 r 0.939 | 24.8s
+[AI-original-5000] epoch  59: train 0.00311 | sel 0.00324 | PSNR 26.24 SSIM 0.811 r 0.939  *best | 24.8s
+[AI-original-5000] epoch  60: train 0.00310 | sel 0.00324 | PSNR 26.26 SSIM 0.811 r 0.939  *best | 24.8s
+[AI-original-5000] epoch  61: train 0.00309 | sel 0.00323 | PSNR 26.26 SSIM 0.812 r 0.939  *best | 24.8s
+[AI-original-5000] epoch  62: train 0.00309 | sel 0.00322 | PSNR 26.28 SSIM 0.812 r 0.939  *best | 24.8s
+[AI-original-5000] epoch  63: train 0.00308 | sel 0.00323 | PSNR 26.26 SSIM 0.810 r 0.939 | 24.8s
+[AI-original-5000] epoch  64: train 0.00308 | sel 0.00324 | PSNR 26.26 SSIM 0.812 r 0.939 | 24.8s
+[AI-original-5000] epoch  65: train 0.00307 | sel 0.00323 | PSNR 26.27 SSIM 0.812 r 0.939 | 24.8s
+[AI-original-5000] epoch  66: train 0.00307 | sel 0.00323 | PSNR 26.27 SSIM 0.811 r 0.939 | 24.8s
+[AI-original-5000] epoch  67: train 0.00307 | sel 0.00321 | PSNR 26.30 SSIM 0.811 r 0.939  *best | 24.9s
+[AI-original-5000] epoch  68: train 0.00306 | sel 0.00322 | PSNR 26.28 SSIM 0.811 r 0.939 | 24.9s
+[AI-original-5000] epoch  69: train 0.00305 | sel 0.00322 | PSNR 26.28 SSIM 0.813 r 0.940 | 24.9s
+[AI-original-5000] epoch  70: train 0.00305 | sel 0.00323 | PSNR 26.28 SSIM 0.808 r 0.939 | 23.7s
+[AI-original-5000] epoch  71: train 0.00305 | sel 0.00322 | PSNR 26.29 SSIM 0.811 r 0.939 | 21.8s
+[AI-original-5000] epoch  72: train 0.00304 | sel 0.00322 | PSNR 26.27 SSIM 0.811 r 0.939 | 21.8s
+[AI-original-5000] epoch  73: train 0.00304 | sel 0.00322 | PSNR 26.29 SSIM 0.811 r 0.940 | 21.9s
+[AI-original-5000] epoch  74: train 0.00304 | sel 0.00323 | PSNR 26.26 SSIM 0.810 r 0.940 | 21.9s
+[AI-original-5000] epoch  75: train 0.00303 | sel 0.00323 | PSNR 26.25 SSIM 0.813 r 0.940 | 22.0s
+[AI-original-5000] epoch  76: train 0.00303 | sel 0.00321 | PSNR 26.31 SSIM 0.813 r 0.940  *best | 22.0s
+[AI-original-5000] epoch  77: train 0.00303 | sel 0.00323 | PSNR 26.28 SSIM 0.812 r 0.940 | 22.0s
+[AI-original-5000] epoch  78: train 0.00302 | sel 0.00321 | PSNR 26.31 SSIM 0.812 r 0.940 | 22.0s
+[AI-original-5000] epoch  79: train 0.00302 | sel 0.00320 | PSNR 26.31 SSIM 0.813 r 0.940  *best | 22.0s
+[AI-original-5000] epoch  80: train 0.00302 | sel 0.00322 | PSNR 26.28 SSIM 0.813 r 0.940 | 22.0s
+[AI-original-5000] best epoch 79, selection PSNR 26.31 SSIM 0.813 r 0.940 (DGI-5000: 16.77 / 0.429), 1966.4 s

@@ -1,0 +1,257 @@
+{
+  "model": "C",
+  "n_shots": 1000,
+  "n_params": 1925025,
+  "architecture": "UNetGI(base=32, depth=3), identical to Model B",
+  "optimizer": "Adam lr=0.0001 (constant)",
+  "loss": "MSE",
+  "batch_size": 16,
+  "max_epochs": 80,
+  "patience": 10,
+  "master_seed": 0,
+  "epochs_completed": 80,
+  "stopped_early": false,
+  "best_epoch": 80,
+  "best_val_loss": 0.004862993014855709,
+  "pattern_augmentation": "every training image gets a fresh 1,000-pattern sequence every epoch; seed = 10,000,000 + 1000*epoch + train_index",
+  "validation_seeds": [
+    2040,
+    2041,
+    2042
+  ],
+  "unseen_seeds": [
+    2027,
+    2028,
+    2029
+  ],
+  "seed_2026": "not used to train or select Model C; reported as an additional unseen sequence",
+  "smoothing_sigma": {
+    "500": 1.75,
+    "1000": 1.5
+  },
+  "checks": {
+    "n_train": 341,
+    "n_val": 75,
+    "test_ids_loaded": 0,
+    "objects_vs_targets_max_abs_diff": 0.0,
+    "train_seed_range": [
+      10001000,
+      10080340
+    ],
+    "train_seeds_unique": true,
+    "train_seeds_overlap_reserved": false,
+    "val_unseen_overlap": [],
+    "dgi_single_seed2026_vs_phase2A_max_abs_diff": 0.0,
+    "epoch1_input_differs_from_seed2026_mean_abs": 0.21941615641117096,
+    "epoch2_vs_epoch1_input_mean_abs_diff": 0.21991051733493805,
+    "best_epoch": 80,
+    "best_reload_max_abs_diff": 0.0
+  },
+  "overfitting": {
+    "train_images_fresh_seq_PSNR": 25.688683206952604,
+    "train_images_fresh_seq_SSIM": 0.6597028542342221,
+    "train_images_fresh_seq_loss": 0.004814123887144406,
+    "val_loss_at_best": 0.004862993014855709,
+    "val_PSNR_at_best": 25.468064241105854,
+    "val_SSIM_at_best": 0.6520838813408307,
+    "epochs_after_best": 0
+  },
+  "unseen_summary": [
+    {
+      "method": "DGI-1000",
+      "shots": 1000,
+      "seed": "2027-2029 mean",
+      "PSNR_mean": 14.475829689639275,
+      "PSNR_std": 0.04948112214437052,
+      "SSIM_mean": 0.18622371417420927,
+      "SSIM_std": 0.0014337896022607356,
+      "MSE_mean": 0.051268833682694775,
+      "MSE_std": 0.0006588487908171739,
+      "Pearson_r_mean": 0.4212971225024411,
+      "Pearson_r_std": 0.002006438863045297
+    },
+    {
+      "method": "Smoothed DGI-1000 (sigma=1.5)",
+      "shots": 1000,
+      "seed": "2027-2029 mean",
+      "PSNR_mean": 23.506936576418955,
+      "PSNR_std": 0.038939343022741636,
+      "SSIM_mean": 0.5832611338724826,
+      "SSIM_std": 0.0005688641611896977,
+      "MSE_mean": 0.007885190511989484,
+      "MSE_std": 8.455561843907378e-05,
+      "Pearson_r_mean": 0.8327288804821614,
+      "Pearson_r_std": 0.0011815994688924001
+    },
+    {
+      "method": "Model A (fixed seed 2026, DGI-500)",
+      "shots": 500,
+      "seed": "2027-2029 mean",
+      "PSNR_mean": 22.616430078331643,
+      "PSNR_std": 0.12702549235084068,
+      "SSIM_mean": 0.4892426101293514,
+      "SSIM_std": 0.006825656960060885,
+      "MSE_mean": 0.008756607735811921,
+      "MSE_std": 0.00019454230168011036,
+      "Pearson_r_mean": 0.7604498418599283,
+      "Pearson_r_std": 0.004647089670858836
+    },
+    {
+      "method": "Model B (fixed seed 2026, DGI-1000)",
+      "shots": 1000,
+      "seed": "2027-2029 mean",
+      "PSNR_mean": 23.797170514050816,
+      "PSNR_std": 0.058061081227939675,
+      "SSIM_mean": 0.5775035057767012,
+      "SSIM_std": 0.0020410408560606833,
+      "MSE_mean": 0.007059404157979165,
+      "MSE_std": 9.937354778861929e-05,
+      "Pearson_r_mean": 0.8210625387359695,
+      "Pearson_r_std": 0.0012300907719872062
+    },
+    {
+      "method": "Model C (random seeds, DGI-1000)",
+      "shots": 1000,
+      "seed": "2027-2029 mean",
+      "PSNR_mean": 25.382326823684696,
+      "PSNR_std": 0.09845025216970782,
+      "SSIM_mean": 0.6484956143740229,
+      "SSIM_std": 0.0037838424288481444,
+      "MSE_mean": 0.004930204328463036,
+      "MSE_std": 9.265938045192645e-05,
+      "Pearson_r_mean": 0.8683592178708107,
+      "Pearson_r_std": 0.001744305791188445
+    },
+    {
+      "method": "DGI-10000",
+      "shots": 10000,
+      "seed": "2027-2029 mean",
+      "PSNR_mean": 23.523966343092663,
+      "PSNR_std": 0.06139250452837576,
+      "SSIM_mean": 0.6105682388093571,
+      "SSIM_std": 0.0032799975263894414,
+      "MSE_mean": 0.006964200089096231,
+      "MSE_std": 0.00010935696123478007,
+      "Pearson_r_mean": 0.841915512799135,
+      "Pearson_r_std": 0.0016793079684421731
+    }
+  ],
+  "paired_unseen": {
+    "C_minus_ModelB_PSNR": {
+      "mean": 1.585156309633884,
+      "median": 1.4731270386920414,
+      "std": 0.6687071762640683,
+      "pct_C_better": 100.0
+    },
+    "C_minus_ModelB_SSIM": {
+      "mean": 0.07099210859732162,
+      "median": 0.07051496015031766,
+      "std": 0.032628749027285145,
+      "pct_C_better": 100.0
+    },
+    "C_minus_ModelB_Pearson_r": {
+      "mean": 0.0472966791348414,
+      "median": 0.049354482378005105,
+      "std": 0.014188577989862663,
+      "pct_C_better": 100.0
+    },
+    "C_minus_Smooth1000_PSNR": {
+      "mean": 1.875390247265743,
+      "median": 2.132810281971093,
+      "std": 1.2372646198638926,
+      "pct_C_better": 93.77777777777779
+    },
+    "C_minus_Smooth1000_SSIM": {
+      "mean": 0.0652344805015403,
+      "median": 0.07629705978796308,
+      "std": 0.036067145195580394,
+      "pct_C_better": 94.22222222222221
+    },
+    "C_minus_Smooth1000_Pearson_r": {
+      "mean": 0.03563033738864944,
+      "median": 0.040509658750946254,
+      "std": 0.019141032945967026,
+      "pct_C_better": 94.22222222222221
+    },
+    "C_minus_DGI10000_PSNR": {
+      "mean": 1.8583604805920326,
+      "median": 1.7731230941320675,
+      "std": 0.943020387554669,
+      "pct_C_better": 97.33333333333334
+    },
+    "C_minus_DGI10000_SSIM": {
+      "mean": 0.03792737556466569,
+      "median": 0.04622265767264078,
+      "std": 0.10857923283796116,
+      "pct_C_better": 64.0
+    },
+    "C_minus_DGI10000_Pearson_r": {
+      "mean": 0.026443705071675774,
+      "median": 0.028871318751983788,
+      "std": 0.034637171212899935,
+      "pct_C_better": 79.11111111111111
+    },
+    "C_minus_DGI1000_PSNR": {
+      "mean": 10.906497134045422,
+      "median": 10.90682686706522,
+      "std": 1.1961854987947116,
+      "pct_C_better": 100.0
+    },
+    "C_minus_DGI1000_SSIM": {
+      "mean": 0.4622719001998136,
+      "median": 0.46832747375277645,
+      "std": 0.09540998624276767,
+      "pct_C_better": 100.0
+    },
+    "C_minus_DGI1000_Pearson_r": {
+      "mean": 0.4470620953683697,
+      "median": 0.45036001309965,
+      "std": 0.04089685536357106,
+      "pct_C_better": 100.0
+    },
+    "C_minus_ModelA_PSNR": {
+      "mean": 2.7658967453530567,
+      "median": 2.6632719097624467,
+      "std": 0.6776772135878903,
+      "pct_C_better": 100.0
+    },
+    "C_minus_ModelA_SSIM": {
+      "mean": 0.15925300424467148,
+      "median": 0.15880313841600913,
+      "std": 0.03711395700075234,
+      "pct_C_better": 100.0
+    },
+    "C_minus_ModelA_Pearson_r": {
+      "mean": 0.1079093760108826,
+      "median": 0.10738300873956197,
+      "std": 0.01888470501235944,
+      "pct_C_better": 100.0
+    },
+    "B_minus_Smooth1000_PSNR": {
+      "mean": 0.2902339376318588,
+      "pct_B_better": 67.55555555555556
+    },
+    "B_minus_Smooth1000_SSIM": {
+      "mean": -0.005757628095781313,
+      "pct_B_better": 40.0
+    },
+    "B_minus_Smooth1000_Pearson_r": {
+      "mean": -0.011666341746191973,
+      "pct_B_better": 18.22222222222222
+    },
+    "seed2026_C_minus_B_PSNR": {
+      "mean": -0.13615546656390734,
+      "pct_C_better": 44.0
+    },
+    "seed2026_C_minus_B_SSIM": {
+      "mean": -0.011685374868221651,
+      "pct_C_better": 36.0
+    },
+    "seed2026_C_minus_B_Pearson_r": {
+      "mean": 0.00047104206204175993,
+      "pct_C_better": 44.0
+    }
+  },
+  "test_images_used": 0,
+  "wall_time_s": 2019.8
+}

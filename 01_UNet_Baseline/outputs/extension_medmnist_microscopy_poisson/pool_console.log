@@ -1,0 +1,32 @@
+selection set (3, 1000, 3, 5, 64, 64) (68s)
+pool: 500/7000 images, 176s
+pool: 1000/7000 images, 267s
+pool: 1500/7000 images, 357s
+pool: 2000/7000 images, 447s
+pool: 2500/7000 images, 538s
+pool: 3000/7000 images, 647s
+pool: 3500/7000 images, 765s
+pool: 4000/7000 images, 856s
+pool: 4500/7000 images, 944s
+pool: 5000/7000 images, 1032s
+pool: 5500/7000 images, 1121s
+pool: 6000/7000 images, 1212s
+pool: 6500/7000 images, 1300s
+pool: 7000/7000 images, 1384s
+{
+ "n_train": 7000,
+ "n_val": 1000,
+ "pool_spot_checks_max_abs_diff": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "noise_free_path_vs_frozen_extension_pool_max_abs_diff": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "pool_finite": true,
+ "selection_finite": true
+} 
+1395.2 s

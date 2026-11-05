@@ -1,0 +1,39 @@
+# E2c (default): Improved U-Net with SSIM + edge losses
+# This is the full E2 configuration.  For ablations see e2a_*.yaml and e2b_*.yaml.
+#
+# Architecture: identical to frozen UNetGI (base=32, depth=3, ~1.9M params)
+# Change from E1: MSE only → MSE + λ_ssim*SSIM + λ_edge*edge
+#
+# Run:  python train_e2.py --config configs/e2_unet.yaml --shot-count 1000
+
+experiment:
+  name: e2_improved_unet
+  description: "E2c — MSE + SSIM + edge loss (full)"
+
+data:
+  frozen_root: /home/ss_students/Downloads/MTP_Ghost_Imaging/01_UNet_Baseline
+  shot_count: 1000
+  random_k: true
+  num_workers: 2
+
+model:
+  base: 32
+  depth: 3
+
+training:
+  epochs: 80
+  batch_size: 16
+  lr: 1.0e-4
+  patience: 10
+  min_delta: 1.0e-5
+  seed: 0
+  device: cuda
+
+loss:
+  lambda_ssim: 0.1
+  lambda_edge: 0.05
+
+output:
+  checkpoint_dir: checkpoints
+  log_dir: logs
+  results_dir: results

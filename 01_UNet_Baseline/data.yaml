@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['d', 'nd']
+
+roboflow:
+  workspace: veerla-vishnu-karthik
+  project: onion-cnn-final-flpoy
+  version: 1
+  license: CC BY 4.0
+  url: https://app.roboflow.com/veerla-vishnu-karthik/onion-cnn-final-flpoy/1

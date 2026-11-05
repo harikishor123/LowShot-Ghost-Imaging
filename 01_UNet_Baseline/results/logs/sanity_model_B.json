@@ -1,0 +1,61 @@
+{
+  "model_A_checkpoint_md5": {
+    "best.keras": "0007032f601710ae76cb9cd7620c1861",
+    "final_restored_best.keras": "015f12b15e35376567067e3a54daebd6"
+  },
+  "condition_table": {
+    "10": 0.0,
+    "50": 0.349485,
+    "100": 0.5,
+    "250": 0.69897,
+    "500": 0.849485,
+    "1000": 1.0
+  },
+  "observed_condition_per_P": {
+    "10": 0.0,
+    "50": 0.349485,
+    "100": 0.5,
+    "250": 0.69897,
+    "500": 0.849485,
+    "1000": 1.0
+  },
+  "generator_condition_counts": {
+    "0.0": 43,
+    "0.349485": 51,
+    "0.5": 47,
+    "0.69897": 19,
+    "0.849485": 71,
+    "1.0": 69
+  },
+  "n_val_patches": 900,
+  "model_params": 1941283,
+  "model_input_shape": "(None, None, None, 4)",
+  "model_output_shape": "(None, None, None, 3)",
+  "first_conv_kernel_shape": "(3, 3, 4, 16)",
+  "benchmark_s_per_step": 0.399,
+  "estimated_epoch_train_s": 100,
+  "estimated_60_epochs_h": 1.66,
+  "model_A_checkpoints_unchanged": true,
+  "checks": {
+    "P10_gives_0.0": true,
+    "P1000_gives_1.0": true,
+    "condition_monotonic": true,
+    "train_stream_rows_all_train_split": true,
+    "no_test_image_in_train_stream": true,
+    "no_val_image_in_train_stream": true,
+    "input_patch_shape_256x256x4": true,
+    "rgb_channels_identical_to_model_A_noisy_input": true,
+    "target_identical_to_model_A_target": true,
+    "condition_channel_spatially_constant": true,
+    "condition_value_matches_P": true,
+    "generator_condition_values_in_allowed_set": true,
+    "val_input_shape_Nx256x256x4": true,
+    "val_rgb_unchanged": true,
+    "val_condition_matches_P": true,
+    "val_images_are_val_split_only": true,
+    "output_shape_256x256x3": true,
+    "params_equal_model_A_plus_144": true,
+    "model_A_checkpoints_unchanged": true
+  },
+  "ALL_PASSED": true
+}

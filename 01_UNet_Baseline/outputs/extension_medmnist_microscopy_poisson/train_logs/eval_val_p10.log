@@ -1,0 +1,90 @@
+/home/ss_students/.local/lib/python3.10/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+  warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+seed 2026 done (142s)
+seed 2027 done (187s)
+seed 2028 done (232s)
+seed 2029 done (274s)
+group                label  n_pairs  SSIM_mean  correlation_mean  PSNR_mean  edge_r_mean
+  all      AI-original-500     4000     0.5592            0.7893    20.8623       0.5468
+  all     AI-original-1000     4000     0.6470            0.8473    22.3750       0.6557
+  all     AI-original-2000     4000     0.7221            0.8921    23.9382       0.7496
+  all     AI-original-5000     4000     0.8059            0.9332    26.0791       0.8418
+  all              DGI-500     4000     0.1194            0.2991     9.3944       0.1012
+  all             DGI-1000     4000     0.1825            0.4163    11.0253       0.1881
+  all             DGI-2000     4000     0.2695            0.5536    13.0916       0.3150
+  all             DGI-5000     4000     0.4124            0.7307    16.3447       0.5237
+  all            DGI-10000     4000     0.5261            0.8337    19.0321       0.6765
+  all noise-free DGI-10000     4000     0.5417            0.8485    19.4831       0.6961
+  all     smoothed DGI-500     4000     0.3837            0.7173    17.5317       0.3191
+  all    smoothed DGI-1000     4000     0.4651            0.7882    19.0563       0.4456
+  all    smoothed DGI-2000     4000     0.5517            0.8451    20.7455       0.5721
+  all    smoothed DGI-5000     4000     0.6582            0.9012    23.0819       0.7202
+blood      AI-original-500     2000     0.6454            0.9310    20.5675       0.6796
+blood     AI-original-1000     2000     0.7207            0.9552    22.3945       0.7654
+blood     AI-original-2000     2000     0.7749            0.9704    24.1781       0.8334
+blood     AI-original-5000     2000     0.8300            0.9826    26.5091       0.8974
+blood              DGI-500     2000     0.0764            0.2986     7.5867       0.0589
+blood             DGI-1000     2000     0.1163            0.4175     8.8534       0.1203
+blood             DGI-2000     2000     0.1761            0.5592    10.6177       0.2211
+blood             DGI-5000     2000     0.2886            0.7422    13.6226       0.4195
+blood            DGI-10000     2000     0.3902            0.8450    16.1891       0.5884
+blood noise-free DGI-10000     2000     0.3981            0.8512    16.3906       0.6008
+blood     smoothed DGI-500     2000     0.3783            0.8417    15.3080       0.3630
+blood    smoothed DGI-1000     2000     0.4534            0.8921    17.0420       0.4879
+blood    smoothed DGI-2000     2000     0.5287            0.9257    19.0704       0.6040
+blood    smoothed DGI-5000     2000     0.6235            0.9563    21.9260       0.7398
+ path      AI-original-500     2000     0.4729            0.6476    21.1571       0.4140
+ path     AI-original-1000     2000     0.5734            0.7393    22.3556       0.5461
+ path     AI-original-2000     2000     0.6693            0.8139    23.6983       0.6657
+ path     AI-original-5000     2000     0.7818            0.8839    25.6492       0.7862
+ path              DGI-500     2000     0.1624            0.2996    11.2021       0.1435
+ path             DGI-1000     2000     0.2488            0.4150    13.1972       0.2560
+ path             DGI-2000     2000     0.3629            0.5481    15.5654       0.4090
+ path             DGI-5000     2000     0.5362            0.7191    19.0669       0.6280
+ path            DGI-10000     2000     0.6620            0.8225    21.8752       0.7646
+ path noise-free DGI-10000     2000     0.6853            0.8457    22.5757       0.7915
+ path     smoothed DGI-500     2000     0.3891            0.5929    19.7554       0.2752
+ path    smoothed DGI-1000     2000     0.4768            0.6844    21.0706       0.4033
+ path    smoothed DGI-2000     2000     0.5748            0.7646    22.4206       0.5402
+ path    smoothed DGI-5000     2000     0.6929            0.8461    24.2377       0.7005
+group                                  comparison  SSIM_mean  SSIM_ci_low  correlation_mean  correlation_ci_low criterion_pass
+  all            smoothed DGI-500 minus DGI-10000    -0.1424      -0.1546           -0.1164             -0.1255          False
+  all             AI-original-500 minus DGI-10000     0.0330       0.0161           -0.0444             -0.0535          False
+  all           smoothed DGI-1000 minus DGI-10000    -0.0610      -0.0719           -0.0455             -0.0529          False
+  all            AI-original-1000 minus DGI-10000     0.1209       0.1052            0.0135              0.0061           True
+  all           smoothed DGI-2000 minus DGI-10000     0.0256       0.0159            0.0114              0.0056           True
+  all            AI-original-2000 minus DGI-10000     0.1960       0.1810            0.0584              0.0530           True
+  all           smoothed DGI-5000 minus DGI-10000     0.1321       0.1242            0.0675              0.0636           True
+  all            AI-original-5000 minus DGI-10000     0.2798       0.2676            0.0995              0.0962           True
+  all  AI-original-500 minus noise-free DGI-10000     0.0174       0.0005           -0.0592             -0.0697          False
+  all AI-original-1000 minus noise-free DGI-10000     0.1053       0.0893           -0.0012             -0.0101          False
+  all AI-original-2000 minus noise-free DGI-10000     0.1804       0.1659            0.0436              0.0373           True
+  all AI-original-5000 minus noise-free DGI-10000     0.2641       0.2520            0.0848              0.0804           True
+  all        DGI-10000 minus noise-free DGI-10000    -0.0156      -0.0180           -0.0147             -0.0174            NaN
+blood            smoothed DGI-500 minus DGI-10000    -0.0119      -0.0171           -0.0033             -0.0043           True
+blood             AI-original-500 minus DGI-10000     0.2552       0.2465            0.0861              0.0844           True
+blood           smoothed DGI-1000 minus DGI-10000     0.0632       0.0583            0.0471              0.0464           True
+blood            AI-original-1000 minus DGI-10000     0.3305       0.3221            0.1103              0.1090           True
+blood           smoothed DGI-2000 minus DGI-10000     0.1385       0.1346            0.0807              0.0801           True
+blood            AI-original-2000 minus DGI-10000     0.3848       0.3767            0.1254              0.1244           True
+blood           smoothed DGI-5000 minus DGI-10000     0.2333       0.2306            0.1113              0.1108           True
+blood            AI-original-5000 minus DGI-10000     0.4398       0.4326            0.1377              0.1369           True
+blood  AI-original-500 minus noise-free DGI-10000     0.2473       0.2384            0.0798              0.0782           True
+blood AI-original-1000 minus noise-free DGI-10000     0.3225       0.3138            0.1040              0.1029           True
+blood AI-original-2000 minus noise-free DGI-10000     0.3768       0.3689            0.1192              0.1183           True
+blood AI-original-5000 minus noise-free DGI-10000     0.4318       0.4250            0.1314              0.1308           True
+blood        DGI-10000 minus noise-free DGI-10000    -0.0079      -0.0083           -0.0062             -0.0065            NaN
+ path            smoothed DGI-500 minus DGI-10000    -0.2729      -0.2891           -0.2296             -0.2414          False
+ path             AI-original-500 minus DGI-10000    -0.1891      -0.2072           -0.1749             -0.1865          False
+ path           smoothed DGI-1000 minus DGI-10000    -0.1853      -0.2000           -0.1381             -0.1480          False
+ path            AI-original-1000 minus DGI-10000    -0.0886      -0.1051           -0.0832             -0.0927          False
+ path           smoothed DGI-2000 minus DGI-10000    -0.0873      -0.1001           -0.0579             -0.0654          False
+ path            AI-original-2000 minus DGI-10000     0.0073      -0.0068           -0.0086             -0.0151          False
+ path           smoothed DGI-5000 minus DGI-10000     0.0309       0.0203            0.0236              0.0183           True
+ path            AI-original-5000 minus DGI-10000     0.1197       0.1084            0.0614              0.0572           True
+ path  AI-original-500 minus noise-free DGI-10000    -0.2124      -0.2306           -0.1982             -0.2114          False
+ path AI-original-1000 minus noise-free DGI-10000    -0.1119      -0.1276           -0.1064             -0.1169          False
+ path AI-original-2000 minus noise-free DGI-10000    -0.0160      -0.0297           -0.0319             -0.0404          False
+ path AI-original-5000 minus noise-free DGI-10000     0.0965       0.0859            0.0381              0.0317           True
+ path        DGI-10000 minus noise-free DGI-10000    -0.0233      -0.0284           -0.0233             -0.0285            NaN
+minimum passing N (vs noisy DGI-10000): {"all": {"smoothed DGI": 2000, "AI-original": 1000}, "blood": {"smoothed DGI": 500, "AI-original": 500}, "path": {"smoothed DGI": 5000, "AI-original": 5000}} | vs noise-free: {"all": {"AI-original": 2000}, "blood": {"AI-original": 500}, "path": {"AI-original": 5000}} | 303.8 s -> /home/ss_students/Downloads/Onion-CNN-Final.v1-onion-original-v1.yolov8/outputs/extension_medmnist_microscopy_poisson/results/level_p10/val

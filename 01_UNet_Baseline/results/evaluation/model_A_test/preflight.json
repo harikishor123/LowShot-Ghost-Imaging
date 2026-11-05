@@ -1,0 +1,64 @@
+{
+  "n_test_images": 74,
+  "n_test_samples": 444,
+  "photon_levels_P": [
+    10.0,
+    50.0,
+    100.0,
+    250.0,
+    500.0,
+    1000.0
+  ],
+  "samples_per_level": {
+    "10": 74,
+    "50": 74,
+    "100": 74,
+    "250": 74,
+    "500": 74,
+    "1000": 74
+  },
+  "test_ids_in_samples_equal_ids_txt": true,
+  "test_overlap_train": [],
+  "test_overlap_val": [],
+  "manifest_split_is_test_for_all": true,
+  "dup_group_members_outside_test": [],
+  "test_ids_in_train_samples": [],
+  "test_ids_in_val_samples": [],
+  "test_noisy_files_match_generation_md5": "444/444",
+  "test_references_match_generation_md5": "74/74",
+  "checkpoint": "models/model_A_baseline_unet/final_restored_best.keras",
+  "checkpoint_md5": "015f12b15e35376567067e3a54daebd6",
+  "checkpoint_weights_identical_to_best_keras": true,
+  "checkpoint_params": 1941139,
+  "checkpoint_epoch": 60,
+  "model_input_shape": "(None, None, None, 3)",
+  "model_output_shape": "(None, None, None, 3)",
+  "model_input_names": [
+    "noisy_linear"
+  ],
+  "model_n_inputs": 1,
+  "example_full_image": {
+    "sample": "test/P0010/A_115",
+    "input_hw": [
+      1024,
+      1013
+    ],
+    "padded_input": [
+      1,
+      1024,
+      1024,
+      3
+    ],
+    "output": [
+      1,
+      1024,
+      1024,
+      3
+    ],
+    "output_range": [
+      0.0009704418480396271,
+      0.9553237557411194
+    ]
+  },
+  "ALL_OK": true
+}

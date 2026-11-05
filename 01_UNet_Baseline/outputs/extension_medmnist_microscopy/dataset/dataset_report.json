@@ -1,0 +1,167 @@
+{
+  "sources": {
+    "zenodo_doi": "10.5281/zenodo.10519652",
+    "record_version": "3.0",
+    "license": "CC BY 4.0",
+    "files": {
+      "bloodmnist_64.npz": {
+        "md5": "2b94928a2ae4916078ca51e05b6b800b",
+        "matches_zenodo": true
+      },
+      "pathmnist_64.npz": {
+        "md5": "55aa9c1e0525abe5a6b9d8343a507616",
+        "matches_zenodo": true
+      }
+    }
+  },
+  "sampling": {
+    "per_subset": {
+      "train": 3500,
+      "val": 500,
+      "test": 1000
+    },
+    "stratified_by": "class label within each official split",
+    "seed": 42,
+    "oversample_for_screening": 0.15
+  },
+  "conversion": "uint8 sRGB -> linear (IEC 61966-2-1) -> Y = 0.2126R + 0.7152G + 0.0722B -> clip [0,1]; 64x64 as provided",
+  "screening": {
+    "n_candidates": 11524,
+    "pairs_flagged_among_candidates": {
+      "similar (review)": 2918,
+      "exact": 1
+    },
+    "removed_as_duplicates": 1,
+    "removed_duplicates_by_subset": {
+      "blood": 1
+    },
+    "low_information_flagged": 47,
+    "min_std_rule": 0.005
+  },
+  "final_counts": {
+    "test": {
+      "blood": 1000,
+      "path": 1000
+    },
+    "train": {
+      "blood": 3500,
+      "path": 3500
+    },
+    "val": {
+      "blood": 500,
+      "path": 500
+    }
+  },
+  "class_counts": {
+    "blood": {
+      "train": {
+        "0": 249,
+        "1": 638,
+        "2": 318,
+        "3": 593,
+        "4": 248,
+        "5": 291,
+        "6": 682,
+        "7": 481
+      },
+      "val": {
+        "0": 36,
+        "1": 91,
+        "2": 45,
+        "3": 85,
+        "4": 35,
+        "5": 42,
+        "6": 97,
+        "7": 69
+      },
+      "test": {
+        "0": 71,
+        "1": 183,
+        "2": 91,
+        "3": 169,
+        "4": 71,
+        "5": 83,
+        "6": 195,
+        "7": 137
+      }
+    },
+    "path": {
+      "train": {
+        "0": 364,
+        "1": 370,
+        "2": 403,
+        "3": 404,
+        "4": 311,
+        "5": 474,
+        "6": 307,
+        "7": 366,
+        "8": 501
+      },
+      "val": {
+        "0": 52,
+        "1": 53,
+        "2": 58,
+        "3": 58,
+        "4": 44,
+        "5": 68,
+        "6": 44,
+        "7": 52,
+        "8": 71
+      },
+      "test": {
+        "0": 186,
+        "1": 118,
+        "2": 47,
+        "3": 88,
+        "4": 144,
+        "5": 83,
+        "6": 103,
+        "7": 59,
+        "8": 172
+      }
+    }
+  },
+  "object_stats": {
+    "blood": {
+      "mean_of_object_mean": 0.5121338573841955,
+      "mean_of_object_std": 0.2625266640893394,
+      "min_object_std": 0.10996788574717443
+    },
+    "path": {
+      "mean_of_object_mean": 0.35975633768171567,
+      "mean_of_object_std": 0.142964039245358,
+      "min_object_std": 0.005031895222029349
+    }
+  },
+  "checks": {
+    "raw_md5": {
+      "bloodmnist_64.npz": {
+        "md5": "2b94928a2ae4916078ca51e05b6b800b",
+        "matches_zenodo": true
+      },
+      "pathmnist_64.npz": {
+        "md5": "55aa9c1e0525abe5a6b9d8343a507616",
+        "matches_zenodo": true
+      }
+    },
+    "official_split_sizes": {
+      "blood": {
+        "train": 11959,
+        "val": 1712,
+        "test": 3421
+      },
+      "path": {
+        "train": 89996,
+        "val": 10004,
+        "test": 7180
+      }
+    },
+    "selected_strong_pairs": 0,
+    "selected_similar_review_pairs": 2183,
+    "selected_similar_review_cross_split": 1068,
+    "selected_ids_unique": true
+  },
+  "objects_npz": "data/extension_medmnist/processed/objects_64.npz",
+  "objects_npz_md5": "73e8ce929c5a7c67111e028032e528c1",
+  "runtime_s": 284.5
+}

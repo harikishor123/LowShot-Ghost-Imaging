@@ -1,0 +1,36 @@
+{
+  "command": "py -3.13 final_evaluate.py --split test --final-test",
+  "runs_on_test_set": 1,
+  "started": "2026-10-06T15:31:53+05:30",
+  "completed": "2026-10-06T15:32:33+05:30",
+  "exit_code": 0,
+  "checkpoint_md5": {
+    "500": "ec72468607dc43b98ae2b1899fccd597",
+    "1000": "26efe9ef2a69cd813b16cc65aedbaa60",
+    "2000": "dc2ff919034623c4b92ea0a6fcf6fffe",
+    "5000": "ac0d35c0aa86747012118411b94eb535"
+  },
+  "checkpoint_md5_match_frozen": true,
+  "protocol_md5": "fa82061d462ff01a70c7c37354d81d5a",
+  "frozen_for_test_md5": "0f5199e8ed605dd951ab89e9e7cf68e3",
+  "final_evaluate_py_md5": "25717d6ca08828a9d522ff5b7cc19a80",
+  "test_split": {
+    "ids_file": "data/v2/splits/test/ids.txt",
+    "n_images": 74,
+    "ids_md5": "41235d66b43e2e6cf754fc0dbbaf9440"
+  },
+  "eval_seeds": [
+    2026,
+    2027,
+    2028,
+    2029
+  ],
+  "retest_offset": 7000,
+  "smoothing_sigma": {
+    "500": 1.5,
+    "1000": 1.125,
+    "2000": 0.75,
+    "5000": 0.5
+  },
+  "note": "final_evaluate.py hash was not recorded at validation time; its content was not edited between the validation run and this test run"
+}

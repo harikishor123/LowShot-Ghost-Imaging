@@ -1,0 +1,82 @@
+{
+  "objective": "Reduce the number of Ghost Imaging measurement shots required to recover the structural information contained in the existing 10,000-shot reference.",
+  "written_before_any_training_or_evaluation": "2026-10-06T14:19:28",
+  "reference": {
+    "file": "outputs/phase2a_dgi_dataset/reconstructions/dgi_estimates_seed2026_64px.npz",
+    "key": "estimate_unclipped_10000",
+    "display_and_metric_form": "clipped to [0,1] (as in all earlier phases)",
+    "acquisition": "pattern seed 2026, i.i.d. Bernoulli(0.5) 64x64 binary patterns, noise-free buckets, 10,000 shots",
+    "method": "calibrated DGI: O_hat = DGI_N/0.25 + <B>_N/<R>_N (Phase 2A)",
+    "noise_regime": "none (noise-free buckets)"
+  },
+  "low_shot_inputs": "first N measurements of the same sequence, same DGI method, clipped to [0,1]; N in 500/1000/2000/5000",
+  "training": {
+    "images": "341 training images only",
+    "pairs": "input = DGI-N from the first N shots of a random sequence; target = DGI-10000 of the SAME sequence (identical pipeline)",
+    "sequences": "pool of 32 independent sequences per training image; seed = 20,000,000 + 1000*k + train_index (k=0..31); one realisation drawn per image per epoch (deterministic, master seed 0)",
+    "noise": "none - the fixed reference acquisition is noise-free, so its prefixes are too",
+    "model": "UNetGI(base=32, depth=3), 1,925,025 parameters (Models B/C/D architecture)",
+    "optimiser": "Adam lr 1e-4, MSE loss, batch 16, max 80 epochs, early stopping patience 10 on selection loss",
+    "checkpoint_selection": "75 validation images x seeds 2040-2042 (shared sequence per seed); target = DGI-10000 of that seed"
+  },
+  "evaluation_seeds": {
+    "existing_reference": [
+      2026
+    ],
+    "unseen_sequences": [
+      2027,
+      2028,
+      2029
+    ],
+    "independent_10k_retest": {
+      "2026": 9026,
+      "2027": 9027,
+      "2028": 9028,
+      "2029": 9029
+    }
+  },
+  "methods_compared_to_reference": [
+    "conventional DGI-N (same method as the reference)",
+    "smoothed DGI-N (Gaussian sigma tuned on training sequences to match their 10k reference)",
+    "AI-N",
+    "independent 10k acquisition (retest yardstick)"
+  ],
+  "metrics": [
+    "PSNR",
+    "SSIM (skimage, data_range 1)",
+    "MSE",
+    "Pearson r",
+    "edge r = Pearson correlation of Sobel gradient-magnitude maps (skimage.filters.sobel)"
+  ],
+  "secondary_context": "all methods also scored against the clean onion image (not the target)",
+  "comparable_criterion": {
+    "definition": "AI-N is comparable to the 10k reference if, on paired image-level differences [metric(AI-N, ref) - metric(independent 10k, ref)] pooled over the validation evaluation seeds (2026-2029), the lower bound of the 95% bootstrap CI (2000 resamples over images) is >= -delta, for BOTH SSIM and Pearson r",
+    "delta": {
+      "SSIM": 0.02,
+      "Pearson_r": 0.01
+    },
+    "decided_on": "validation set; the minimum successful N is frozen before the test set is opened",
+    "test_set": "the same rule is applied once to the 74 test images; N is not changed after seeing test results"
+  },
+  "seed_ranges_reserved": {
+    "model_C_D_training": "10,001,000-10,080,340",
+    "this_pool": "20,000,000-20,031,340",
+    "selection": [
+      2040,
+      2041,
+      2042
+    ],
+    "evaluation": [
+      2026,
+      2027,
+      2028,
+      2029
+    ],
+    "retest": [
+      9026,
+      9027,
+      9028,
+      9029
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+[
+ {
+  "layer": "noisy_linear",
+  "type": "InputLayer",
+  "output_shape": "(None, None, None, 3)",
+  "params": 0
+ },
+ {
+  "layer": "enc0_conv1",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 16)",
+  "params": 448
+ },
+ {
+  "layer": "enc0_conv2",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 16)",
+  "params": 2320
+ },
+ {
+  "layer": "down0",
+  "type": "MaxPooling2D",
+  "output_shape": "(None, None, None, 16)",
+  "params": 0
+ },
+ {
+  "layer": "enc1_conv1",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 32)",
+  "params": 4640
+ },
+ {
+  "layer": "enc1_conv2",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 32)",
+  "params": 9248
+ },
+ {
+  "layer": "down1",
+  "type": "MaxPooling2D",
+  "output_shape": "(None, None, None, 32)",
+  "params": 0
+ },
+ {
+  "layer": "enc2_conv1",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 64)",
+  "params": 18496
+ },
+ {
+  "layer": "enc2_conv2",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 64)",
+  "params": 36928
+ },
+ {
+  "layer": "down2",
+  "type": "MaxPooling2D",
+  "output_shape": "(None, None, None, 64)",
+  "params": 0
+ },
+ {
+  "layer": "enc3_conv1",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 128)",
+  "params": 73856
+ },
+ {
+  "layer": "enc3_conv2",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 128)",
+  "params": 147584
+ },
+ {
+  "layer": "down3",
+  "type": "MaxPooling2D",
+  "output_shape": "(None, None, None, 128)",
+  "params": 0
+ },
+ {
+  "layer": "bottleneck_conv1",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 256)",
+  "params": 295168
+ },
+ {
+  "layer": "bottleneck_conv2",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 256)",
+  "params": 590080
+ },
+ {
+  "layer": "up3",
+  "type": "Conv2DTranspose",
+  "output_shape": "(None, None, None, 128)",
+  "params": 131200
+ },
+ {
+  "layer": "skip3",
+  "type": "Concatenate",
+  "output_shape": "(None, None, None, 256)",
+  "params": 0
+ },
+ {
+  "layer": "dec3_conv1",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 128)",
+  "params": 295040
+ },
+ {
+  "layer": "dec3_conv2",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 128)",
+  "params": 147584
+ },
+ {
+  "layer": "up2",
+  "type": "Conv2DTranspose",
+  "output_shape": "(None, None, None, 64)",
+  "params": 32832
+ },
+ {
+  "layer": "skip2",
+  "type": "Concatenate",
+  "output_shape": "(None, None, None, 128)",
+  "params": 0
+ },
+ {
+  "layer": "dec2_conv1",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 64)",
+  "params": 73792
+ },
+ {
+  "layer": "dec2_conv2",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 64)",
+  "params": 36928
+ },
+ {
+  "layer": "up1",
+  "type": "Conv2DTranspose",
+  "output_shape": "(None, None, None, 32)",
+  "params": 8224
+ },
+ {
+  "layer": "skip1",
+  "type": "Concatenate",
+  "output_shape": "(None, None, None, 64)",
+  "params": 0
+ },
+ {
+  "layer": "dec1_conv1",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 32)",
+  "params": 18464
+ },
+ {
+  "layer": "dec1_conv2",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 32)",
+  "params": 9248
+ },
+ {
+  "layer": "up0",
+  "type": "Conv2DTranspose",
+  "output_shape": "(None, None, None, 16)",
+  "params": 2064
+ },
+ {
+  "layer": "skip0",
+  "type": "Concatenate",
+  "output_shape": "(None, None, None, 32)",
+  "params": 0
+ },
+ {
+  "layer": "dec0_conv1",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 16)",
+  "params": 4624
+ },
+ {
+  "layer": "dec0_conv2",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 16)",
+  "params": 2320
+ },
+ {
+  "layer": "clean_linear",
+  "type": "Conv2D",
+  "output_shape": "(None, None, None, 3)",
+  "params": 51
+ }
+]

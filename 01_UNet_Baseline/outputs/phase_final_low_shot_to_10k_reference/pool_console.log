@@ -1,0 +1,36 @@
+{
+ "val_seed2026_pipeline_vs_existing_reference_max_abs_diff": {
+  "500": 0.0,
+  "1000": 0.0,
+  "5000": 0.0,
+  "10000": 2.9103830456733704e-11
+ },
+ "train20_seed2026_pipeline_vs_existing_max_abs_diff": 0.0,
+ "single_image_sequence_equals_shared_sequence_max_abs_diff": 0.0
+}
+pool: 25/341 images, 230s
+pool: 50/341 images, 314s
+pool: 75/341 images, 400s
+pool: 100/341 images, 485s
+pool: 125/341 images, 570s
+pool: 150/341 images, 655s
+pool: 175/341 images, 742s
+pool: 200/341 images, 831s
+pool: 225/341 images, 924s
+pool: 250/341 images, 1017s
+pool: 275/341 images, 1110s
+pool: 300/341 images, 1202s
+pool: 325/341 images, 1294s
+{
+ "val_seed2026_pipeline_vs_existing_reference_max_abs_diff": {
+  "500": 0.0,
+  "1000": 0.0,
+  "5000": 0.0,
+  "10000": 2.9103830456733704e-11
+ },
+ "train20_seed2026_pipeline_vs_existing_max_abs_diff": 0.0,
+ "single_image_sequence_equals_shared_sequence_max_abs_diff": 0.0,
+ "pool_spot_check_max_abs_diff": 0.0,
+ "pool_finite": true
+} 
+1334.2 s

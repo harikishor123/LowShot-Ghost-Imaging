@@ -1,0 +1,51 @@
+{
+  "label": "AI-2000",
+  "shots": 2000,
+  "target": "DGI-10000 of the same acquisition",
+  "best_epoch": 77,
+  "best_selection_loss": 0.016649404908152504,
+  "epochs_completed": 80,
+  "stopped_early": false,
+  "n_params": 1925025,
+  "checkpoint": "outputs/extension_medmnist_microscopy/models/target_dgi10k/model_2000/checkpoints/best.pt",
+  "config": {
+    "target": "dgi10k",
+    "shots": 2000,
+    "epochs": 80,
+    "patience": 10,
+    "batch_size": 16,
+    "lr": 0.0001,
+    "base": 32,
+    "seed": 0,
+    "threads": 4,
+    "device": "cuda"
+  },
+  "pool_seed_rule": "30,000,000 + 10,000*k + train_index",
+  "selection_seeds": [
+    2040,
+    2041,
+    2042
+  ],
+  "epoch_realisation_rule": "default_rng([master_seed, epoch]).integers(0, 32, 7000)",
+  "selection_at_best": {
+    "PSNR": 19.10766747980578,
+    "SSIM": 0.5764091144077579,
+    "MSE": 0.01664939499886138,
+    "Pearson_r": 0.8274060338922055
+  },
+  "conventional_on_selection": {
+    "PSNR": 14.382481353128954,
+    "SSIM": 0.5005162304319051,
+    "MSE": 0.050553386037658375,
+    "Pearson_r": 0.6729598481607771
+  },
+  "checks": {
+    "n_train_images": 7000,
+    "realisations_per_image": 32,
+    "selection_pairs": 3000,
+    "test_ids_in_training_or_selection": 0,
+    "device": "NVIDIA RTX A5000",
+    "best_reload_max_abs_diff": 0.0
+  },
+  "wall_time_s": 1974.2
+}

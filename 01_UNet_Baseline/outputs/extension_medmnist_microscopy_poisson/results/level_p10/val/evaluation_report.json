@@ -1,0 +1,102 @@
+{
+  "level": "p10",
+  "noise_f": 0.1,
+  "split": "val",
+  "criterion": {
+    "definition": "on paired image-level differences [metric(method) - metric(comparator)] pooled over seeds 2026-2029, the lower bound of the 95% bootstrap CI (2,000 resamples over images, seeds kept together, rng default_rng(0) per group) is >= -0.02 for SSIM AND >= -0.01 for Pearson r",
+    "delta": {
+      "SSIM": 0.02,
+      "Pearson_r": 0.01
+    },
+    "minimum_N": "smallest N in {500, 1000, 2000, 5000} meeting the criterion; reduction factor = 10000 / N",
+    "primary": "all 2,000 test images (blood + path)",
+    "secondary": "blood and path separately (same rule, images of that subset only)",
+    "candidates": "AI-original-N and smoothed DGI-N, each vs noisy DGI-10000, separately per noise level"
+  },
+  "checks": {
+    "split": "val",
+    "level": "p10",
+    "noise_f": 0.1,
+    "n_images": 1000,
+    "n_by_subset": {
+      "blood": 500,
+      "path": 500
+    },
+    "models": {
+      "500": {
+        "checkpoint": "outputs/extension_medmnist_microscopy_poisson/models/level_p10/model_500/checkpoints/best.pt",
+        "best_epoch": 74,
+        "md5": "b418c2a900a9c836563ca10dbaeb60b2"
+      },
+      "1000": {
+        "checkpoint": "outputs/extension_medmnist_microscopy_poisson/models/level_p10/model_1000/checkpoints/best.pt",
+        "best_epoch": 80,
+        "md5": "47441495a1a4a88222054bc6c263def7"
+      },
+      "2000": {
+        "checkpoint": "outputs/extension_medmnist_microscopy_poisson/models/level_p10/model_2000/checkpoints/best.pt",
+        "best_epoch": 79,
+        "md5": "e029d735f17f558f579865fed5203a09"
+      },
+      "5000": {
+        "checkpoint": "outputs/extension_medmnist_microscopy_poisson/models/level_p10/model_5000/checkpoints/best.pt",
+        "best_epoch": 68,
+        "md5": "47ce62e27ad9acb7f49a3565407fd593"
+      }
+    },
+    "smoothing_sigma": {
+      "500": 1.75,
+      "1000": 1.5,
+      "2000": 1.25,
+      "5000": 1.0
+    }
+  },
+  "minimum_passing_shot_count": {
+    "all": {
+      "smoothed DGI": 2000,
+      "AI-original": 1000
+    },
+    "blood": {
+      "smoothed DGI": 500,
+      "AI-original": 500
+    },
+    "path": {
+      "smoothed DGI": 5000,
+      "AI-original": 5000
+    }
+  },
+  "minimum_passing_shot_count_vs_noise_free_DGI10000": {
+    "all": {
+      "AI-original": 2000
+    },
+    "blood": {
+      "AI-original": 500
+    },
+    "path": {
+      "AI-original": 5000
+    }
+  },
+  "reduction_factor_vs_10000": {
+    "all": {
+      "smoothed DGI": 5.0,
+      "AI-original": 10.0
+    },
+    "blood": {
+      "smoothed DGI": 20.0,
+      "AI-original": 20.0
+    },
+    "path": {
+      "smoothed DGI": 2.0,
+      "AI-original": 2.0
+    }
+  },
+  "example_ids": [
+    "blood_val_000409",
+    "blood_val_000169",
+    "blood_val_000050",
+    "path_val_007927",
+    "path_val_002920",
+    "path_val_009433"
+  ],
+  "runtime_s": 303.8
+}

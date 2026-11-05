@@ -1,0 +1,186 @@
+{
+ "split_counts": {
+  "train": 341,
+  "val": 75,
+  "test": 74
+ },
+ "split_overlap": {
+  "train&val": 0,
+  "train&test": 0,
+  "val&test": 0
+ },
+ "n_train_loaded": 341,
+ "n_val_loaded": 75,
+ "test_ids_in_loaded_data": 0,
+ "alignment_max_psnr_diff_db_train": 1.8723468997450254e-08,
+ "alignment_max_psnr_diff_db_val": 1.689156192696828e-08,
+ "target_vs_fresh_reference_max_abs_diff": 0.0,
+ "input_range": [
+  0.0,
+  1.0
+ ],
+ "target_range": [
+  0.0,
+  0.974702775478363
+ ],
+ "data_finite": true
+}
+U-Net base=32: 1,925,025 parameters
+epoch   1: train 0.06394 | val 0.03446 | PSNR 16.28 SSIM 0.153 r 0.346  *best | 6.5 s
+epoch   2: train 0.02824 | val 0.02417 | PSNR 17.62 SSIM 0.208 r 0.428  *best | 6.0 s
+epoch   3: train 0.02148 | val 0.01962 | PSNR 18.52 SSIM 0.249 r 0.487  *best | 6.0 s
+epoch   4: train 0.01804 | val 0.01707 | PSNR 19.15 SSIM 0.280 r 0.534  *best | 5.9 s
+epoch   5: train 0.01594 | val 0.01532 | PSNR 19.65 SSIM 0.304 r 0.569  *best | 5.9 s
+epoch   6: train 0.01447 | val 0.01407 | PSNR 20.04 SSIM 0.323 r 0.598  *best | 6.0 s
+epoch   7: train 0.01338 | val 0.01306 | PSNR 20.39 SSIM 0.340 r 0.619  *best | 5.9 s
+epoch   8: train 0.01246 | val 0.01223 | PSNR 20.71 SSIM 0.355 r 0.640  *best | 6.2 s
+epoch   9: train 0.01170 | val 0.01157 | PSNR 20.98 SSIM 0.368 r 0.657  *best | 6.1 s
+epoch  10: train 0.01103 | val 0.01093 | PSNR 21.27 SSIM 0.382 r 0.675  *best | 5.9 s
+epoch  11: train 0.01046 | val 0.01046 | PSNR 21.51 SSIM 0.394 r 0.689  *best | 5.9 s
+epoch  12: train 0.00998 | val 0.01000 | PSNR 21.73 SSIM 0.406 r 0.702  *best | 6.2 s
+epoch  13: train 0.00954 | val 0.00966 | PSNR 21.93 SSIM 0.417 r 0.714  *best | 6.0 s
+epoch  14: train 0.00917 | val 0.00930 | PSNR 22.13 SSIM 0.427 r 0.723  *best | 6.0 s
+epoch  15: train 0.00889 | val 0.00899 | PSNR 22.31 SSIM 0.437 r 0.733  *best | 6.0 s
+epoch  16: train 0.00858 | val 0.00874 | PSNR 22.46 SSIM 0.445 r 0.740  *best | 6.1 s
+epoch  17: train 0.00834 | val 0.00850 | PSNR 22.62 SSIM 0.454 r 0.748  *best | 6.0 s
+epoch  18: train 0.00810 | val 0.00836 | PSNR 22.71 SSIM 0.459 r 0.753  *best | 5.9 s
+epoch  19: train 0.00788 | val 0.00813 | PSNR 22.86 SSIM 0.468 r 0.759  *best | 5.9 s
+epoch  20: train 0.00773 | val 0.00804 | PSNR 22.91 SSIM 0.473 r 0.762  *best | 5.8 s
+epoch  21: train 0.00759 | val 0.00784 | PSNR 23.06 SSIM 0.481 r 0.768  *best | 5.8 s
+epoch  22: train 0.00738 | val 0.00770 | PSNR 23.15 SSIM 0.485 r 0.772  *best | 6.0 s
+epoch  23: train 0.00724 | val 0.00772 | PSNR 23.15 SSIM 0.489 r 0.775 | 5.9 s
+epoch  24: train 0.00716 | val 0.00759 | PSNR 23.23 SSIM 0.495 r 0.779  *best | 6.0 s
+epoch  25: train 0.00700 | val 0.00739 | PSNR 23.37 SSIM 0.498 r 0.782  *best | 6.0 s
+epoch  26: train 0.00688 | val 0.00735 | PSNR 23.40 SSIM 0.502 r 0.783  *best | 5.9 s
+epoch  27: train 0.00675 | val 0.00735 | PSNR 23.41 SSIM 0.505 r 0.788  *best | 6.1 s
+epoch  28: train 0.00667 | val 0.00718 | PSNR 23.52 SSIM 0.510 r 0.788  *best | 5.9 s
+epoch  29: train 0.00659 | val 0.00712 | PSNR 23.57 SSIM 0.514 r 0.792  *best | 5.9 s
+epoch  30: train 0.00650 | val 0.00716 | PSNR 23.54 SSIM 0.518 r 0.794 | 6.1 s
+epoch  31: train 0.00647 | val 0.00701 | PSNR 23.64 SSIM 0.521 r 0.794  *best | 5.8 s
+epoch  32: train 0.00640 | val 0.00694 | PSNR 23.70 SSIM 0.522 r 0.798  *best | 6.1 s
+epoch  33: train 0.00619 | val 0.00690 | PSNR 23.74 SSIM 0.526 r 0.799  *best | 6.2 s
+epoch  34: train 0.00612 | val 0.00688 | PSNR 23.76 SSIM 0.528 r 0.799  *best | 6.2 s
+epoch  35: train 0.00605 | val 0.00679 | PSNR 23.81 SSIM 0.530 r 0.801  *best | 6.0 s
+epoch  36: train 0.00592 | val 0.00677 | PSNR 23.83 SSIM 0.533 r 0.803  *best | 5.9 s
+epoch  37: train 0.00589 | val 0.00676 | PSNR 23.85 SSIM 0.536 r 0.804  *best | 5.9 s
+epoch  38: train 0.00582 | val 0.00671 | PSNR 23.88 SSIM 0.537 r 0.805  *best | 5.9 s
+epoch  39: train 0.00573 | val 0.00669 | PSNR 23.90 SSIM 0.539 r 0.807  *best | 6.1 s
+epoch  40: train 0.00567 | val 0.00663 | PSNR 23.94 SSIM 0.540 r 0.807  *best | 6.1 s
+epoch  41: train 0.00555 | val 0.00662 | PSNR 23.96 SSIM 0.542 r 0.808  *best | 6.1 s
+epoch  42: train 0.00545 | val 0.00674 | PSNR 23.87 SSIM 0.543 r 0.806 | 5.9 s
+epoch  43: train 0.00540 | val 0.00671 | PSNR 23.88 SSIM 0.544 r 0.810 | 5.9 s
+epoch  44: train 0.00537 | val 0.00668 | PSNR 23.91 SSIM 0.544 r 0.810 | 5.9 s
+epoch  45: train 0.00527 | val 0.00673 | PSNR 23.86 SSIM 0.546 r 0.807 | 6.0 s
+epoch  46: train 0.00522 | val 0.00671 | PSNR 23.89 SSIM 0.548 r 0.812 | 6.1 s
+epoch  47: train 0.00526 | val 0.00660 | PSNR 23.95 SSIM 0.550 r 0.811  *best | 6.0 s
+epoch  48: train 0.00508 | val 0.00655 | PSNR 24.01 SSIM 0.552 r 0.811  *best | 6.0 s
+epoch  49: train 0.00497 | val 0.00654 | PSNR 24.03 SSIM 0.552 r 0.811  *best | 6.1 s
+epoch  50: train 0.00489 | val 0.00656 | PSNR 24.03 SSIM 0.551 r 0.812 | 6.1 s
+epoch  51: train 0.00482 | val 0.00653 | PSNR 24.05 SSIM 0.553 r 0.812  *best | 6.0 s
+epoch  52: train 0.00475 | val 0.00658 | PSNR 24.00 SSIM 0.554 r 0.812 | 5.9 s
+epoch  53: train 0.00476 | val 0.00665 | PSNR 23.96 SSIM 0.555 r 0.814 | 6.0 s
+epoch  54: train 0.00465 | val 0.00656 | PSNR 24.03 SSIM 0.555 r 0.814 | 6.0 s
+epoch  55: train 0.00459 | val 0.00656 | PSNR 24.02 SSIM 0.554 r 0.812 | 6.0 s
+epoch  56: train 0.00468 | val 0.00654 | PSNR 24.05 SSIM 0.556 r 0.815 | 5.8 s
+epoch  57: train 0.00446 | val 0.00649 | PSNR 24.10 SSIM 0.558 r 0.814  *best | 6.0 s
+epoch  58: train 0.00438 | val 0.00652 | PSNR 24.07 SSIM 0.557 r 0.814 | 6.0 s
+epoch  59: train 0.00440 | val 0.00654 | PSNR 24.06 SSIM 0.559 r 0.815 | 6.0 s
+epoch  60: train 0.00430 | val 0.00666 | PSNR 23.97 SSIM 0.558 r 0.816 | 6.2 s
+epoch  61: train 0.00436 | val 0.00728 | PSNR 23.56 SSIM 0.556 r 0.817 | 6.0 s
+epoch  62: train 0.00439 | val 0.00647 | PSNR 24.12 SSIM 0.561 r 0.815  *best | 6.0 s
+epoch  63: train 0.00414 | val 0.00652 | PSNR 24.09 SSIM 0.560 r 0.816 | 6.0 s
+epoch  64: train 0.00406 | val 0.00649 | PSNR 24.10 SSIM 0.560 r 0.814 | 6.0 s
+epoch  65: train 0.00399 | val 0.00658 | PSNR 24.05 SSIM 0.559 r 0.814 | 5.9 s
+epoch  66: train 0.00396 | val 0.00652 | PSNR 24.09 SSIM 0.560 r 0.814 | 5.9 s
+epoch  67: train 0.00389 | val 0.00665 | PSNR 24.00 SSIM 0.560 r 0.815 | 5.9 s
+epoch  68: train 0.00394 | val 0.00663 | PSNR 24.02 SSIM 0.560 r 0.815 | 5.9 s
+epoch  69: train 0.00384 | val 0.00654 | PSNR 24.09 SSIM 0.561 r 0.815 | 5.8 s
+epoch  70: train 0.00377 | val 0.00659 | PSNR 24.05 SSIM 0.561 r 0.815 | 5.9 s
+epoch  71: train 0.00371 | val 0.00655 | PSNR 24.09 SSIM 0.561 r 0.814 | 5.9 s
+epoch  72: train 0.00366 | val 0.00660 | PSNR 24.06 SSIM 0.562 r 0.814 | 5.9 s
+early stopping: no val-loss improvement for 10 epochs
+
+validation (75 images):
+                       method    PSNR   SSIM    MSE  Pearson_r
+                DGI-500 input 12.4175 0.1168 0.0776     0.3066
+        flat image at <B>/<R> 19.2597 0.3007 0.0191        NaN
+U-Net DGI-500 (best epoch 62) 24.1208 0.5613 0.0064     0.8151
+    DGI-10,000 (conventional) 23.5156 0.6093 0.0070     0.8413
+
+per-image analysis:
+                          mean   median     std  pct_positive     min      max
+UNet_vs_DGI500_PSNR    11.7033  11.5935  1.6436      100.0000  7.4407  15.9147
+UNet_vs_DGI500_SSIM     0.4445   0.4149  0.1132      100.0000  0.1516   0.6599
+UNet_vs_DGI10000_PSNR   0.6052   0.3445  1.5641       58.6667 -1.8748   4.7369
+UNet_vs_DGI10000_SSIM  -0.0480  -0.0532  0.1195       32.0000 -0.3834   0.2466
+UNet_vs_flat_PSNR       4.8611   4.7398  1.7004      100.0000  2.3411   9.1023
+UNet_vs_flat_SSIM       0.2606   0.3103  0.1613       92.0000 -0.1354   0.4832
+
+overfitting: {
+ "train_loss_at_best_eval_mode": 0.0041232311695771915,
+ "val_loss_at_best": 0.006473070678311128,
+ "val_over_train_loss_ratio": 1.5699024410932787,
+ "train_PSNR_at_best": 25.71570393267407,
+ "val_PSNR_at_best": 24.12083192856669,
+ "train_SSIM_at_best": 0.6459752415588929,
+ "val_SSIM_at_best": 0.5612534266183519,
+ "epochs_after_best": 10,
+ "val_loss_last_minus_best": 0.0001280975938615283,
+ "train_loss_last_epoch": 0.0036626595476658636
+}
+
+checks: {
+ "split_counts": {
+  "train": 341,
+  "val": 75,
+  "test": 74
+ },
+ "split_overlap": {
+  "train&val": 0,
+  "train&test": 0,
+  "val&test": 0
+ },
+ "n_train_loaded": 341,
+ "n_val_loaded": 75,
+ "test_ids_in_loaded_data": 0,
+ "alignment_max_psnr_diff_db_train": 1.8723468997450254e-08,
+ "alignment_max_psnr_diff_db_val": 1.689156192696828e-08,
+ "target_vs_fresh_reference_max_abs_diff": 0.0,
+ "input_range": [
+  0.0,
+  1.0
+ ],
+ "target_range": [
+  0.0,
+  0.974702775478363
+ ],
+ "data_finite": true,
+ "dgi10000_alignment_max_psnr_diff_db": 5.446809581144407e-08,
+ "model_output_shape": [
+  2,
+  1,
+  64,
+  64
+ ],
+ "all_train_images_seen_each_epoch": true,
+ "best_epoch": 62,
+ "best_reload_reproduces_recorded": {
+  "val_loss_abs_diff": 0.0,
+  "psnr_abs_diff": 0.0,
+  "ssim_abs_diff": 0.0,
+  "r_abs_diff": 0.0
+ },
+ "best_reload_exact": true,
+ "output_finite": true,
+ "output_shape": [
+  1,
+  64,
+  64
+ ],
+ "output_raw_range": [
+  -0.19363285601139069,
+  0.8615935444831848
+ ]
+}
+
+epochs 72, best 62, early stop True, 443.9 s -> C:\Users\vishn\Downloads\Onion-CNN-Final.v1-onion-original-v1.yolov8\outputs\phase2b_unet\model_A_dgi500\full

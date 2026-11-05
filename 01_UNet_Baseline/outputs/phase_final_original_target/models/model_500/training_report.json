@@ -1,0 +1,47 @@
+{
+  "shots": 500,
+  "target": "original clean preprocessed object",
+  "best_epoch": 80,
+  "best_selection_loss": 0.0063535724926051165,
+  "epochs_completed": 80,
+  "stopped_early": false,
+  "n_params": 1925025,
+  "checkpoint": "outputs\\phase_final_original_target\\models\\model_500\\checkpoints\\best.pt",
+  "config": {
+    "shots": 500,
+    "epochs": 80,
+    "patience": 10,
+    "batch_size": 16,
+    "lr": 0.0001,
+    "base": 32,
+    "seed": 0,
+    "threads": 8
+  },
+  "pool_seed_rule": "20,000,000 + 1000*k + train_index",
+  "selection_seeds": [
+    2040,
+    2041,
+    2042
+  ],
+  "epoch_realisation_rule": "default_rng([master_seed, epoch]).integers(0, 32, 341)",
+  "selection_at_best": {
+    "PSNR": 24.236639409399157,
+    "SSIM": 0.5580256224657463,
+    "MSE": 0.006330781094759577,
+    "Pearson_r": 0.8245787789083273
+  },
+  "conventional_on_selection": {
+    "PSNR": 12.276221347841053,
+    "SSIM": 0.11464836142238637,
+    "MSE": 0.07929843946417393,
+    "Pearson_r": 0.306845425870201
+  },
+  "checks": {
+    "n_train_images": 341,
+    "realisations_per_image": 32,
+    "selection_pairs": 225,
+    "test_ids_in_training_or_selection": 0,
+    "best_reload_max_abs_diff": 0.0
+  },
+  "wall_time_s": 611.3
+}

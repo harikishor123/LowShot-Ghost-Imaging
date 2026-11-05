@@ -1,0 +1,11 @@
+# Environment used for the final experiments (Phase 1 and Phase 2), CPU only.
+# Python 3.13.7 (Windows, launched as `py -3.13`)
+numpy==2.2.6
+torch==2.8.0          # CPU build (2.8.0+cpu)
+scipy==1.16.2
+scikit-image==0.26.0
+pandas==2.3.2
+matplotlib==3.10.6
+pillow==11.3.0
+# Note: some legacy modules in src/ from early exploratory phases import tensorflow/keras;
+# they are not used by the final pipeline (final_*.py, orig_*.py).

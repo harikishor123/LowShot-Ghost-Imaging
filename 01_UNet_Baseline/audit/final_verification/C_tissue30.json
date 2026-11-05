@@ -1,0 +1,74 @@
+{
+ "n_images": 1000,
+ "n_pairs": 4000,
+ "mean SSIM AI-original-1000": 0.5290225846253248,
+ "mean r AI-original-1000": 0.6702961890272549,
+ "mean SSIM AI-original-2000": 0.6293695334501946,
+ "mean r AI-original-2000": 0.7515826551917637,
+ "mean SSIM DGI-10000": 0.5567965402928078,
+ "mean r DGI-10000": 0.7308487582384772,
+ "mean SSIM noise-free DGI-10000": 0.6720659947497354,
+ "mean r noise-free DGI-10000": 0.8471140737403469,
+ "comparisons": {
+  "AI-original-1000 minus DGI-10000": {
+   "SSIM": {
+    "mean_diff": -0.027773955667483023,
+    "ci_low_independent": -0.042059994337340624,
+    "ci_high_independent": -0.01264070604855498,
+    "ci_low_frozen": -0.0423445783860075,
+    "pct_pairs_AI_better": 40.2,
+    "margin": -0.02
+   },
+   "correlation": {
+    "mean_diff": -0.060552569211222346,
+    "ci_low_independent": -0.06799918270088662,
+    "ci_high_independent": -0.05306721973207379,
+    "ci_low_frozen": -0.0679344261125303,
+    "pct_pairs_AI_better": 36.775000000000006,
+    "margin": -0.01
+   },
+   "passes (lo>=-0.02 SSIM and lo>=-0.01 r)": false,
+   "frozen_criterion_pass": false
+  },
+  "AI-original-2000 minus DGI-10000": {
+   "SSIM": {
+    "mean_diff": 0.07257299315738691,
+    "ci_low_independent": 0.06014129262714842,
+    "ci_high_independent": 0.08601089794913457,
+    "ci_low_frozen": 0.0602395087978992,
+    "pct_pairs_AI_better": 53.75,
+    "margin": -0.02
+   },
+   "correlation": {
+    "mean_diff": 0.020733896953286434,
+    "ci_low_independent": 0.01485951585669654,
+    "ci_high_independent": 0.026602009843467778,
+    "ci_low_frozen": 0.0152035016846158,
+    "pct_pairs_AI_better": 58.95,
+    "margin": -0.01
+   },
+   "passes (lo>=-0.02 SSIM and lo>=-0.01 r)": true,
+   "frozen_criterion_pass": true
+  },
+  "AI-original-1000 minus noise-free DGI-10000": {
+   "SSIM": {
+    "mean_diff": -0.14304341012441055,
+    "ci_low_independent": -0.15616923118498607,
+    "ci_high_independent": -0.1290678685814695,
+    "ci_low_frozen": -0.1559222791683412,
+    "pct_pairs_AI_better": 23.275000000000002,
+    "margin": -0.02
+   },
+   "correlation": {
+    "mean_diff": -0.17681788471309198,
+    "ci_low_independent": -0.1880389719625235,
+    "ci_high_independent": -0.16590620342043563,
+    "ci_low_frozen": -0.1884515297461541,
+    "pct_pairs_AI_better": 13.0,
+    "margin": -0.01
+   },
+   "passes (lo>=-0.02 SSIM and lo>=-0.01 r)": false,
+   "frozen_criterion_pass": false
+  }
+ }
+}
