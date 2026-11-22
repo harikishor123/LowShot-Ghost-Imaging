@@ -1,0 +1,296 @@
+{
+ "checkpoints": [
+  {
+   "group": "onion-phase1",
+   "model": "AI-500",
+   "path": "outputs/phase_final_low_shot_to_10k_reference/models/model_500/checkpoints/best.pt",
+   "size": 23135517,
+   "md5": "ec72468607dc43b98ae2b1899fccd597",
+   "sha256": "3bd76a2005abe3173fc6b56449896e44993056d52d28a158d4cd5f12f2f4d854",
+   "best_epoch": 80,
+   "frozen_record": "outputs/phase_final_low_shot_to_10k_reference/frozen_for_test.json"
+  },
+  {
+   "group": "onion-phase1",
+   "model": "AI-1000",
+   "path": "outputs/phase_final_low_shot_to_10k_reference/models/model_1000/checkpoints/best.pt",
+   "size": 23135517,
+   "md5": "26efe9ef2a69cd813b16cc65aedbaa60",
+   "sha256": "ced61b75bca3fef933f716cbc4918d0e5003e1af53d69ba28e10adcc50cc2a06",
+   "best_epoch": 79,
+   "frozen_record": "outputs/phase_final_low_shot_to_10k_reference/frozen_for_test.json"
+  },
+  {
+   "group": "onion-phase1",
+   "model": "AI-2000",
+   "path": "outputs/phase_final_low_shot_to_10k_reference/models/model_2000/checkpoints/best.pt",
+   "size": 23135517,
+   "md5": "dc2ff919034623c4b92ea0a6fcf6fffe",
+   "sha256": "aa43cc9ce0354dbcb09428df6febb67bce6c72de3c9825fe47bfe7d5771f6390",
+   "best_epoch": 80,
+   "frozen_record": "outputs/phase_final_low_shot_to_10k_reference/frozen_for_test.json"
+  },
+  {
+   "group": "onion-phase1",
+   "model": "AI-5000",
+   "path": "outputs/phase_final_low_shot_to_10k_reference/models/model_5000/checkpoints/best.pt",
+   "size": 23135517,
+   "md5": "ac0d35c0aa86747012118411b94eb535",
+   "sha256": "3c884b93eb2b4aa4bf1f4763f9eeb411197ae39efea8125b78b8c4a3e5419b9b",
+   "best_epoch": 78,
+   "frozen_record": "outputs/phase_final_low_shot_to_10k_reference/frozen_for_test.json"
+  },
+  {
+   "group": "onion-phase2",
+   "model": "AI-original-500",
+   "path": "outputs/phase_final_original_target/models/model_500/checkpoints/best.pt",
+   "size": 23135517,
+   "md5": "2af10174c4b8d267abccc9aacbfc0038",
+   "sha256": "1c76521b434cbf74073118a2b448090187b185ac678c16795671898a67259c1b",
+   "best_epoch": 80,
+   "frozen_record": "outputs/phase_final_original_target/reports/frozen_for_test.json"
+  },
+  {
+   "group": "onion-phase2",
+   "model": "AI-original-1000",
+   "path": "outputs/phase_final_original_target/models/model_1000/checkpoints/best.pt",
+   "size": 23135517,
+   "md5": "1eec40bff638b0169ef9a0d1ec7bfd9a",
+   "sha256": "d62a34af117c06649a587db8d107b4da408cb0af5d928e698e664de7b54995d4",
+   "best_epoch": 80,
+   "frozen_record": "outputs/phase_final_original_target/reports/frozen_for_test.json"
+  },
+  {
+   "group": "onion-phase2",
+   "model": "AI-original-2000",
+   "path": "outputs/phase_final_original_target/models/model_2000/checkpoints/best.pt",
+   "size": 23135517,
+   "md5": "3aeda148fefc79a914b5ef6dfd0558a2",
+   "sha256": "cee13f590e6ede2ed68670b90c8bfdccafa213965bfb6d3b696016fe41235eaa",
+   "best_epoch": 80,
+   "frozen_record": "outputs/phase_final_original_target/reports/frozen_for_test.json"
+  },
+  {
+   "group": "onion-phase2",
+   "model": "AI-original-5000",
+   "path": "outputs/phase_final_original_target/models/model_5000/checkpoints/best.pt",
+   "size": 23135517,
+   "md5": "8f0fc0d5e301a03f1615f19987f2b074",
+   "sha256": "0a948fa5b7afec5d91798c628484d7aea3da79091cc5e70ccff43ba94e3f2bcc",
+   "best_epoch": 79,
+   "frozen_record": "outputs/phase_final_original_target/reports/frozen_for_test.json"
+  },
+  {
+   "group": "extension-clean",
+   "model": "AI-original-500",
+   "path": "outputs/extension_medmnist_microscopy/models/target_clean/model_500/checkpoints/best.pt",
+   "size": 23135197,
+   "md5": "14292ff849960596941c8fe50a1c7b99",
+   "sha256": "e3c1468a55b6a3ed93e98912590d72eb3b3258b3b460d50336301b7bbf8a382b",
+   "best_epoch": 79,
+   "frozen_record": "outputs/extension_medmnist_microscopy/results/target_clean/frozen_for_test.json"
+  },
+  {
+   "group": "extension-clean",
+   "model": "AI-original-1000",
+   "path": "outputs/extension_medmnist_microscopy/models/target_clean/model_1000/checkpoints/best.pt",
+   "size": 23135197,
+   "md5": "25784148b599d3a967a2042e57d3eef8",
+   "sha256": "49d8a5dcfa258908ad61a4680a0a1b44aa7dfdc157c6543457c231f44386fb0d",
+   "best_epoch": 80,
+   "frozen_record": "outputs/extension_medmnist_microscopy/results/target_clean/frozen_for_test.json"
+  },
+  {
+   "group": "extension-clean",
+   "model": "AI-original-2000",
+   "path": "outputs/extension_medmnist_microscopy/models/target_clean/model_2000/checkpoints/best.pt",
+   "size": 23135197,
+   "md5": "bf4a264dd6df34a9936e6367f614d57c",
+   "sha256": "226d15356d2ff31d1318b84435622bb39e78f41f71b2f91e6c6f77851a713090",
+   "best_epoch": 59,
+   "frozen_record": "outputs/extension_medmnist_microscopy/results/target_clean/frozen_for_test.json"
+  },
+  {
+   "group": "extension-clean",
+   "model": "AI-original-5000",
+   "path": "outputs/extension_medmnist_microscopy/models/target_clean/model_5000/checkpoints/best.pt",
+   "size": 23135197,
+   "md5": "103f5c4eda854fc27f9a26fb62967612",
+   "sha256": "0cded24ba38ae3e2f45a702ffb5faeed1e5156ee2a1e40895b0d1f05bdd0cd4d",
+   "best_epoch": 79,
+   "frozen_record": "outputs/extension_medmnist_microscopy/results/target_clean/frozen_for_test.json"
+  },
+  {
+   "group": "extension-dgi10k",
+   "model": "AI-500",
+   "path": "outputs/extension_medmnist_microscopy/models/target_dgi10k/model_500/checkpoints/best.pt",
+   "size": 23135197,
+   "md5": "35e24d52246c038ea35e2d39126e7ee3",
+   "sha256": "e96a27d599f93c087d0800f7f840169f4632bf4e50d47b8c8f2a8d58732e20e7",
+   "best_epoch": 71,
+   "frozen_record": "outputs/extension_medmnist_microscopy/results/target_dgi10k/frozen_for_test.json"
+  },
+  {
+   "group": "extension-dgi10k",
+   "model": "AI-1000",
+   "path": "outputs/extension_medmnist_microscopy/models/target_dgi10k/model_1000/checkpoints/best.pt",
+   "size": 23135197,
+   "md5": "4c898c20dd9571a1d12c25e750ad0135",
+   "sha256": "b738d83ea3f81e1a0cc3849da18da4a6b1703dd5b90e2e878c77586a890a8d4c",
+   "best_epoch": 80,
+   "frozen_record": "outputs/extension_medmnist_microscopy/results/target_dgi10k/frozen_for_test.json"
+  },
+  {
+   "group": "extension-dgi10k",
+   "model": "AI-2000",
+   "path": "outputs/extension_medmnist_microscopy/models/target_dgi10k/model_2000/checkpoints/best.pt",
+   "size": 23135197,
+   "md5": "d236a647450f52c3c06c1a5c64253990",
+   "sha256": "55d2d23e713dd20ae12bb62080b2de83fcce3517d01cb258643e8422e42ea94c",
+   "best_epoch": 77,
+   "frozen_record": "outputs/extension_medmnist_microscopy/results/target_dgi10k/frozen_for_test.json"
+  },
+  {
+   "group": "extension-dgi10k",
+   "model": "AI-5000",
+   "path": "outputs/extension_medmnist_microscopy/models/target_dgi10k/model_5000/checkpoints/best.pt",
+   "size": 23135197,
+   "md5": "383805e9ada96289ce0075feaa5e1f3f",
+   "sha256": "e979d5a726d7ae2818e2599b0c70ada16a2f5797cbcb1a69cda5cbe3e5b3ca7d",
+   "best_epoch": 79,
+   "frozen_record": "outputs/extension_medmnist_microscopy/results/target_dgi10k/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p05",
+   "model": "AI-original-500",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p05/model_500/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "93b3363387f2cdb4f2dfc947f572ab7a",
+   "sha256": "91e05c0bccbc6f913a528f0ed40336cb1193213def9e4d9215c997363a39705d",
+   "best_epoch": 79,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p05/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p05",
+   "model": "AI-original-1000",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p05/model_1000/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "cf0ed7ed7d421cf1fae59cf7e6362d88",
+   "sha256": "dc863256900a19b0be3b69af19677505d206c508457a07c513b119eb26e0e5d6",
+   "best_epoch": 61,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p05/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p05",
+   "model": "AI-original-2000",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p05/model_2000/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "0eed438062db1597fe6fc70ac36a9002",
+   "sha256": "978732a7b3aa037f2160352af1206e5460b6038f06cc8e448d48e489ec7db010",
+   "best_epoch": 68,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p05/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p05",
+   "model": "AI-original-5000",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p05/model_5000/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "af61fb9a8bb400dcf488e5c56ca4fab4",
+   "sha256": "b52d78698e705df8e18aa4ced6e39e8f8568ae2c5442853705dccfb7c8a123c2",
+   "best_epoch": 76,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p05/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p10",
+   "model": "AI-original-500",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p10/model_500/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "b418c2a900a9c836563ca10dbaeb60b2",
+   "sha256": "fd0d0a86d050352877af17d2281d99d9114ea1853056086ac567bf538ec28286",
+   "best_epoch": 74,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p10/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p10",
+   "model": "AI-original-1000",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p10/model_1000/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "47441495a1a4a88222054bc6c263def7",
+   "sha256": "7a1fbefcd7afc66604cc7d9882aed391f1fc2e91fd9d333be51da183641f1097",
+   "best_epoch": 80,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p10/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p10",
+   "model": "AI-original-2000",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p10/model_2000/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "e029d735f17f558f579865fed5203a09",
+   "sha256": "5c131f7350796e6aa44355dbb227e8ba5a8fbb53b393379ff982ae57d8850e8e",
+   "best_epoch": 79,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p10/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p10",
+   "model": "AI-original-5000",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p10/model_5000/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "47ce62e27ad9acb7f49a3565407fd593",
+   "sha256": "9aa7d00ef3bbaef065904102a57f8a1719fbfb06d0fd4313f6746a5caa6eede8",
+   "best_epoch": 68,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p10/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p30",
+   "model": "AI-original-500",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p30/model_500/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "07ad4d2ef18ede395896b432ccbbd8e8",
+   "sha256": "6d391b7c7764b617501b4104d280880e052e9b61900c298ed28e1a908c7defbc",
+   "best_epoch": 79,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p30/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p30",
+   "model": "AI-original-1000",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p30/model_1000/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "c510add10a66b7f4bdf104ae38fd4889",
+   "sha256": "666220a9142897b5e832cadce4d69adc4cd65375977b66128cb252d8d9b95bca",
+   "best_epoch": 61,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p30/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p30",
+   "model": "AI-original-2000",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p30/model_2000/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "329fd9c2df76f0f3c42306c8c5148b62",
+   "sha256": "b31c6a1ef5c295dcfd240beca73c910096cd6754bd4e22f2f330792ec014f526",
+   "best_epoch": 59,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p30/frozen_for_test.json"
+  },
+  {
+   "group": "poisson-p30",
+   "model": "AI-original-5000",
+   "path": "outputs/extension_medmnist_microscopy_poisson/models/level_p30/model_5000/checkpoints/best.pt",
+   "size": 23135261,
+   "md5": "2747b0dfe3392b34e23032d76d1b9a0d",
+   "sha256": "63d3f6ee8b2c6d0bcb39ed83c4792aa2f15d557838d5c481ef77a6c41b9bc01b",
+   "best_epoch": 69,
+   "frozen_record": "outputs/extension_medmnist_microscopy_poisson/results/level_p30/frozen_for_test.json"
+  }
+ ],
+ "optional_data": [
+  {
+   "group": "extension-data",
+   "model": "objects_64",
+   "path": "data/extension_medmnist/processed/objects_64.npz",
+   "size": 229166300,
+   "md5": "73e8ce929c5a7c67111e028032e528c1",
+   "sha256": "a749310bd2e1161e5e67a416c745df1df8e41d2abacb68e37e48cfc7105844a4",
+   "best_epoch": "",
+   "frozen_record": "outputs/extension_medmnist_microscopy/FREEZE_MANIFEST_extension.md5"
+  }
+ ]
+}

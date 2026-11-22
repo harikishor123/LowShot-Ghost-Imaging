@@ -235,36 +235,37 @@ The onion cell study (341 images) used micrographs from a Roboflow dataset. Thes
 ## Repository Structure
 
 ```
-├── 01_UNet_Baseline/            # Stage 1: U-Net experiments (FROZEN)
-│   ├── src/                     #   Core simulation and model code
-│   ├── scripts/                 #   Training and evaluation scripts
-│   ├── data/                    #   Dataset metadata and splits
-│   ├── outputs/                 #   Frozen evaluation outputs
-│   ├── EXPERIMENTS.md           #   Experiment protocol and results
-│   ├── REPRODUCIBILITY.md       #   Full reproduction guide
-│   └── ATTRIBUTION.md           #   Data licences and citations
+├── 01_UNet_Baseline/              # Stage 1: U-Net experiments
+│   ├── src/                       #   Core simulation and model code
+│   ├── scripts/                   #   Training and evaluation scripts
+│   │   ├── onion_ghost_imaging/   #     Phase 1: Original onion cell study
+│   │   ├── microscopy_extension/  #     Phase 2: MedMNIST+ extension
+│   │   └── poisson_noise/         #     Phase 3: Poisson noise experiments
+│   ├── configs/                   #   Model configurations
+│   ├── models/                    #   Trained model checkpoints + metadata
+│   ├── data/                      #   Dataset metadata and splits
+│   ├── outputs/                   #   Frozen evaluation outputs
+│   ├── results/                   #   Evaluation results and figures
+│   ├── audit/                     #   Scientific audit and verification
+│   ├── thesis/                    #   Thesis documents and drafts
+│   ├── presentation/              #   Presentation materials
+│   ├── EXPERIMENTS.md             #   Experiment protocol and results
+│   ├── REPRODUCIBILITY.md         #   Full reproduction guide
+│   └── ATTRIBUTION.md             #   Data licences and citations
 │
-├── 02_DiffTransFuse/            # Stage 2: DiffTransFuse experiments
-│   ├── configs/                 #   YAML training configurations
-│   ├── ghost_imaging_v2/        #   Model definitions (E2–E4)
-│   ├── results/                 #   Per-experiment outputs
-│   ├── reports/                 #   Design docs and audit reports
-│   │   └── final_test_evaluation/  Final held-out test results
-│   ├── train_e*.py              #   Training scripts
-│   └── evaluate_e*.py           #   Evaluation scripts
+├── 02_DiffTransFuse/              # Stage 2: DiffTransFuse experiments
+│   ├── src/                       #   Model definitions (diffusion, transformer fusion)
+│   ├── configs/                   #   YAML training configurations
+│   ├── logs/                      #   Training logs
+│   ├── checkpoints/               #   Model checkpoints
+│   ├── results/                   #   Per-experiment outputs
+│   ├── reports/                   #   Design docs and audit reports
+│   ├── tests/                     #   Unit tests
+│   ├── train_e*.py                #   Training scripts
+│   └── evaluate_e*.py             #   Evaluation scripts
 │
-├── scripts/                     # Organized utility scripts
-│   ├── onion_ghost_imaging/     #   Original onion study scripts
-│   ├── microscopy_extension/    #   MedMNIST extension scripts
-│   └── poisson_noise/           #   Poisson noise experiment scripts
-│
-└── docs/images/                 # Figures used in this README
+└── docs/images/                   # Figures used in this README
 ```
-
-**Freeze manifests** in `01_UNet_Baseline/` verify file integrity via MD5 checksums:
-- `FREEZE_MANIFEST_phase1_phase2.md5` — original onion study (134 files)
-- `outputs/.../FREEZE_MANIFEST_extension.md5` — MedMNIST extension (131 files)
-- `outputs/.../FREEZE_MANIFEST_poisson.md5` — Poisson noise experiments (180 files)
 
 ---
 
@@ -297,15 +298,6 @@ python train_e4.py --shots 1000 --loss mse_ssim   # E4b
 
 # Final test evaluation (all models, all shot counts)
 python evaluate_final_test.py
-```
-
-### Verifying frozen results
-
-```bash
-cd 01_UNet_Baseline
-md5sum -c FREEZE_MANIFEST_phase1_phase2.md5
-md5sum -c outputs/extension_medmnist_microscopy/FREEZE_MANIFEST_extension.md5
-md5sum -c outputs/extension_medmnist_microscopy_poisson/FREEZE_MANIFEST_poisson.md5
 ```
 
 ### Numerical reproducibility notes
